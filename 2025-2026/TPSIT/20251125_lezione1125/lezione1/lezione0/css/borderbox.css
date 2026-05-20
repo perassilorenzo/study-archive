@@ -1,0 +1,15 @@
+.box{
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border: 5px solid red;
+    background: lightblue;
+}
+
+.box1{
+    box-sizing: content-box;
+}
+
+.box2{
+    box-sizing: border-box;
+}

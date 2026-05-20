@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es7_pag51"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-17 10:39:44 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0yNDsyMDI1LTA5LTE3OyIxMDoyMjo1NiAiOzI4MTg="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0yNDsyMDI1LTA5LTE3OyIxMDozOTo0NCAiOzE7MjkzMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hArrivo, hPartenza, differenza, spesa" type="Real" array="False" size=""/>
+            <do expression="hArrivo &lt; 0 and hPartenza &lt; 0">
+                <output expression="&quot;Inserire l'ora di arrivo: &quot;" newline="False"/>
+                <input variable="hArrivo"/>
+                <output expression="&quot;Inserire l'ora di partenza: &quot;" newline="False"/>
+                <input variable="hPartenza"/>
+            </do>
+            <assign variable="differenza" expression="hPartenza - hArrivo"/>
+            <assign variable="spesa" expression="4"/>
+            <if expression="differenza = 1">
+                <then/>
+                <else>
+                    <if expression="differenza &gt; 5">
+                        <then>
+                            <assign variable="spesa" expression="spesa + 3 * differenza"/>
+                        </then>
+                        <else>
+                            <assign variable="spesa" expression="spesa + 2 * differenza"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Il totale da pagare &#232; &quot; &amp; spesa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

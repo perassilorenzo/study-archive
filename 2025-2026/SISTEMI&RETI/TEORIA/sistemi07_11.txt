@@ -1,0 +1,233 @@
+esercizi
+pop push
+
+	______ <-- eos 
+	______ <-- sp
+	______
+indiriz	______
+	______
+	______
+	______
+	______
+	______
+	______ <-- ss
+	ram		lifo
+
+push
+inserisce il dato puntata nella cella puntata da sp
+sp <-- sp-1
+
+pop
+legge il dato nella cella puntata da sp
+sp <-- sp+1
+
+	______		eos
+	______
+	______
+fffa	______
+fffb	______		sp
+fffc	___9___
+fffd	___8___
+fffe	____43__
+ffff	___13___	ss
+
+r1 = 3
+r2 = 5
+
+push r1
+
+	______		eos
+	______
+	______
+fffa	______		sp
+fffb	___3___		
+fffc	___9___
+fffd	___8___
+fffe	____43__
+ffff	___13___	ss
+
+
+push r2
+
+	______		eos
+	______
+	______		sp
+fffa	___5___
+fffb	___3___		
+fffc	___9___
+fffd	___8___
+fffe	____43__
+ffff	___13___	ss
+
+
+pop r1
+r1 = 5
+	______		eos
+	______
+	______		
+fffa	___5___		sp
+fffb	___3___		
+fffc	___9___
+fffd	___8___
+fffe	____43__
+ffff	___13___	ss
+
+
+pop r2
+r2 = 3
+
+
+	______		eos
+	______
+	______		
+fffa	___5___		
+fffb	___3___		sp
+fffc	___9___
+fffd	___8___
+fffe	____43__
+ffff	___13___	ss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rom
+- read only memory
+ad esempio programmi che non devono essere toccati come la bios (uefi)
+- memoria permanente senza mai perdere i dati anche se senza corrente a differenza della ram
+
+programmabile
+- prom
+erasable
+- eprom
+electricali programmabili e cancellabili con dei segnali elettrici molto più funzionale rispetto alle precedenti
+- eeprom
+
+
+
+
+cache (dal francese nascondere)
+- memoria volatile
+- ha una struttura a stack simile alla ram ma più piccola quindi meno dati ma più veloce
+- si trova tra la ram e la cpu
+contiene alcuni dati della ram che a livello statistico sono più richiesti
+
+3 livelli di cache
+1) 1' livello quindi si trova attaccata alla cpu
+fa un accesso in circa 2 cicli di clock 
+2) 2' livello cache che si trova tra la cpu e la ram
+accesso tra 4 e 10 cicli di clock
+3) 3' livello 
+tra 15-70 cicli di clock
+
+il collegamento tra cpu e cache avviene con l'aiuto di bus specifici
+
+		__________
+		__________
+		__________
+____		__________
+____		__________
+____		__________
+____		__________
+____ ram	__________cpu
+
+
+1) read
+- cache hit 
+- cache miss
+
+t totale = tempo cache hit + tempo accesso ram
+
+2) write
+- write-through
+- write-back
+	dirty bit
+	overhead
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

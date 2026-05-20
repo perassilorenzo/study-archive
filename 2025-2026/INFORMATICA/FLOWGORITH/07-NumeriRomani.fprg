@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="07-NumeriRomani"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-18 10:18:07 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7UEFTQ0FMLTE0OzIwMjUtMDktMTg7IjA5OjEyOjAzICI7MjkzOA=="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7UEFTQ0FMLTE0OzIwMjUtMDktMTg7IjA5OjM1OjEyICI7MjszMDUy"/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTE4OyIxMDoxODowNyAiOzE7MjkyNg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numeroDecimale, c, d, u" type="Integer" array="False" size=""/>
+            <declare name="numeroRomano" type="String" array="False" size=""/>
+            <assign variable="c" expression="0"/>
+            <assign variable="d" expression="0"/>
+            <assign variable="u" expression="0"/>
+            <do expression="numeroDecimale &lt;= 0 and numeroDecimale &gt; 1000">
+                <output expression="&quot;Inserire un numero decimale &quot;" newline="True"/>
+                <input variable="numeroDecimale"/>
+            </do>
+            <if expression="numeroDecimale = 1000">
+                <then>
+                    <assign variable="numeroRomano" expression="&quot;M&quot;"/>
+                </then>
+                <else>
+                    <while expression="numeroDecimale &gt; 0">
+                        <assign variable="numeroDecimale" expression="numeroDecimale - 100"/>
+                        <assign variable="c" expression="c + 1"/>
+                    </while>
+                    <while expression="numeroDecimale &gt; 0">
+                        <assign variable="numeroDecimale" expression="numeroDecimale - 10"/>
+                        <assign variable="d" expression="d + 1"/>
+                    </while>
+                    <while expression="numeroDecimale = 0">
+                        <assign variable="numeroDecimale" expression="numeroDecimale - 1"/>
+                        <assign variable="u" expression="u + 1"/>
+                    </while>
+                    <if expression="c &lt; 4">
+                        <then>
+                            <assign variable="numeroRomano" expression="&quot;C&quot; * c"/>
+                        </then>
+                        <else>
+                            <if expression="c &lt; 6">
+                                <then>
+                                    <if expression="c = 5">
+                                        <then>
+                                            <assign variable="numeroRomano" expression="&quot;D&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="numeroRomano" expression="&quot;CD&quot;"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="c &lt; 9">
+                                        <then>
+                                            <assign variable="numeroRomano" expression="&quot;D&quot; + &quot;C&quot; * c - 5"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="numeroRomano" expression="&quot;CM&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <if expression="d &lt; 4">
+                        <then>
+                            <assign variable="numeroRomano" expression="&quot;X&quot; * d + numeroRomano"/>
+                        </then>
+                        <else>
+                            <if expression="d &lt; 6">
+                                <then>
+                                    <if expression="d = 5">
+                                        <then>
+                                            <assign variable="numeroRomano" expression="&quot;L&quot; + numeroRomano"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="numeroRomano" expression="&quot;XL&quot; + numeroRomano"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="d &lt; 9">
+                                        <then>
+                                            <assign variable="numeroRomano" expression="&quot;L&quot; + &quot;X&quot; * c - 5 + numeroRomano"/>
+                                        </then>
+                                        <else>
+                                            <if expression="d = 9">
+                                                <then>
+                                                    <assign variable="numeroRomano" expression="&quot;XC&quot; + numeroRomano"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="numeroRomano" expression="&quot;C&quot; + numeroRomano"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <if expression="u &lt; 4">
+                        <then>
+                            <assign variable="numeroRomano" expression="&quot;I&quot; * d + numeroRomano"/>
+                        </then>
+                        <else>
+                            <if expression="u &lt; 6">
+                                <then>
+                                    <if expression="u = 5">
+                                        <then>
+                                            <assign variable="numeroRomano" expression="&quot;V&quot; + numeroRomano"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="numeroRomano" expression="&quot;IV&quot; + numeroRomano"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="u &lt; 9">
+                                        <then>
+                                            <assign variable="numeroRomano" expression="&quot;V&quot; + &quot;I&quot; * c - 5 + numeroRomano"/>
+                                        </then>
+                                        <else>
+                                            <if expression="u = 9">
+                                                <then>
+                                                    <assign variable="numeroRomano" expression="&quot;IX&quot; + numeroRomano"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="numeroRomano" expression="&quot;X&quot; + numeroRomano"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="numeroRomano" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

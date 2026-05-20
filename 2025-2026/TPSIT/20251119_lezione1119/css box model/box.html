@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <link rel="stylesheet" href="box.css">
+</head>
+<body> 
+    <div class="scatola">Questo è il contenuto della scatola</div>
+    <p>testo2</p>
+    <h1>titolo2</h1>
+       
+    <form action="conferma.html" method="post">
+        <input type="text" name="Nome" id="Nome">
+        <input type="text" name="cognome" id="cognome">
+        <button type="submit">Conferma</button>
+        <button type="submit" formaction="confermaAdmin.html">Invia ad admine</button>
+        <button type="submit" formmethod="get">usa get invece di post</button>  
+        <!-- i valori sono trasmessi in chiaro sull'url -->
+    </form>
+</body>
+</html>

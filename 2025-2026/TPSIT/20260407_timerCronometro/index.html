@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Cronometro e Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="contenitore">
+    <div class="scheda">
+        <h3>CRONOMETRO</h3>
+        <div class="schermo" id="cronometro-testo">00:00:00.000</div>
+        <div class="comandi">
+            <button id="crono-avvia" class="p-verde" onclick="avviaCrono()">Avvia</button>
+            <button id="crono-ferma" class="p-rosso" onclick="fermaCrono()" disabled>Ferma</button>
+            <button id="crono-reset" class="p-grigio" onclick="resetCrono()">Reset</button>
+            <button id="crono-giro" class="p-giro" disabled>Giro</button>
+        </div>
+    </div>
+
+    <div class="scheda">
+        <h3>TIMER</h3>
+        <div class="scelta-tempo">
+            <div class="gruppo">
+                <input type="number" id="ore" value="0" min="0">
+                <label>ORE</label>
+            </div>
+            <div class="gruppo">
+                <input type="number" id="minuti" value="4" min="0" max="59">
+                <label>MIN</label>
+            </div>
+            <div class="gruppo">
+                <input type="number" id="secondi" value="0" min="0" max="59">
+                <label>SEC</label>
+            </div>
+        </div>
+        <div class="schermo" id="timer-testo">00:04:00</div>
+        <div class="comandi">
+            <button id="timer-avvia" class="p-verde" onclick="avviaTimer()">Avvia</button>
+            <button id="timer-ferma" class="p-rosso" onclick="fermaTimer()" disabled>Ferma</button>
+            <button id="timer-reset" class="p-grigio" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

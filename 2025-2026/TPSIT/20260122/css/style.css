@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    /* position: fixed; */
+    padding: 5px 5%;
+    background-color: purple;
+    display: flex;
+}

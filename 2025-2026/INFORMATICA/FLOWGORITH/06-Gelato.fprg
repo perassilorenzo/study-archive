@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="06-Gelato"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-18 09:06:31 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7UEFTQ0FMLTE0OzIwMjUtMDktMTg7IjA4OjU4OjA1ICI7Mjk0OQ=="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7UEFTQ0FMLTE0OzIwMjUtMDktMTg7IjA5OjA2OjMxICI7MTszMDUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numeroAmici, unGusto, dueGusti" type="Integer" array="False" size=""/>
+            <declare name="spesa" type="Real" array="False" size=""/>
+            <do expression="numeroAmici &lt; 0 and unGusto &lt; 0 and dueGusti &lt;0">
+                <output expression="&quot;Inserire il numero di amici:&quot;" newline="True"/>
+                <input variable="numeroAmici"/>
+                <output expression="&quot;Inserire il numero di gelati con un solo gusto:&quot;" newline="True"/>
+                <input variable="unGusto"/>
+                <output expression="&quot;Inserire il numero di gelati con due gusti:&quot;" newline="True"/>
+                <input variable="dueGusti"/>
+            </do>
+            <assign variable="spesa" expression="(unGusto * 1.20) + (dueGusti * 2.00)"/>
+            <output expression="&quot;La spesa totale &#232; &quot; &amp; spesa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

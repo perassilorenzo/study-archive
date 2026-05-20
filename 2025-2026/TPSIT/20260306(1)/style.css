@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: rgb(211, 144, 200);
+}
+
+main{
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 100px 500px;
+    border: 1px solid rgb(228, 74, 202);
+    border-radius: 10px;
+    align-items: center;
+}
+
+h3{
+    font-size: xx-large;
+}
+
+button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(211, 144, 200);
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid rgb(228, 74, 202);
+}
+
+input{
+    margin: 0 20px;
+}
+
+p{
+    margin: 20px;
+    font-size: large;
+    font-weight: bold;
+}

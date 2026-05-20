@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 7 - Input Group e Validazione</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-orange text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">Input Group e Validazione</h1>
+      <p class="mb-0 fs-5">input-group, input-group-text, is-valid, is-invalid, form layout</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- INPUT GROUP BASE -->
+    <div class="sezione">
+      <h2>Input Group — testo prima o dopo</h2>
+      <p>L'<strong>input group</strong> permette di aggiungere testo, icone o bottoni direttamente attaccati a un campo.</p>
+
+      <div class="codice">&lt;!-- Testo PRIMA del campo --&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-text"&gt;@&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="Username"&gt;
+&lt;/div&gt;
+
+&lt;!-- Testo DOPO il campo --&gt;
+&lt;div class="input-group"&gt;
+  &lt;input type="number" class="form-control" placeholder="Prezzo"&gt;
+  &lt;span class="input-group-text"&gt;€&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Testo su entrambi i lati --&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-text"&gt;https://&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="www.sito"&gt;
+  &lt;span class="input-group-text"&gt;.it&lt;/span&gt;
+&lt;/div&gt;</div>
+
+      <div class="d-flex flex-column gap-3 mt-3" style="max-width: 500px">
+        <div>
+          <label class="form-label">Username</label>
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="nomeutente">
+          </div>
+        </div>
+        <div>
+          <label class="form-label">Prezzo</label>
+          <div class="input-group">
+            <input type="number" class="form-control" placeholder="0">
+            <span class="input-group-text">€</span>
+          </div>
+        </div>
+        <div>
+          <label class="form-label">Sito web</label>
+          <div class="input-group">
+            <span class="input-group-text">https://</span>
+            <input type="text" class="form-control" placeholder="www.miosito">
+            <span class="input-group-text">.it</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUT GROUP CON BOTTONI -->
+    <div class="sezione">
+      <h2>Input Group — con bottoni</h2>
+      <p>Un bottone può sostituire lo <code>span</code> dentro l'input group.</p>
+
+      <div class="codice">&lt;!-- Bottone dopo il campo --&gt;
+&lt;div class="input-group"&gt;
+  &lt;input type="text" class="form-control" placeholder="Cerca..."&gt;
+  &lt;button class="btn btn-primary"&gt;Cerca&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Bottone prima del campo --&gt;
+&lt;div class="input-group"&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;Copia&lt;/button&gt;
+  &lt;input type="text" class="form-control" value="testo-da-copiare"&gt;
+&lt;/div&gt;</div>
+
+      <div class="d-flex flex-column gap-3 mt-3" style="max-width: 500px">
+        <div>
+          <label class="form-label">Barra di ricerca</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Cerca prodotti...">
+            <button class="btn btn-primary">Cerca</button>
+          </div>
+        </div>
+        <div>
+          <label class="form-label">Quantità</label>
+          <div class="input-group">
+            <button class="btn btn-outline-secondary">−</button>
+            <input type="number" class="form-control text-center" value="1" min="1">
+            <button class="btn btn-outline-secondary">+</button>
+          </div>
+        </div>
+        <div>
+          <label class="form-label">Codice coupon</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Inserisci il codice">
+            <button class="btn btn-success">Applica</button>
+            <button class="btn btn-outline-danger">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALIDAZIONE -->
+    <div class="sezione">
+      <h2>Validazione — is-valid e is-invalid</h2>
+      <p>
+        Aggiungendo <code>is-valid</code> o <code>is-invalid</code> al campo, Bootstrap colora il bordo di verde o rosso.
+        Abbinando <code>valid-feedback</code> o <code>invalid-feedback</code>, appare anche un messaggio sotto il campo.
+      </p>
+
+      <div class="codice">&lt;!-- Campo valido --&gt;
+&lt;input type="email" class="form-control is-valid" value="mario@email.it"&gt;
+&lt;div class="valid-feedback"&gt;Email corretta!&lt;/div&gt;
+
+&lt;!-- Campo non valido --&gt;
+&lt;input type="email" class="form-control is-invalid" value="non-è-email"&gt;
+&lt;div class="invalid-feedback"&gt;Inserisci un'email valida.&lt;/div&gt;</div>
+
+      <form style="max-width: 500px" class="mt-3">
+        <div class="mb-3">
+          <label class="form-label">Nome <span class="text-success">(valido)</span></label>
+          <input type="text" class="form-control is-valid" value="Mario">
+          <div class="valid-feedback">Nome inserito correttamente.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email <span class="text-danger">(non valida)</span></label>
+          <input type="email" class="form-control is-invalid" value="non-è-una-email">
+          <div class="invalid-feedback">Inserisci un indirizzo email valido (esempio: mario@email.it).</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password <span class="text-danger">(troppo corta)</span></label>
+          <input type="password" class="form-control is-invalid" value="123">
+          <div class="invalid-feedback">La password deve essere di almeno 8 caratteri.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Città <span class="text-success">(valida)</span></label>
+          <select class="form-select is-valid">
+            <option selected>Roma</option>
+            <option>Milano</option>
+          </select>
+          <div class="valid-feedback">Città selezionata.</div>
+        </div>
+      </form>
+    </div>
+
+    <!-- VALIDAZIONE CON JS -->
+    <div class="sezione">
+      <h2>Validazione dinamica con JavaScript</h2>
+      <p>In un caso reale, le classi <code>is-valid</code> e <code>is-invalid</code> vengono aggiunte tramite JavaScript dopo che l'utente ha compilato il campo.</p>
+
+      <div class="codice">// Aggiunge la validazione al click su Invia
+document.getElementById('formVal').addEventListener('submit', function(e) {
+  e.preventDefault(); // blocca l'invio reale
+  const email = document.getElementById('emailVal');
+
+  if (email.value.includes('@')) {
+    email.classList.remove('is-invalid');
+    email.classList.add('is-valid');
+  } else {
+    email.classList.remove('is-valid');
+    email.classList.add('is-invalid');
+  }
+});</div>
+
+      <form id="formVal" style="max-width: 400px" class="mt-3">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="text" class="form-control" id="emailVal" placeholder="Scrivi qualcosa e premi Invia">
+          <div class="valid-feedback">Contiene @, sembra una email!</div>
+          <div class="invalid-feedback">Manca la @, non è una email valida.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Verifica</button>
+      </form>
+    </div>
+
+    <!-- FORM ORIZZONTALE -->
+    <div class="sezione">
+      <h2>Form orizzontale (label + campo affiancati)</h2>
+      <p>Usa <code>row</code> e <code>col-sm-*</code> per mettere label e campo sulla stessa riga. Usa <code>col-form-label</code> per allineare verticalmente la label.</p>
+
+      <div class="codice">&lt;div class="row mb-3"&gt;
+  &lt;label class="col-sm-3 col-form-label"&gt;Nome&lt;/label&gt;
+  &lt;div class="col-sm-9"&gt;
+    &lt;input type="text" class="form-control"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+
+      <form class="mt-3" style="max-width: 600px">
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Nome</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="Mario">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" placeholder="mario@email.it">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Ruolo</label>
+          <div class="col-sm-9">
+            <select class="form-select">
+              <option>Studente</option>
+              <option>Insegnante</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-3 col-form-label">Note</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-9 offset-sm-3">
+            <button class="btn btn-primary">Salva</button>
+            <button class="btn btn-outline-secondary ms-2">Annulla</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <a href="index.html" class="btn btn-outline-orange mb-5">&larr; Torna all'indice</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('formVal').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('emailVal');
+
+      if (email.value.includes('@')) {
+        email.classList.remove('is-invalid');
+        email.classList.add('is-valid');
+      } else {
+        email.classList.remove('is-valid');
+        email.classList.add('is-invalid');
+      }
+    });
+  </script>
+</body>
+</html>

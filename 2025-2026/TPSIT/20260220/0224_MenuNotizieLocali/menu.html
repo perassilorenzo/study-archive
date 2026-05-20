@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Notizie Locali</title>
+    <link rel="stylesheet" href="stile.css">
+</head>
+
+<body>
+
+    <h2>Sito di notizie</h2>
+
+    <ul class="menu">
+        <li>Home</li>
+        <li>Sport</li>
+        <li id="notizieLocali">
+            Notizie locali
+            <ul class="sottomenu" id="listaCitta"></ul>
+        </li>
+        <li>Contatti</li>
+    </ul>
+
+    <div class="controlli">
+        <h3>Modifica città</h3>
+
+        <input type="text" id="nuovaCitta" placeholder="Nome città">
+
+        <br><br>
+
+        <button onclick="aggiungiFine()">Aggiungi in fondo (push)</button>
+        <button onclick="aggiungiInizio()">Aggiungi all'inizio (unshift)</button>
+
+        <br>
+
+        <button onclick="rimuoviFine()">Rimuovi ultima (pop)</button>
+        <button onclick="rimuoviInizio()">Rimuovi prima (shift)</button>
+
+        <br>
+
+        <button onclick="primeQuattro()">Mostra prime 4 (slice)</button>
+        <button onclick="ultimeTre()">Mostra ultime 3 (slice)</button>
+        <button onclick="ripristina()">Ripristina tutte</button>
+
+        <p id="info"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 8 - Flexbox, Sizing, Display, Responsive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="py-4 mb-4" style="background: linear-gradient(135deg, #0dcaf0, #0aa2c0);">
+    <div class="container">
+        <h1 class="text-white mb-1">Lezione 8</h1>
+        <p class="text-white mb-0 opacity-75">Flexbox, Sizing, Display, Responsive, Text e Visibility</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- NAVIGAZIONE -->
+    <div class="sezione">
+        <h2>Argomenti</h2>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <a href="01_flexbox.html" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center py-4">
+                            <div class="display-4 mb-3">↔</div>
+                            <h5 class="card-title" style="color:#0aa2c0;">Flexbox Utilities</h5>
+                            <p class="card-text text-muted small">d-flex, justify-content, align-items, flex-direction, flex-wrap, gap</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="02_sizing_display.html" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center py-4">
+                            <div class="display-4 mb-3">⬛</div>
+                            <h5 class="card-title" style="color:#0aa2c0;">Sizing &amp; Display</h5>
+                            <p class="card-text text-muted small">w-*, h-*, mw-100, d-none, d-block, d-inline, d-flex</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="03_responsive_text_visibility.html" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center py-4">
+                            <div class="display-4 mb-3">👁</div>
+                            <h5 class="card-title" style="color:#0aa2c0;">Responsive, Text &amp; Visibility</h5>
+                            <p class="card-text text-muted small">d-{bp}-*, text-center, text-truncate, invisible, visually-hidden</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANTEPRIMA FLEXBOX -->
+    <div class="sezione">
+        <h2>Anteprima — Flexbox</h2>
+        <p>Con <code>d-flex</code> e le classi di allineamento puoi controllare la disposizione degli elementi senza scrivere CSS.</p>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">justify-content-center + align-items-center</p>
+                <div class="demo-container d-flex justify-content-center align-items-center" style="height:100px;">
+                    <span class="demo-box">Centro</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">justify-content-between</p>
+                <div class="demo-container d-flex justify-content-between align-items-center" style="height:100px;">
+                    <span class="demo-box">A</span>
+                    <span class="demo-box">B</span>
+                    <span class="demo-box">C</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">flex-column</p>
+                <div class="demo-container d-flex flex-column gap-2" style="height:150px;">
+                    <span class="demo-box">Alto</span>
+                    <span class="demo-box">Mezzo</span>
+                    <span class="demo-box">Basso</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">flex-wrap + gap-2</p>
+                <div class="demo-container d-flex flex-wrap gap-2">
+                    <span class="demo-box">1</span>
+                    <span class="demo-box">2</span>
+                    <span class="demo-box">3</span>
+                    <span class="demo-box">4</span>
+                    <span class="demo-box">5</span>
+                    <span class="demo-box">6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANTEPRIMA SIZING -->
+    <div class="sezione">
+        <h2>Anteprima — Sizing</h2>
+        <p>Le classi <code>w-*</code> e <code>h-*</code> controllano larghezza e altezza in percentuale rispetto al contenitore.</p>
+        <div class="bg-light rounded p-3">
+            <div class="w-100 bg-info p-2 text-dark fw-bold rounded mb-2">w-100</div>
+            <div class="w-75 bg-info p-2 text-dark fw-bold rounded mb-2">w-75</div>
+            <div class="w-50 bg-info p-2 text-dark fw-bold rounded mb-2">w-50</div>
+            <div class="w-25 bg-info p-2 text-dark fw-bold rounded">w-25</div>
+        </div>
+    </div>
+
+    <!-- ANTEPRIMA RESPONSIVE DISPLAY -->
+    <div class="sezione">
+        <h2>Anteprima — Responsive Display</h2>
+        <p>Ridimensiona la finestra del browser per vedere comparire e sparire i blocchi.</p>
+        <div class="d-block d-md-none alert alert-warning mb-2">
+            Solo mobile (scompare da 768px)
+        </div>
+        <div class="d-none d-md-block d-lg-none alert alert-info mb-2">
+            Solo tablet (768px – 991px)
+        </div>
+        <div class="d-none d-lg-block alert alert-success mb-2">
+            Solo desktop (da 992px)
+        </div>
+        <div class="alert alert-secondary">
+            Sempre visibile su tutti gli schermi
+        </div>
+    </div>
+
+    <!-- CHEAT SHEET -->
+    <div class="sezione">
+        <h2>Riepilogo rapido</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered align-middle">
+                <thead style="background-color:#0dcaf0;" class="text-dark">
+                    <tr>
+                        <th>Classe</th>
+                        <th>Effetto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>d-flex</code></td><td>Attiva flexbox sul contenitore</td></tr>
+                    <tr><td><code>justify-content-center</code></td><td>Centra orizzontalmente i figli</td></tr>
+                    <tr><td><code>align-items-center</code></td><td>Centra verticalmente i figli</td></tr>
+                    <tr><td><code>flex-column</code></td><td>Dispone i figli in colonna</td></tr>
+                    <tr><td><code>flex-wrap</code></td><td>Va a capo se non c'è spazio</td></tr>
+                    <tr><td><code>gap-2</code></td><td>Spazio tra i figli (8px)</td></tr>
+                    <tr><td><code>w-50</code></td><td>Larghezza 50% del contenitore</td></tr>
+                    <tr><td><code>h-100</code></td><td>Altezza 100% del contenitore</td></tr>
+                    <tr><td><code>d-none</code></td><td>Nasconde l'elemento</td></tr>
+                    <tr><td><code>d-none d-md-block</code></td><td>Nascosto su mobile, visibile da tablet</td></tr>
+                    <tr><td><code>text-center</code></td><td>Testo centrato</td></tr>
+                    <tr><td><code>text-truncate</code></td><td>Testo troncato con …</td></tr>
+                    <tr><td><code>invisible</code></td><td>Invisibile ma occupa spazio</td></tr>
+                    <tr><td><code>visually-hidden</code></td><td>Nascosto visivamente, leggibile da screen reader</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<footer class="text-center py-4 text-muted mt-4">
+    <small>Bootstrap 5 — Lezione 8 | Flexbox, Sizing, Display, Responsive, Text &amp; Visibility</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

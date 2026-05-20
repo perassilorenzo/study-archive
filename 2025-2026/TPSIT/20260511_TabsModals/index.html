@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Only - Tabs e Modali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-5">
+
+<div class="container bg-white p-4 shadow-sm rounded">
+    
+    <h2 class="text-primary border-bottom border-primary border-3 pb-2 mb-4">Esempio pratico — scheda prodotto</h2>
+    
+    <!-- 
+    nav nav-tabs -> crea una barra di navigazione a schede
+    id="productTabs" -> identificatore per il gruppo di tab
+    role="tablist" -> ruolo per l'accessibilità
+    -->
+    <ul class="nav nav-tabs" id="productTabs" role="tablist">
+        <li class="nav-item">
+
+            <!-- 
+            nav-link -> classe per i link di navigazione
+            active -> classe per il link attivo
+            fw-bold -> testo in grassetto
+            text-dark -> testo scuro
+            id="desc-tab" -> identificatore per il tab
+            data-bs-toggle="tab" -> attiva la funzionalità di tab
+            data-bs-target="#desc" -> specifica il contenuto da mostrare
+            type="button" -> specifica che è un pulsante
+            role="tab" -> ruolo per l'accessibilità
+            -->
+            <button class="nav-link active fw-bold text-dark" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">Descrizione</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="spec-tab" data-bs-toggle="tab" data-bs-target="#spec" type="button" role="tab">Specifiche</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="rec-tab" data-bs-toggle="tab" data-bs-target="#rec" type="button" role="tab">Recensioni</button>
+        </li>
+    </ul>
+    
+    <!-- 
+    tab-content -> contenitore per il contenuto dei tab
+    border border-top-0 -> bordo con eccezione della parte superiore
+    rounded-bottom -> bordi arrotondati solo in basso
+    id="productTabsContent" -> identificatore per il contenuto dei tab
+    -->
+    <div class="tab-content border border-top-0 p-4 rounded-bottom" id="productTabsContent">
+
+        <!-- 
+        tab-pane -> classe per il contenuto di ogni tab
+        fade -> effetto di dissolvenza quando si cambia tab
+        show active -> classi per mostrare il tab attivo
+        id="desc" -> identificatore per questo tab
+        role="tabpanel" -> ruolo per l'accessibilità
+        -->
+        <div class="tab-pane fade show active" id="desc" role="tabpanel">
+            <h4 class="fw-bold">Smartphone Galaxy Pro</h4>
+            <p>Il Galaxy Pro è il più potente della sua categoria. Con schermo AMOLED da 6,7 pollici e fotocamera tripla da 108MP, ogni foto è uno scatto professionale.</p>
+        </div>
+        
+        <div class="tab-pane fade" id="spec" role="tabpanel">
+            <ul class="list-unstyled">
+                <li><strong>Schermo:</strong> 6,7" AMOLED 120Hz</li>
+                <li><strong>Processore:</strong> Snapdragon 8 Gen 3</li>
+                <li><strong>RAM:</strong> 12 GB</li>
+                <li><strong>Batteria:</strong> 5000 mAh</li>
+                <li><strong>Fotocamera:</strong> 108 + 12 + 10 MP</li>
+            </ul>
+        </div>
+        
+        <div class="tab-pane fade" id="rec" role="tabpanel">
+            <p class="mb-2"><span class="text-warning">★★★★★</span> — "Ottimo telefono, batteria eccezionale!" — Mario R.</p>
+            <p><span class="text-warning">★★★★☆</span> — "Molto buono, un po' costoso." — Giulia B.</p>
+        </div>
+    </div>
+
+    <div class="mt-5 pt-3">
+        <h2 class="text-primary border-bottom border-primary border-3 pb-2 mb-4">Esempi pratici</h2>
+        <div class="d-flex gap-2">
+
+            <!-- 
+            data-bs-toggle="modal" -> attiva la funzionalità di modale
+            data-bs-target="#modalElimina" -> specifica il modale da aprire
+            -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalElimina">Elimina elemento</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalUtente">Aggiungi utente</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- modali a parte che verranno aperti dai bottoni che li richiamano tramite data-bs-target e gli id -->
+
+<!-- 
+modal fade -> classe per il modale con effetto di dissolvenza
+id="modalElimina" -> identificatore per questo modale
+tabindex="-1" -> rende il modale non focalizzabile quando è nascosto
+aria-hidden="true" -> indica che il modale è nascosto per l'accessibilità
+-->
+<div class="modal fade" id="modalElimina" tabindex="-1" aria-hidden="true">
+
+    <!-- 
+    modal-dialog -> classe per il contenitore del modale
+    modal-sm -> classe per un modale di dimensioni piccole
+    -->
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Conferma eliminazione</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Sei sicuro di voler eliminare questo elemento? L'operazione non può essere annullata.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <button type="button" class="btn btn-danger">Elimina</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUtente" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Nuovo utente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" placeholder="Inserisci il nome">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="esempio@email.it">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <button type="button" class="btn btn-success px-4">Salva</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

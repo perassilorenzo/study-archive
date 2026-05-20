@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 7 - Modali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-indigo text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">Modali</h1>
+      <p class="mb-0 fs-5">modal-dialog, modal-content, header, body, footer, dimensioni</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- STRUTTURA -->
+    <div class="sezione">
+      <h2>Struttura del modale</h2>
+      <p>Un modale ha tre livelli di contenitori annidati, poi header/body/footer all'interno.</p>
+
+      <div class="codice"><!-- Bottone che apre il modale -->
+&lt;button class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#mioModale"&gt;
+  Apri modale
+&lt;/button&gt;
+
+&lt;!-- Il modale --&gt;
+&lt;div class="modal fade" id="mioModale"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title"&gt;Titolo&lt;/h5&gt;
+        &lt;button class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div class="modal-body"&gt;
+        Contenuto del modale.
+      &lt;/div&gt;
+
+      &lt;div class="modal-footer"&gt;
+        &lt;button class="btn btn-secondary" data-bs-dismiss="modal"&gt;Chiudi&lt;/button&gt;
+        &lt;button class="btn btn-primary"&gt;Conferma&lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+
+      <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modaleBase">
+        Apri modale base
+      </button>
+
+      <div class="modal fade" id="modaleBase">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Titolo del modale</h5>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              Questo è il <strong>modal-body</strong>: il contenuto principale del modale.
+              Puoi mettere qualsiasi elemento HTML qui dentro.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+              <button class="btn btn-primary">Conferma</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATTRIBUTI -->
+    <div class="sezione">
+      <h2>Attributi fondamentali</h2>
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr><th>Attributo</th><th>Dove si mette</th><th>Scopo</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>data-bs-toggle="modal"</code></td>
+            <td>Bottone trigger</td>
+            <td>Dice a Bootstrap di aprire un modale al click</td>
+          </tr>
+          <tr>
+            <td><code>data-bs-target="#id"</code></td>
+            <td>Bottone trigger</td>
+            <td>Indica quale modale aprire (deve corrispondere all'<code>id</code>)</td>
+          </tr>
+          <tr>
+            <td><code>data-bs-dismiss="modal"</code></td>
+            <td>Pulsante chiudi / X</td>
+            <td>Chiude il modale al click</td>
+          </tr>
+          <tr>
+            <td><code>class="modal fade"</code></td>
+            <td>Div modale</td>
+            <td><code>fade</code> aggiunge l'animazione di dissolvenza</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert alert-warning mt-2">
+        <strong>Attenzione:</strong> il valore di <code>data-bs-target</code> deve essere identico all'<code>id</code> del modale, compreso il <code>#</code>.
+      </div>
+    </div>
+
+    <!-- DIMENSIONI -->
+    <div class="sezione">
+      <h2>Dimensioni del modale</h2>
+      <p>La classe di dimensione va aggiunta su <code>modal-dialog</code>.</p>
+
+      <div class="codice">&lt;div class="modal-dialog modal-sm"&gt;         &lt;!-- piccolo ~300px --&gt;
+&lt;div class="modal-dialog"&gt;                   &lt;!-- default ~500px --&gt;
+&lt;div class="modal-dialog modal-lg"&gt;         &lt;!-- grande ~800px --&gt;
+&lt;div class="modal-dialog modal-xl"&gt;         &lt;!-- molto grande ~1140px --&gt;
+&lt;div class="modal-dialog modal-fullscreen"&gt; &lt;!-- tutto lo schermo --&gt;</div>
+
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modaleSm">modal-sm</button>
+        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modaleDefault">default</button>
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modaleLg">modal-lg</button>
+        <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modaleXl">modal-xl</button>
+        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modaleFs">modal-fullscreen</button>
+      </div>
+
+      <!-- modali dimensioni -->
+      <div class="modal fade" id="modaleSm">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title">Piccolo (modal-sm)</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">Questo modale è piccolo.</div>
+            <div class="modal-footer"><button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Chiudi</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modaleDefault">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title">Default</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">Questo è il modale di dimensione predefinita.</div>
+            <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modaleLg">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title">Grande (modal-lg)</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">Questo modale è grande. Ottimo per form o contenuti estesi.</div>
+            <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modaleXl">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title">Molto grande (modal-xl)</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">Questo modale è molto grande, quasi a tutta pagina.</div>
+            <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modaleFs">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title">Fullscreen</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">Questo modale occupa tutto lo schermo.</div>
+            <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESEMPI PRATICI -->
+    <div class="sezione">
+      <h2>Esempi pratici</h2>
+      <div class="d-flex flex-wrap gap-3">
+
+        <!-- Modale conferma eliminazione -->
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modaleElimina">
+          Elimina elemento
+        </button>
+        <div class="modal fade" id="modaleElimina">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Conferma eliminazione</h5>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                Sei sicuro di voler eliminare questo elemento? L'operazione non può essere annullata.
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal">Elimina</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modale con form -->
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modaleForm">
+          Aggiungi utente
+        </button>
+        <div class="modal fade" id="modaleForm">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Nuovo utente</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label class="form-label">Nome</label>
+                  <input type="text" class="form-control" placeholder="Inserisci il nome">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" placeholder="esempio@email.it">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <button class="btn btn-success">Salva</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <a href="index.html" class="btn btn-outline-indigo mb-5">&larr; Torna all'indice</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

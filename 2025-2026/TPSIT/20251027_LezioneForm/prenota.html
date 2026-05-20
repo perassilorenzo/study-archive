@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenota - Cinema Stella</title>
+</head>
+<body>
+    <div>
+        <h1>🎬 Cinema Stella</h1>
+        <p><em>Il tuo cinema di fiducia dal 1985</em></p>
+    </div>
+
+    <div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programmazione.html">Programmazione</a></li>
+            <li><a href="prenota.html">Prenota Biglietti</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>Prenota i tuoi biglietti</h2>
+
+        <form action = "conferma.html"  method = "post" name="formPrenotazione" target="_self" accept-charset="utf-8" enctype="multipart/form-data" autocomplete="on">
+
+            <!-- INPUT HIDDEN -->
+
+            <input type="hidden" name = "id_sezione" value="12345-abcde">
+            <input type="hidden" name="lingua" value="it">
+            <fieldset>
+                <legend>
+                    <strong>
+                        Dati Personali
+                    </strong>
+                </legend>
+                <label for="cinema">Nome Cinema: </label> </br>
+                <input type="text" name="cinema" id="cinema" value="Cinema Stella">
+
+                <br><br>
+
+                <!-- INPUT READ ONLY -->
+
+                <label for="codice">Codice Prenotazione (sola lettura): </label> </br>
+                <input type="text" id="codice" name="codice" value="STELLA-2025-001" readonly>
+
+                <br><br>
+
+                <!-- Input Disable -->
+
+                <label for="sconto">Sconto Speciale (disabilitato): </label>
+                <input type="text" id= "sconto" name="sconto" value="Non Disponibile" disabled>
+
+                <br><br>
+
+                <label for="name">Nome *: </label> <br>
+                <input type="text" name="nome" id="nome" placeholder="Inserisci il tuo nome" required autofocus maxlength="50">
+
+                <br><br>
+
+                <label for="Cognome">Cognome *: </label> <br>
+                <input type="text" name="Cognome" id="Cognome" placeholder="Inserisci il tuo nome" required autofocus maxlength="50">
+
+                <br><br>
+
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <strong>
+                        Contatti 
+                    </strong>
+                </legend>
+
+                <!-- Email con validazione automatica -->
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="esempio@mail.it" autocomplete="off">
+
+                <br><br>
+
+                <label for="telefono">Telefono:</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="000-0000000" pattern="[0-9]{3}-[0-9]{7}" title="Formato richiesto: 000-0000000">
+                
+                <br><br>
+
+                <label for="sito">Sito web: </label>
+                <input type="url" name="sito" id="sito" placeholder="https://esempio.it">
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <strong>
+                        PULSANTI
+                    </strong>
+                </legend>
+
+                <input type="submit" value="Conferma Prenotazione">
+                <input type="reset" value="Cancella Tutto">
+                <input type="button" value="Aiuto">
+            </fieldset>
+
+        <hr>
+
+            <!-- Input con datalist  -->
+
+            <label for="orario">Orari</label><br>
+            <input type="text" id="orario" name="orari" list="invernali" placeholder="Scegli o digita" required>
+            <datalist id="orari">
+                <datalist id="estivi">
+                    <option value="Venerdì 22:00"></option>
+                    <option value="Sabato 18:30"></option>
+                    <option value="Domenica 19:15"></option>
+                </datalist>
+                <datalist id="invernali">
+                    <option value="Venerdì 18:00"></option>
+                    <option value="Sabato 16:30"></option>
+                    <option value="Domenica 17:45"></option>
+                </datalist>
+            </datalist>
+            <br><br>
+            
+            <!-- Input con optgroup  -->
+
+            <legend>
+                <strong>
+                    Film
+                </strong>                
+            </legend>
+
+            <label for="film">Sceglio il film *:</label><br>
+            <select name="film" id="film" required>
+                <option value="">-- Seleziona un film --</option>
+
+                <optgroup label="Avventura">
+                    <option value="indiana-jones">Indiana Jones</option>
+                    <option value="un-grande-viaggio">Un grande viaggio</option>
+                </optgroup>
+                
+                <optgroup label="Commedia">
+                    <option value="risate-in-famiglia">Risate in famiglia</option>
+                </optgroup>
+
+                <optgroup label="Fantascienza">
+                    <option value="interstellar">Interstellar</option>
+                    <option value="star-wars">Star Wars</option>
+                </optgroup>
+
+                <optgroup label="Fantasy">
+                    <option value="harry-potter">Harry Potter</option>
+                    <option value="il-signore-degli-anelli">Il signore degli anelli</option>
+                </optgroup>
+
+            </select>
+            <br><br>
+
+            <!-- Input search -->
+
+            <label for="ricerca-amico">Cerca film:</label> <br>
+            <input type="search" id="ricerca-film" name="ricerca-film" placeholder="Nome film" size="30"> 
+        </form>
+    </div>
+            
+        <p><small>&copy; 2025 Cinema Stella</small></p>
+    </div>
+</body>
+</html>

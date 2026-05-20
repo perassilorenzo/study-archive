@@ -1,0 +1,210 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    scrollbar-width: none;
+}
+
+body{
+    background-color: #145d3b;
+    margin: 15px 250px;
+}
+
+/* parte del titolo */
+.briscola{
+    background-color: #14532d;
+    border: 0.5px solid lightgreen;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.briscola p{
+    background-color: #376d4c;
+    border-radius: 25px;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
+}
+
+/* computer versus giocatore */
+.versus{
+    display: flex;
+    gap: 15px;
+
+}
+
+.computer{
+    flex: 1;
+    background-color: #14532d;
+    text-align: center;
+    border: 0.5px solid lightgreen;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.tu{
+    flex: 1;
+    background-color: #14532d;
+    text-align: center;
+    border: 0.5px solid lightgreen;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.versus p{
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* sezione del gioco */
+.game{
+    display: flex;
+    gap: 15px;
+}
+
+.mano-computer{
+    flex: 1;
+    background-color: #14532d;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mano-tu{
+    flex: 1;
+    background-color: #14532d;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tavolo{
+    background-color: #166534;
+    flex: 2.5;
+}
+
+.card-computer{
+    background: repeating-linear-gradient(45deg, #8ec0ef, #8ec0ef 10px, #1d4ed8 10px, #1d4ed8 20px);
+    color: black;
+    height: 110px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    margin: 10px auto;
+    align-items: center;
+}
+
+.card-tu{
+    background-color: white;
+    color: black;
+    height: 110px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    margin: 10px auto;
+    align-items: center;
+}
+
+.tavolo{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+}
+
+.briscola-mazzo{
+    flex: 1;
+    margin: auto 20px;
+}
+
+.card-briscola{
+    background-color: white;
+    color: black;
+    height: 110px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    align-items: center;
+
+}
+
+.mazzo-briscola{
+    flex: 2;
+    margin: 10px;
+}
+
+.computer-tavolo{
+    flex: 1;
+    background-color: #287144;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+
+}
+
+.tu-tavolo{
+    flex: 1;
+    background-color: #287144;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.tavolo-briscola{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tavolo-briscola h4{
+    background-color: white;
+    color: black;
+    height: 110px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightskyblue;
+    border-radius: 10px;
+    align-items: center;
+    margin: 10px;
+}
+
+/* sezione testo nuova partita */
+.nuova-partita{
+    color: white;
+    background-color: #376d4c;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 0 10px;
+}
+
+/* sezione per ricominciare */
+.new{
+    background-color: #14532d;
+    display: flex;
+    justify-content: center;    
+    margin: 10px auto;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.new button{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}

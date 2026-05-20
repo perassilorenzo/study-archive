@@ -1,0 +1,43 @@
+dom documento object model reppresntazione struttrata dlella pagfina su cui js può agire
+può essere eseguito nel browser o in Node.js
+browser interagisce con dom 
+node usato per app server-side
+inserire java in html:
+inline <script>alert('ciao')</script>
+file esterno <script src='script.js'></script>
+let vatriabile modificabile
+const sostante
+var evitare vecchia gesione dello scope
+scope area del codie in cui valore è accessibile
+è un linguaggio di programmazione a differenza di html che è descrittivo
+tipi di dato:
+- string
+- number
+- boolean
+- null
+- undefined
+- object
+
+operatori:
+- matematici
+- confronto: ==, ===, !=, <, >
+
+=== confronto aggiuntivo anche il tipo oltre il valore
+
+tipizzazione dinamica --> ?? manca definizione
+
+cliente--> relativo, rispetto, ci sono dei linguaggi lati server e cliente, questo è cliente, cliente è quello che viene sviluppato dalla parte dell'utente e eseguito, server viene eseguito su un altro dispositivo su cui l'utente può eseguire
+
+array = lista ordinata di valori
+let arr = [1, 2, 3]
+console.log(arr[0]);
+
+un oggetto è una rappresentazione di qualcosa che ha una proprietà che sono gestite con:
+let persona = {nome:'Luca', età:30};
+console.log(persona.nome);
+
+il ; non è indispensabile perché vale come a capo, si usa quando ci sono più comando inline
+minimizzazione --> tutti gli a capo occupano spazio, quindi si prende un file js, una stringa di testo, eliminare i ritorni a capo, perché quando lo si scarica, riduce i caratteri non necessari appiccicando istruzioni, se non hanno il ;, rischio di avere danno sul codice, anche se esistono minimizzazione con il ; a capo
+quindi è sempre meglio utilizzarlo
+
+si possono usare i pulsanti, che è più semplice per portare una funziona da un file js a un altro

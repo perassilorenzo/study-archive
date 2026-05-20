@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giochi da Tavolo</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#giochi">Giochi</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <h1>Benvenuto nei Giochi da Tavolo</h1>
+        <p>Scopri i migliori giochi online e da tavolo.</p>
+        <a href="#giochi" class="btn-rosso">Scopri i Giochi</a>
+    </header>
+
+    <!-- SEZIONE CARD GIOCHI -->
+    <section id="giochi" class="sezione-giochi">
+        <h2>I nostri giochi</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>Gioco 1</h3>
+                <p>Descrizione del primo gioco.</p>
+            </div>
+
+            <div class="card">
+                <h3>Gioco 2</h3>
+                <p>Descrizione del secondo gioco.</p>
+            </div>
+
+            <div class="card card-dadi" onclick="mostraDadi()">
+                <h3>Gioco dei Dadi</h3>
+                <p>Clicca per giocare al lancio dei dadi online</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEZIONE GIOCO DEI DADI (inizialmente nascosta) -->
+    <section id="sezione-dadi" class="hidden">
+
+        <h2>Lancia i dadi</h2>
+
+        <button onclick="lanciaDadi()" class="btn-lancia">Lancia i 5 dadi</button>
+
+        <div class="dadi-container">
+            <img id="d1">
+            <img id="d2">
+            <img id="d3">
+            <img id="d4">
+            <img id="d5">
+        </div>
+
+        <h3>Statistiche</h3>
+
+        <p id="somma">Somma: -</p>
+        <p id="frequenze">Frequenze: -</p>
+        <p id="coppie">Coppie: -</p>
+        <p id="tris">Tris: -</p>
+
+        <button onclick="nascondiDadi()" class="btn-back">Torna ai giochi</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Giochi da Tavolo - Tutti i diritti riservati</p>
+    </footer>
+
+</body>
+</html>

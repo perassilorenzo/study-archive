@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Document</title>
+    </head>
+<body>
+    
+    <div class="game">
+
+        <div id="parola" class="parola"></div>
+
+        <input type="text" id="lettera" maxlength="1" placeholder="Lettera" autocomplete="off" autofocus>
+        <button id="btn-gioca" onclick="gioca()" >Gioca</button>
+        
+        <div id="count" class="info">Hai ancora 7 vite</div>
+        <div class="info" id="risultati"></div>
+    </div>
+    
+    <script src="parola.js"></script>
+    <script src="gioco.js"></script>
+
+</body>
+</html>

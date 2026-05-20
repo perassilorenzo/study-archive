@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 7 - Tabs e Accordion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-indigo text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">Tabs e Accordion</h1>
+      <p class="mb-0 fs-5">nav-tabs, tab-pane, accordion, collapse</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- TABS BASE -->
+    <div class="sezione">
+      <h2>Tabs — struttura base</h2>
+      <p>Le tabs sono composte da due parti: la <strong>navigazione</strong> (le linguette) e il <strong>contenuto</strong> (i pannelli).</p>
+
+      <div class="codice">&lt;!-- Navigazione --&gt;
+&lt;ul class="nav nav-tabs"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" data-bs-toggle="tab" href="#scheda1"&gt;Scheda 1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" data-bs-toggle="tab" href="#scheda2"&gt;Scheda 2&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Contenuto --&gt;
+&lt;div class="tab-content mt-3"&gt;
+  &lt;div class="tab-pane fade show active" id="scheda1"&gt;
+    Contenuto scheda 1.
+  &lt;/div&gt;
+  &lt;div class="tab-pane fade" id="scheda2"&gt;
+    Contenuto scheda 2.
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+
+      <ul class="nav nav-tabs mt-3" id="tabBase">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#b1">Scheda 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b2">Scheda 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b3">Scheda 3</a>
+        </li>
+      </ul>
+      <div class="tab-content p-3 border border-top-0 rounded-bottom">
+        <div class="tab-pane fade show active" id="b1">
+          Contenuto della <strong>Scheda 1</strong>. Questa è la scheda attiva all'apertura.
+        </div>
+        <div class="tab-pane fade" id="b2">
+          Contenuto della <strong>Scheda 2</strong>. Visibile solo quando si clicca su di essa.
+        </div>
+        <div class="tab-pane fade" id="b3">
+          Contenuto della <strong>Scheda 3</strong>. Anche questa nascosta di default.
+        </div>
+      </div>
+    </div>
+
+    <!-- COME FUNZIONA IL COLLEGAMENTO -->
+    <div class="sezione">
+      <h2>Come funziona il collegamento</h2>
+      <p>Il collegamento tra la linguetta e il pannello avviene tramite l'<code>href</code> del link e l'<code>id</code> del pannello.</p>
+
+      <div class="codice">&lt;!-- Il link punta a "#scheda1" --&gt;
+&lt;a class="nav-link active" data-bs-toggle="tab" href="#scheda1"&gt;Scheda 1&lt;/a&gt;
+
+&lt;!-- Il pannello ha id="scheda1" --&gt;
+&lt;div class="tab-pane fade show active" id="scheda1"&gt;...&lt;/div&gt;</div>
+
+      <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+          <tr><th>Classe/Attributo</th><th>Dove</th><th>Scopo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>data-bs-toggle="tab"</code></td><td>Sul link</td><td>Attiva il comportamento tab</td></tr>
+          <tr><td><code>href="#id"</code></td><td>Sul link</td><td>Indica quale pannello mostrare</td></tr>
+          <tr><td><code>active</code></td><td>Sul link e sul pannello</td><td>Tab aperta di default</td></tr>
+          <tr><td><code>show active</code></td><td>Sul pannello attivo</td><td><code>show</code> lo rende visibile, <code>active</code> lo marca come corrente</td></tr>
+          <tr><td><code>fade</code></td><td>Sul pannello</td><td>Animazione di dissolvenza al cambio</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- NAV-PILLS -->
+    <div class="sezione">
+      <h2>Variante: nav-pills</h2>
+      <p>Sostituendo <code>nav-tabs</code> con <code>nav-pills</code> le linguette diventano bottoni.</p>
+
+      <div class="codice">&lt;ul class="nav nav-pills"&gt;  &lt;!-- al posto di nav-tabs --&gt;</div>
+
+      <ul class="nav nav-pills mt-3" id="pillsDemo">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#p1">Pill 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#p2">Pill 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#p3">Pill 3</a>
+        </li>
+      </ul>
+      <div class="tab-content mt-3 p-3 border rounded">
+        <div class="tab-pane fade show active" id="p1">Contenuto della <strong>Pill 1</strong>.</div>
+        <div class="tab-pane fade" id="p2">Contenuto della <strong>Pill 2</strong>.</div>
+        <div class="tab-pane fade" id="p3">Contenuto della <strong>Pill 3</strong>.</div>
+      </div>
+    </div>
+
+    <!-- TABS ESEMPIO PRATICO -->
+    <div class="sezione">
+      <h2>Esempio pratico — scheda prodotto</h2>
+
+      <ul class="nav nav-tabs" id="prodottoTab">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#descrizione">Descrizione</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#specifiche">Specifiche</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#recensioni">Recensioni</a>
+        </li>
+      </ul>
+      <div class="tab-content p-3 border border-top-0 rounded-bottom">
+        <div class="tab-pane fade show active" id="descrizione">
+          <h5>Smartphone Galaxy Pro</h5>
+          <p>Il Galaxy Pro è il più potente della sua categoria. Con schermo AMOLED da 6,7 pollici e fotocamera tripla da 108MP, ogni foto è uno scatto professionale.</p>
+        </div>
+        <div class="tab-pane fade" id="specifiche">
+          <ul class="list-unstyled">
+            <li><strong>Schermo:</strong> 6,7" AMOLED 120Hz</li>
+            <li><strong>Processore:</strong> Snapdragon 8 Gen 3</li>
+            <li><strong>RAM:</strong> 12 GB</li>
+            <li><strong>Batteria:</strong> 5000 mAh</li>
+            <li><strong>Fotocamera:</strong> 108 + 12 + 10 MP</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="recensioni">
+          <p>⭐⭐⭐⭐⭐ — <em>"Ottimo telefono, batteria eccezionale!"</em> — Mario R.</p>
+          <p>⭐⭐⭐⭐ — <em>"Molto buono, un po' costoso."</em> — Giulia B.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION -->
+    <div class="sezione">
+      <h2>Accordion — struttura base</h2>
+      <p>L'accordion è basato sul componente <strong>collapse</strong> di Bootstrap. <code>data-bs-parent</code> garantisce che un solo pannello sia aperto alla volta.</p>
+
+      <div class="codice">&lt;div class="accordion" id="mioAccordion"&gt;
+
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#corpo1"&gt;
+        Titolo 1 (aperto di default)
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="corpo1" class="accordion-collapse collapse show"
+         data-bs-parent="#mioAccordion"&gt;
+      &lt;div class="accordion-body"&gt;Contenuto 1&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#corpo2"&gt;
+        Titolo 2 (chiuso)
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="corpo2" class="accordion-collapse collapse"
+         data-bs-parent="#mioAccordion"&gt;
+      &lt;div class="accordion-body"&gt;Contenuto 2&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</div>
+
+      <div class="accordion mt-3" id="accordionBase">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#ab1">
+              Primo elemento (aperto)
+            </button>
+          </h2>
+          <div id="ab1" class="accordion-collapse collapse show" data-bs-parent="#accordionBase">
+            <div class="accordion-body">Contenuto del primo elemento. È aperto di default.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#ab2">
+              Secondo elemento
+            </button>
+          </h2>
+          <div id="ab2" class="accordion-collapse collapse" data-bs-parent="#accordionBase">
+            <div class="accordion-body">Contenuto del secondo elemento.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#ab3">
+              Terzo elemento
+            </button>
+          </h2>
+          <div id="ab3" class="accordion-collapse collapse" data-bs-parent="#accordionBase">
+            <div class="accordion-body">Contenuto del terzo elemento.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION ESEMPIO PRATICO -->
+    <div class="sezione">
+      <h2>Esempio pratico — FAQ</h2>
+
+      <div class="accordion" id="faq">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Come posso iscrivermi al corso?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+            <div class="accordion-body">
+              Puoi iscriverti compilando il modulo nella sezione "Iscrizioni" del sito. Riceverai una email di conferma entro 24 ore.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Il corso è gratuito?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">
+              Sì, il corso è completamente gratuito per gli studenti iscritti. I materiali sono disponibili online senza costi aggiuntivi.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Quale linguaggio devo conoscere prima di iniziare?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">
+              Sono sufficienti le basi di HTML e CSS. Non è richiesta esperienza con JavaScript o altri framework.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              Ricevo un attestato al termine?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">
+              Sì, al completamento di tutte le lezioni riceverai un attestato di partecipazione in formato PDF.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn btn-outline-indigo mb-5">&larr; Torna all'indice</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

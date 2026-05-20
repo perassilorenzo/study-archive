@@ -427,3 +427,34 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Env / secrets (extra sicurezza)
+.env
+*.key
+*.pem
+
+# Temporary / personal notes
+*.tmp
+*.temp
+
+# Visual Studio / C#
+bin/
+obj/
+**/bin/
+**/obj/
+.vs/
+
+# user workspace garbage
+source/repos/
+CLONE/
+
+# builds
+*.exe
+*.dll
+*.pdb
+
+source/repos/
+**/source/repos/
+
+# installers
+*.exe

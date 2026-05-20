@@ -1,0 +1,354 @@
+sistema operativo = kernel + moduli
+kernel = nucleo
+ci sono varie tipologie --> micro kernel --> minix non si riusci va caricare sui floppi
+--> macro kernel --> unix --> linux /gnu
+--> hybrid-lernel --> win / dos 
+differenza tra micro macro è la grandezza, mentre ibridi cambiano la loro dimensioni col campio del tempo, come windows
+
+unix:
+- tutto è un file: ogni cosa rappresentata in un sistemi unix è rappresentabile come un file, periferiche, monitor...
+fantaggio: 
+un interfaccia di rete è un file e questo cosiderare tutto un file da vantaggi del tipo se si vuoi mandare un messaggio via rete basta prendere il file della rete e scriverci dentro, se devo fermare un programma aperto > elimino il file, devo prendere l'input da tastiera > leggo in un file, se devo riderizionale da una destinazione come lo schermo voglio spostalo in un altro file...
+-
+unix:
+- tutto è un file --> /dev/null
+--> /dev/random
+--> /dev/stdout
+--> /dev/stdin
+
+- cartelle chiave --> / root
+--> /dev --> devices
+--> /home/<utente> --> home dell'uente e anche quando l'utente fa il login 
+--> /etc    contengono le configurazioni delle cose installate
+--> /opt    per optional, ci sono programmi opzionali (vengono messi qui quando vengono installati a mano)
+--> /bin    file programmi disponibili globabilmente, con codice binario ?? se scriviamo which con nome cartella ci dice dove si trova iil comando
+--> /var    contiene delle cartelle , il contenuto è variabile, il programma lo può combiare e col tempo cambia, cartelle con contenuti variabili
+--> /var/log    
+-->/run     i programmi aperti o i processi attivi
+
+nella cartella / c'è tutto
+
+- permessi
+--> lettura-scrittura-esecuzione
+--> utente-gruppo-altri
+--> chmod
+--> chown
+--> useradd
+--> newgrp
+--> passwd
+se si è amministratore e lutente dimentica la passwd lamm può resettare la passwd dellutente
+
+
+
+
+
+
+
+
+
+
+
+@Pera-glich ➜ /dev $ echo "ciaone" > null
+@Pera-glich ➜ /dev $ cd /dev
+@Pera-glich ➜ /dev $ ls
+autofs           dri       hwrng         loop1  mapper        nvram  pts     sdb    sg1       stdin   tty12  tty19  tty25  tty31  tty38  tty44  tty50  tty57  tty63   ttyS11  ttyS18  ttyS24  ttyS30  ttyS9        vcs1  vcsa1  vcsu1  vga_arbiter
+bsg              ecryptfs  infiniband    loop2  mcelog        port   random  sdb1   sg2       stdout  tty13  tty2   tty26  tty32  tty39  tty45  tty51  tty58  tty7    ttyS12  ttyS19  ttyS25  ttyS31  ttyprintk    vcs2  vcsa2  vcsu2  vhost-net
+btrfs-control    fb0       input         loop3  mem           ppp    rfkill  sdc    sg3       tty     tty14  tty20  tty27  tty33  tty4   tty46  tty52  tty59  tty8    ttyS13  ttyS2   ttyS26  ttyS4   udmabuf      vcs3  vcsa3  vcsu3  vhost-vsock
+core             fd        kmsg          loop4  mqueue        psaux  root    sdc1   shm       tty0    tty15  tty21  tty28  tty34  tty40  tty47  tty53  tty6   tty9    ttyS14  ttyS20  ttyS27  ttyS5   uinput       vcs4  vcsa4  vcsu4  vmbus
+cpu_dma_latency  full      kvm           loop5  net           ptmx   rtc0    sdc14  snapshot  tty1    tty16  tty22  tty29  tty35  tty41  tty48  tty54  tty60  ttyS0   ttyS15  ttyS21  ttyS28  ttyS6   urandom      vcs5  vcsa5  vcsu5  zero
+cuse             fuse      loop-control  loop6  null          ptp0   sda     sdc15  sr0       tty10   tty17  tty23  tty3   tty36  tty42  tty49  tty55  tty61  ttyS1   ttyS16  ttyS22  ttyS29  ttyS7   userfaultfd  vcs6  vcsa6  vcsu6  zfs
+dma_heap         hpet      loop0         loop7  nvme-fabrics  ptp1   sda1    sg0    stderr    tty11   tty18  tty24  tty30  tty37  tty43  tty5   tty56  tty62  ttyS10  ttyS17  ttyS23  ttyS3   ttyS8   vcs          vcsa  vcsu   vfio
+ù@Pera-glich ➜ /dev $ ls -la
+total 4
+drwxr-xr-x 14 root root        3940 Oct 22 06:07 .
+drwxr-xr-x  1 root root        4096 Oct  8 06:46 ..
+crw-r--r--  1 root root     10, 235 Oct 22 06:07 autofs
+drwxr-xr-x  2 root root         120 Oct 22 06:07 bsg
+crw-------  1 root root     10, 234 Oct 22 06:07 btrfs-control
+lrwxrwxrwx  1 root root          11 Oct 22 06:07 core -> /proc/kcore
+crw-------  1 root root     10, 122 Oct 22 06:07 cpu_dma_latency
+crw-------  1 root root     10, 203 Oct 22 06:07 cuse
+drwxr-xr-x  2 root root          60 Oct 22 06:07 dma_heap
+drwxr-xr-x  2 root root          60 Oct 22 06:07 dri
+crw-------  1 root root     10, 125 Oct 22 06:07 ecryptfs
+crw-rw----  1 root video    29,   0 Oct 22 06:07 fb0
+lrwxrwxrwx  1 root root          13 Oct 22 06:07 fd -> /proc/self/fd
+crw-rw-rw-  1 root root      1,   7 Oct 22 06:07 full
+crw-rw-rw-  1 root root     10, 229 Oct 22 06:07 fuse
+crw-------  1 root root     10, 228 Oct 22 06:07 hpet
+crw-------  1 root root     10, 183 Oct 22 06:07 hwrng
+drwxr-xr-x  2 root root          60 Oct 22 06:07 infiniband
+drwxr-xr-x  2 root root         180 Oct 22 06:07 input
+crw-r--r--  1 root root      1,  11 Oct 22 06:07 kmsg
+crw-rw----  1 root     109  10, 232 Oct 22 06:07 kvm
+crw-rw----  1 root disk     10, 237 Oct 22 06:07 loop-control
+brw-rw----  1 root disk      7,   0 Oct 22 06:07 loop0
+brw-rw----  1 root disk      7,   1 Oct 22 06:07 loop1
+brw-rw----  1 root disk      7,   2 Oct 22 06:07 loop2
+brw-rw----  1 root disk      7,   3 Oct 22 06:07 loop3
+brw-rw----  1 root disk      7,   4 Oct 22 06:07 loop4
+brw-rw----  1 root disk      7,   5 Oct 22 06:07 loop5
+brw-rw----  1 root disk      7,   6 Oct 22 06:07 loop6
+brw-rw----  1 root disk      7,   7 Oct 22 06:07 loop7
+drwxr-xr-x  2 root root          60 Oct 22 06:07 mapper
+crw-------  1 root root     10, 227 Oct 22 06:07 mcelog
+crw-r-----  1 root kmem      1,   1 Oct 22 06:07 mem
+drwxrwxrwt  2 root root          40 Oct 22 06:07 mqueue
+drwxr-xr-x  2 root root          60 Oct 22 06:07 net
+crw-rw-rw-  1 root root      1,   3 Oct 22 06:07 null
+crw-------  1 root root     10, 121 Oct 22 06:07 nvme-fabrics
+crw-------  1 root root     10, 144 Oct 22 06:07 nvram
+crw-r-----  1 root kmem      1,   4 Oct 22 06:07 port
+crw-------  1 root root    108,   0 Oct 22 06:07 ppp
+crw-------  1 root root     10,   1 Oct 22 06:07 psaux
+lrwxrwxrwx  1 root root           8 Oct 22 06:07 ptmx -> pts/ptmx
+crw-------  1 root root    246,   0 Oct 22 06:07 ptp0
+crw-------  1 root root    246,   1 Oct 22 06:07 ptp1
+drwxr-xr-x  2 root root           0 Oct 22 06:07 pts
+crw-rw-rw-  1 root root      1,   8 Oct 22 06:07 random
+crw-rw-r--  1 root root     10, 242 Oct 22 06:07 rfkill
+brw-------  1 root root      8,  33 Oct 22 06:07 root
+crw-------  1 root root    248,   0 Oct 22 06:07 rtc0
+brw-rw----  1 root disk      8,   0 Oct 22 06:07 sda
+brw-rw----  1 root disk      8,   1 Oct 22 06:07 sda1
+brw-rw----  1 root disk      8,  16 Oct 22 06:07 sdb
+brw-rw----  1 root disk      8,  17 Oct 22 06:07 sdb1
+brw-rw----  1 root disk      8,  32 Oct 22 06:07 sdc
+brw-rw----  1 root disk      8,  33 Oct 22 06:07 sdc1
+brw-rw----  1 root disk      8,  46 Oct 22 06:07 sdc14
+brw-rw----  1 root disk      8,  47 Oct 22 06:07 sdc15
+crw-rw----  1 root disk     21,   0 Oct 22 06:07 sg0
+crw-rw----  1 root disk     21,   1 Oct 22 06:07 sg1
+crw-rw----  1 root disk     21,   2 Oct 22 06:07 sg2
+crw-rw----  1 root cdrom    21,   3 Oct 22 06:07 sg3
+drwxrwxrwt  2 root root          40 Oct 22 06:07 shm
+crw-------  1 root root     10, 231 Oct 22 06:07 snapshot
+brw-rw----  1 root cdrom    11,   0 Oct 22 06:07 sr0
+lrwxrwxrwx  1 root root          15 Oct 22 06:07 stderr -> /proc/self/fd/2
+lrwxrwxrwx  1 root root          15 Oct 22 06:07 stdin -> /proc/self/fd/0
+lrwxrwxrwx  1 root root          15 Oct 22 06:07 stdout -> /proc/self/fd/1
+crw-rw-rw-  1 root tty       5,   0 Oct 22 06:07 tty
+crw--w----  1 root tty       4,   0 Oct 22 06:07 tty0
+crw--w----  1 root tty       4,   1 Oct 22 06:07 tty1
+crw--w----  1 root tty       4,  10 Oct 22 06:07 tty10
+crw--w----  1 root tty       4,  11 Oct 22 06:07 tty11
+crw--w----  1 root tty       4,  12 Oct 22 06:07 tty12
+crw--w----  1 root tty       4,  13 Oct 22 06:07 tty13
+crw--w----  1 root tty       4,  14 Oct 22 06:07 tty14
+crw--w----  1 root tty       4,  15 Oct 22 06:07 tty15
+crw--w----  1 root tty       4,  16 Oct 22 06:07 tty16
+crw--w----  1 root tty       4,  17 Oct 22 06:07 tty17
+crw--w----  1 root tty       4,  18 Oct 22 06:07 tty18
+crw--w----  1 root tty       4,  19 Oct 22 06:07 tty19
+crw--w----  1 root tty       4,   2 Oct 22 06:07 tty2
+crw--w----  1 root tty       4,  20 Oct 22 06:07 tty20
+crw--w----  1 root tty       4,  21 Oct 22 06:07 tty21
+crw--w----  1 root tty       4,  22 Oct 22 06:07 tty22
+crw--w----  1 root tty       4,  23 Oct 22 06:07 tty23
+crw--w----  1 root tty       4,  24 Oct 22 06:07 tty24
+crw--w----  1 root tty       4,  25 Oct 22 06:07 tty25
+crw--w----  1 root tty       4,  26 Oct 22 06:07 tty26
+crw--w----  1 root tty       4,  27 Oct 22 06:07 tty27
+crw--w----  1 root tty       4,  28 Oct 22 06:07 tty28
+crw--w----  1 root tty       4,  29 Oct 22 06:07 tty29
+crw--w----  1 root tty       4,   3 Oct 22 06:07 tty3
+crw--w----  1 root tty       4,  30 Oct 22 06:07 tty30
+crw--w----  1 root tty       4,  31 Oct 22 06:07 tty31
+crw--w----  1 root tty       4,  32 Oct 22 06:07 tty32
+crw--w----  1 root tty       4,  33 Oct 22 06:07 tty33
+crw--w----  1 root tty       4,  34 Oct 22 06:07 tty34
+crw--w----  1 root tty       4,  35 Oct 22 06:07 tty35
+crw--w----  1 root tty       4,  36 Oct 22 06:07 tty36
+crw--w----  1 root tty       4,  37 Oct 22 06:07 tty37
+crw--w----  1 root tty       4,  38 Oct 22 06:07 tty38
+crw--w----  1 root tty       4,  39 Oct 22 06:07 tty39
+crw--w----  1 root tty       4,   4 Oct 22 06:07 tty4
+crw--w----  1 root tty       4,  40 Oct 22 06:07 tty40
+crw--w----  1 root tty       4,  41 Oct 22 06:07 tty41
+crw--w----  1 root tty       4,  42 Oct 22 06:07 tty42
+crw--w----  1 root tty       4,  43 Oct 22 06:07 tty43
+crw--w----  1 root tty       4,  44 Oct 22 06:07 tty44
+crw--w----  1 root tty       4,  45 Oct 22 06:07 tty45
+crw--w----  1 root tty       4,  46 Oct 22 06:07 tty46
+crw--w----  1 root tty       4,  47 Oct 22 06:07 tty47
+crw--w----  1 root tty       4,  48 Oct 22 06:07 tty48
+crw--w----  1 root tty       4,  49 Oct 22 06:07 tty49
+crw--w----  1 root tty       4,   5 Oct 22 06:07 tty5
+crw--w----  1 root tty       4,  50 Oct 22 06:07 tty50
+crw--w----  1 root tty       4,  51 Oct 22 06:07 tty51
+crw--w----  1 root tty       4,  52 Oct 22 06:07 tty52
+crw--w----  1 root tty       4,  53 Oct 22 06:07 tty53
+crw--w----  1 root tty       4,  54 Oct 22 06:07 tty54
+crw--w----  1 root tty       4,  55 Oct 22 06:07 tty55
+crw--w----  1 root tty       4,  56 Oct 22 06:07 tty56
+crw--w----  1 root tty       4,  57 Oct 22 06:07 tty57
+crw--w----  1 root tty       4,  58 Oct 22 06:07 tty58
+crw--w----  1 root tty       4,  59 Oct 22 06:07 tty59
+crw--w----  1 root tty       4,   6 Oct 22 06:07 tty6
+crw--w----  1 root tty       4,  60 Oct 22 06:07 tty60
+crw--w----  1 root tty       4,  61 Oct 22 06:07 tty61
+crw--w----  1 root tty       4,  62 Oct 22 06:07 tty62
+crw--w----  1 root tty       4,  63 Oct 22 06:07 tty63
+crw--w----  1 root tty       4,   7 Oct 22 06:07 tty7
+crw--w----  1 root tty       4,   8 Oct 22 06:07 tty8
+crw--w----  1 root tty       4,   9 Oct 22 06:07 tty9
+crw--w----  1 root tty       4,  64 Oct 22 06:07 ttyS0
+crw-rw----  1 root dialout   4,  65 Oct 22 06:07 ttyS1
+crw-rw----  1 root dialout   4,  74 Oct 22 06:07 ttyS10
+crw-rw----  1 root dialout   4,  75 Oct 22 06:07 ttyS11
+crw-rw----  1 root dialout   4,  76 Oct 22 06:07 ttyS12
+crw-rw----  1 root dialout   4,  77 Oct 22 06:07 ttyS13
+crw-rw----  1 root dialout   4,  78 Oct 22 06:07 ttyS14
+crw-rw----  1 root dialout   4,  79 Oct 22 06:07 ttyS15
+crw-rw----  1 root dialout   4,  80 Oct 22 06:07 ttyS16
+crw-rw----  1 root dialout   4,  81 Oct 22 06:07 ttyS17
+crw-rw----  1 root dialout   4,  82 Oct 22 06:07 ttyS18
+crw-rw----  1 root dialout   4,  83 Oct 22 06:07 ttyS19
+crw-rw----  1 root dialout   4,  66 Oct 22 06:07 ttyS2
+crw-rw----  1 root dialout   4,  84 Oct 22 06:07 ttyS20
+crw-rw----  1 root dialout   4,  85 Oct 22 06:07 ttyS21
+crw-rw----  1 root dialout   4,  86 Oct 22 06:07 ttyS22
+crw-rw----  1 root dialout   4,  87 Oct 22 06:07 ttyS23
+crw-rw----  1 root dialout   4,  88 Oct 22 06:07 ttyS24
+crw-rw----  1 root dialout   4,  89 Oct 22 06:07 ttyS25
+crw-rw----  1 root dialout   4,  90 Oct 22 06:07 ttyS26
+crw-rw----  1 root dialout   4,  91 Oct 22 06:07 ttyS27
+crw-rw----  1 root dialout   4,  92 Oct 22 06:07 ttyS28
+crw-rw----  1 root dialout   4,  93 Oct 22 06:07 ttyS29
+crw-rw----  1 root dialout   4,  67 Oct 22 06:07 ttyS3
+crw-rw----  1 root dialout   4,  94 Oct 22 06:07 ttyS30
+crw-rw----  1 root dialout   4,  95 Oct 22 06:07 ttyS31
+crw-rw----  1 root dialout   4,  68 Oct 22 06:07 ttyS4
+crw-rw----  1 root dialout   4,  69 Oct 22 06:07 ttyS5
+crw-rw----  1 root dialout   4,  70 Oct 22 06:07 ttyS6
+crw-rw----  1 root dialout   4,  71 Oct 22 06:07 ttyS7
+crw-rw----  1 root dialout   4,  72 Oct 22 06:07 ttyS8
+crw-rw----  1 root dialout   4,  73 Oct 22 06:07 ttyS9
+crw-------  1 root root      5,   3 Oct 22 06:07 ttyprintk
+crw-rw----  1 root     109  10, 124 Oct 22 06:07 udmabuf
+crw-------  1 root root     10, 223 Oct 22 06:07 uinput
+crw-rw-rw-  1 root root      1,   9 Oct 22 06:07 urandom
+crw-------  1 root root     10, 126 Oct 22 06:07 userfaultfd
+crw-rw----  1 root tty       7,   0 Oct 22 06:07 vcs
+crw-rw----  1 root tty       7,   1 Oct 22 06:07 vcs1
+crw-rw----  1 root tty       7,   2 Oct 22 06:07 vcs2
+crw-rw----  1 root tty       7,   3 Oct 22 06:07 vcs3
+crw-rw----  1 root tty       7,   4 Oct 22 06:07 vcs4
+crw-rw----  1 root tty       7,   5 Oct 22 06:07 vcs5
+crw-rw----  1 root tty       7,   6 Oct 22 06:07 vcs6
+crw-rw----  1 root tty       7, 128 Oct 22 06:07 vcsa
+crw-rw----  1 root tty       7, 129 Oct 22 06:07 vcsa1
+crw-rw----  1 root tty       7, 130 Oct 22 06:07 vcsa2
+crw-rw----  1 root tty       7, 131 Oct 22 06:07 vcsa3
+crw-rw----  1 root tty       7, 132 Oct 22 06:07 vcsa4
+crw-rw----  1 root tty       7, 133 Oct 22 06:07 vcsa5
+crw-rw----  1 root tty       7, 134 Oct 22 06:07 vcsa6
+crw-rw----  1 root tty       7,  64 Oct 22 06:07 vcsu
+crw-rw----  1 root tty       7,  65 Oct 22 06:07 vcsu1
+crw-rw----  1 root tty       7,  66 Oct 22 06:07 vcsu2
+crw-rw----  1 root tty       7,  67 Oct 22 06:07 vcsu3
+crw-rw----  1 root tty       7,  68 Oct 22 06:07 vcsu4
+crw-rw----  1 root tty       7,  69 Oct 22 06:07 vcsu5
+crw-rw----  1 root tty       7,  70 Oct 22 06:07 vcsu6
+drwxr-xr-x  2 root root          60 Oct 22 06:07 vfio
+crw-------  1 root root     10, 127 Oct 22 06:07 vga_arbiter
+crw-rw----  1 root     109  10, 238 Oct 22 06:07 vhost-net
+crw-rw----  1 root     109  10, 241 Oct 22 06:07 vhost-vsock
+drwxr-xr-x  2 root root          60 Oct 22 06:07 vmbus
+crw-rw-rw-  1 root root      1,   5 Oct 22 06:07 zero
+crw-------  1 root root     10, 249 Oct 22 06:07 zfs
+@Pera-glich ➜ /dev $ 
+@Pera-glich ➜ /dev $ echo "ciao" > stdout
+ciao
+@Pera-glich ➜ /dev $ echo "ciao" > stdint
+bash: stdint: Permission denied
+@Pera-glich ➜ /dev $ echo "ciao" > stdin
+ciao
+@Pera-glich ➜ /dev $ 
+@Pera-glich ➜ /dev $ cd $HOME
+@Pera-glich ➜ ~ $ pwd
+/home/codespace
+@Pera-glich ➜ ~ $ 
+
+
+@Pera-glich ➜ /dev $ cd $HOME
+@Pera-glich ➜ ~ $ pwd
+/home/codespace
+@Pera-glich ➜ ~ $ ls /etc
+ODBCDataSources  bash.bashrc             cloud         debian_version  environment  groff      hostname     issue.net      lighttpd      lynx            mke2fs.conf     opt         profile    rc3.d        rvmrc     ssh        sysctl.conf  update-motd.d
+PackageKit       bash_completion         cron.d        default         ethertypes   group      hosts        kernel         locale.alias  machine-id      modules-load.d  os-release  profile.d  rc4.d        security  ssl        sysctl.d     vim
+X11              bash_completion.d       cron.daily    deluser.conf    fish         group-     hosts.allow  ld.so.cache    locale.gen    magic           mtab            pam.conf    protocols  rc5.d        selinux   subgid     systemd      wgetrc
+adduser.conf     bindresvport.blacklist  cron.weekly   dhcp            fonts        gshadow    hosts.deny   ld.so.conf     localtime     magic.mime      mysql           pam.d       python3    rc6.d        services  subgid-    terminfo     xattr.conf
+alternatives     binfmt.d                csh.login     docker          fstab        gshadow-   init.d       ld.so.conf.d   logcheck      mailcap         nanorc          passwd      python3.8  rcS.d        shadow    subuid     timezone     xdg
+apache2          ca-certificates         dbus-1        dpkg            gai.conf     gss        inputrc      ldap           login.defs    mailcap.order   networks        passwd-     rc0.d      resolv.conf  shadow-   subuid-    tmpfiles.d   zsh
+apparmor.d       ca-certificates.conf    dconf         e2scrub.conf    gdb          gtk-3.0    iproute2     legal          logrotate.d   manpath.config  nsswitch.conf   perl        rc1.d      rmt          shells    sudoers    ucf.conf
+apt              calendar                debconf.conf  emacs           gitconfig    host.conf  issue        libaudit.conf  lsb-release   mime.types      odbc.ini        polkit-1    rc2.d      rpc          skel      sudoers.d  ufw
+@Pera-glich ➜ ~ $ ls /var
+backups  cache  lib  local  lock  log  mail  opt  run  spool  tmp  vscode-remote
+@Pera-glich ➜ ~ $ 
+@Pera-glich ➜ ~ $ cd lock
+bash: cd: lock: No such file or directory
+@Pera-glich ➜ ~ $ cd /lock
+bash: cd: /lock: No such file or directory
+@Pera-glich ➜ ~ $ cd log
+bash: cd: log: No such file or directory
+@Pera-glich ➜ ~ $ cd var
+bash: cd: var: No such file or directory
+@Pera-glich ➜ ~ $ cd /var
+@Pera-glich ➜ /var $ cd /log
+bash: cd: /log: No such file or directory
+@Pera-glich ➜ /var $ cd log
+@Pera-glich ➜ /var/log $ ls
+alternatives.log  apt  bootstrap.log  btmp  dpkg.log  faillog  fontconfig.log  journal  lastlog  private  wtmp
+@Pera-glich ➜ /var/log $ 
+@Pera-glich ➜ /var/log $ cat log
+cat: log: No such file or directory
+@Pera-glich ➜ /var/log $ cat /log
+cat: /log: No such file or directory
+@Pera-glich ➜ /var/log $ cd log
+bash: cd: log: No such file or directory
+@Pera-glich ➜ /var/log $ cd log
+bash: cd: log: No such file or directory
+@Pera-glich ➜ /var/log $ ls log
+ls: cannot access 'log': No such file or directory
+@Pera-glich ➜ /var/log $ cat kern.log
+cat: kern.log: No such file or directory
+@Pera-glich ➜ /var/log $ 
+
+@Pera-glich ➜ /opt $ ls -la
+total 36
+drwxrwsr-x 1 codespace oryx 4096 Oct  8 06:46 .
+drwxr-xr-x 1 root      root 4096 Oct  8 06:46 ..
+drwxrwsr-x 1 codespace oryx 4096 May  6 20:18 conda
+drwx--s--x 4 root      oryx 4096 Oct  8 06:46 containerd
+drwxrwsr-x 3 codespace oryx 4096 May  6 20:33 dotnet
+drwxrwsr-x 2 codespace oryx 4096 May  6 20:33 oryx
+lrwxrwxrwx 1 codespace oryx   17 May  6 20:33 python -> /usr/local/python
+drwxrwsr-x 1 codespace oryx 4096 May  6 20:29 tmp
+@Pera-glich ➜ /opt $ 
+
+@Pera-glich ➜ /opt $ ls /run
+containerd  docker  docker.pid  docker.sock  lock  log  mount  sendsigs.omit.d  shm  sshd  sshd.pid  systemd  user  utmp  xtables.lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

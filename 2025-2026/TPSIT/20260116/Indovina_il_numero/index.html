@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovina il numero</title>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div class="question-emoji">❓</div>
+    <p>Indovina un numero tra 0 a 100</p>
+    <button onclick="genera()">Genera numero segreto</button>
+    <div class="controls">
+        <input type="number" name="txtUtente" id="txtUtente" value="0">
+        <button onclick="confronta()">Confronta</button>
+        <div>
+            <p id="tentativi"></p>
+            <p id="risultato"></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+*{scrollbar-width: none;}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-container{
+    border: solid 2px;
+    border-radius: 10px;
+    background-color: yellow;
+    padding: 15px 0;
+}
+
+
+.div-chat{
+    height: 500px;
+    width: 500px;
+    background-color: rgb(249, 249, 140);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    color: black;
+    overflow-y: auto;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+}
+
+.div-controls{
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px 0 5px 0;
+}
+
+.div-reaction-emoji{
+    display: none;
+    background-color: yellow;
+    text-align: center;
+    align-items: center;
+    border: solid 1px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+.div-message{
+    padding: 8px 12px;
+    margin: 4px;
+    border-radius: 8px;
+    max-width: 30%;
+    width: fit-content;
+    word-wrap: break-word;
+}
+
+.div-emoji{
+    background-color: yellow;
+    margin: 0 -12px -8px 0;
+    border: solid 1px;
+    border-radius: 10px;
+}
+
+.span-emoji{
+    border: solid 1px;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: rgb(249, 249, 140);
+    font-size: x-large;
+}
+
+.btn{
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: solid 1px;
+    background-color: rgb(249, 249, 140);
+}
+
+.btn-cancel{
+    margin: 15px 0 0;
+    padding: 5px;
+    font-size: large;
+}
+
+.input-message{
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: solid 1px;
+}
+
+.h1-chat{
+    text-align: center;
+}
+
+
+
+.message-user2{
+    background-color: cadetblue;
+    align-self: flex-end;
+}
+
+.message-user1{
+    align-self: flex-start;
+    background-color: aquamarine;
+}

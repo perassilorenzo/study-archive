@@ -1,0 +1,68 @@
+Preparazione del disco
+
+1. formattazione di basso livello (llf)
+composto da bit di parità, preambolo, 512B
+
+2. Partizionamento del disco
+possiamo dividerlo in parti che hanno un compito specifico, queste parti sono i cilindri
+tutte le tracce con la stessa distanza dal centro costituiscono un cilindro
+	- attiva
+	- fs (file system)
+	- so (codice sistema operativo
+
+3. Formattazione di alto livello (hlf)
+
+- bios / uefi --> rom (eeprom)
+- settore di avviamento che contiene il codice bootstrap loader che cerca la partizione attiva
+- partizione attiva --> bootloader
+- kernel
+
+partizionamento mbr (master boot record)
+--> bios
+lba 0 --> 512B
+
+1. codice di avviamento (bootstrap loader)
+446B
+
+2. tabella delle partizioni 64B
+
+indice inizio e fine + tipo partizione (nfts, fat30)	16B	attiva
+							16B	so	
+							16B	fs
+							16B
+3. signature 2B 0 x 55AA (magic number)
+
+LBA 0
+
+M	
+B		1' part		2' p		3' p 		4' p	--> diventa partizione estesa quindi la suddividiamo
+R	
+
+partizionamento mbr (master boot record)
+--> bios
+
+16B|	|	--> 32 bit --> 2 ^ 32 4 settori circa 4mln --> 4mln x 512B circa 2TB
+16B|	|
+16B|	|
+16B|	|
+
+partizionamento gpt (guid partition table) --> uefi
+
+1. protective mbr (lba 0)
+2. header gpt primario (lba 1)
+3. tabella delle partizioni primarie
+
+rgb lba2	|	| 128B	-|
+		|	| 128B	 | 1 settore (512B) --> 32 settori x 4 indirizzi partizioni = 128 partizioni
+		|	| 128B   |
+		|	| 128B	-|
+		|	|
+		|	|
+		|	|
+		|	|
+lba 33		|	|
+
+4. partizioni dati (lba 34 - ultimi settori del disco)
+
+5. backup gpt (copia 2. e 3.)
+

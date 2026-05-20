@@ -1,0 +1,41 @@
+*{
+    border: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    background-color: gray;
+    color: white;
+}
+
+.slot{
+    background-color: darkblue;
+    border-radius: 20px;
+    padding: 5%;
+    text-align: center;
+    margin: 10% 35%;
+    padding: 50px;
+}
+
+button{
+    padding: 5px;
+    margin: 10px;
+    background-color: yellow;
+    font-size: large;
+    border-radius: 10px;
+}
+
+span{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: x-large;
+    font: 100;
+}
+
+.numeri{
+    margin: 20px;
+}

@@ -1,0 +1,31 @@
+periferiche
+abbiamo una periferica (hardware) e un pc
+come si collegano?
+- velocità di elaborazione diverse
+ce bisogno di qualcosa che faccia da tramite
+le periferiche hanno componenti meccaniche diverse
+abbiamo dei dati analogici a differenza di quelli digitali
+hanno frequenze diverse
+quindi abbiamo un interfaccia che collega le due che definiscono una serie di regole per comunicare come l'usb 3.0, hdmi, tcp/ip)
+1. modalità di transito dei dati
+	- input
+	- output
+- destinatorio delle informazioni
+	- essere umano
+	- macchine / sistema
+	- dispositivi memorizzazione
+
+periferica 	--> controller (hw)
+		--> driver (sw)
+
+standard plug & play		porta
+periferica <--> <--> pc		1 parallele
+				perf -1-0-0-1- controller
+
+2 seriali
+
+perif --------1/0------ controller
+
+- sincrona clock
+- asincrona 	bit start
+		bit stop

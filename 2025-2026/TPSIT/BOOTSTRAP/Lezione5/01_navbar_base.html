@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 5 - Navbar base e stili</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-teal text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">Navbar base e stili</h1>
+      <p class="mb-0 fs-5">navbar-brand, navbar-dark/light, colori di sfondo e posizionamento</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- STRUTTURA MINIMA -->
+    <div class="sezione">
+      <h2>Struttura minima</h2>
+      <p>Il minimo indispensabile per una navbar Bootstrap: il tag <code>&lt;nav&gt;</code>, la classe <code>navbar</code> e un <code>navbar-brand</code>.</p>
+
+      <div class="codice">&lt;nav class="navbar navbar-dark bg-dark"&gt;
+  &lt;div class="container"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;MioSito&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</div>
+
+      <nav class="navbar navbar-dark bg-dark mt-3 rounded">
+        <div class="container-fluid px-3">
+          <a class="navbar-brand" href="#">MioSito</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- NAVBAR-DARK VS NAVBAR-LIGHT -->
+    <div class="sezione">
+      <h2>navbar-dark vs navbar-light</h2>
+      <p>
+        <code>navbar-dark</code> rende testi e icone **chiari** (per sfondi scuri).<br>
+        <code>navbar-light</code> rende testi e icone **scuri** (per sfondi chiari).
+      </p>
+      <p>Se scegli il tema sbagliato rispetto al colore di sfondo, i testi diventano quasi invisibili!</p>
+
+      <div class="codice">&lt;nav class="navbar navbar-dark bg-dark"&gt;  &lt;!-- testo chiaro su sfondo scuro ✔ --&gt;
+&lt;nav class="navbar navbar-light bg-light"&gt; &lt;!-- testo scuro su sfondo chiaro ✔ --&gt;
+&lt;nav class="navbar navbar-dark bg-light"&gt;  &lt;!-- testo chiaro su sfondo chiaro ✗ --&gt;</div>
+
+      <div class="d-flex flex-column gap-2 mt-3">
+        <nav class="navbar navbar-dark bg-dark rounded px-3">
+          <a class="navbar-brand" href="#">navbar-dark + bg-dark ✔</a>
+          <ul class="navbar-nav flex-row gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          </ul>
+        </nav>
+        <nav class="navbar navbar-light bg-light border rounded px-3">
+          <a class="navbar-brand" href="#">navbar-light + bg-light ✔</a>
+          <ul class="navbar-nav flex-row gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          </ul>
+        </nav>
+        <nav class="navbar navbar-dark bg-light border rounded px-3">
+          <a class="navbar-brand" href="#">navbar-dark + bg-light ✗ (testo invisibile)</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- COLORI SFONDO -->
+    <div class="sezione">
+      <h2>Colori di sfondo</h2>
+      <p>Usa le classi <code>bg-*</code> di Bootstrap per colorare la navbar.</p>
+
+      <div class="codice">&lt;nav class="navbar navbar-dark bg-dark"&gt;
+&lt;nav class="navbar navbar-dark bg-primary"&gt;
+&lt;nav class="navbar navbar-dark bg-success"&gt;
+&lt;nav class="navbar navbar-dark bg-danger"&gt;
+&lt;nav class="navbar navbar-dark bg-warning"&gt;
+&lt;nav class="navbar navbar-light bg-light"&gt;</div>
+
+      <div class="d-flex flex-column gap-2 mt-3">
+        <nav class="navbar navbar-dark bg-dark rounded px-3"><a class="navbar-brand" href="#">bg-dark</a></nav>
+        <nav class="navbar navbar-dark bg-primary rounded px-3"><a class="navbar-brand" href="#">bg-primary</a></nav>
+        <nav class="navbar navbar-dark bg-success rounded px-3"><a class="navbar-brand" href="#">bg-success</a></nav>
+        <nav class="navbar navbar-dark bg-danger rounded px-3"><a class="navbar-brand" href="#">bg-danger</a></nav>
+        <nav class="navbar navbar-dark bg-warning rounded px-3"><a class="navbar-brand" href="#">bg-warning (usa navbar-dark con attenzione)</a></nav>
+        <nav class="navbar navbar-light bg-light border rounded px-3"><a class="navbar-brand" href="#">bg-light</a></nav>
+        <nav class="navbar navbar-dark bg-teal rounded px-3"><a class="navbar-brand" href="#">bg personalizzato (teal)</a></nav>
+      </div>
+    </div>
+
+    <!-- POSIZIONAMENTO -->
+    <div class="sezione">
+      <h2>Posizionamento</h2>
+
+      <div class="codice">&lt;nav class="navbar navbar-dark bg-dark"&gt;             &lt;!-- normale nel flusso --&gt;
+&lt;nav class="navbar navbar-dark bg-dark sticky-top"&gt;  &lt;!-- resta in cima allo scroll --&gt;
+&lt;nav class="navbar navbar-dark bg-dark fixed-top"&gt;   &lt;!-- sempre visibile in cima --&gt;
+&lt;nav class="navbar navbar-dark bg-dark fixed-bottom"&gt; &lt;!-- sempre visibile in fondo --&gt;</div>
+
+      <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+          <tr><th>Classe</th><th>Comportamento</th><th>Nota</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><em>(nessuna)</em></td>
+            <td>Normale, scorre con la pagina</td>
+            <td>Uso generale</td>
+          </tr>
+          <tr>
+            <td><code>sticky-top</code></td>
+            <td>Si fissa in cima solo dopo essere entrata nella viewport</td>
+            <td>Consigliata per la maggior parte dei siti</td>
+          </tr>
+          <tr>
+            <td><code>fixed-top</code></td>
+            <td>Sempre in cima, fuori dal flusso</td>
+            <td>Aggiungere <code>padding-top</code> al body</td>
+          </tr>
+          <tr>
+            <td><code>fixed-bottom</code></td>
+            <td>Sempre in fondo, fuori dal flusso</td>
+            <td>Aggiungere <code>padding-bottom</code> al body</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert alert-info mt-2">
+        <i class="fas fa-circle-info me-1"></i>
+        La navbar in <strong>cima a questa pagina</strong> usa <code>sticky-top</code>: prova a scorrere verso il basso!
+      </div>
+    </div>
+
+    <!-- LINK NELLA NAVBAR -->
+    <div class="sezione">
+      <h2>Link nella navbar</h2>
+      <p>I link si inseriscono in una lista <code>navbar-nav</code>. Ogni elemento è un <code>nav-item</code> con dentro un <code>nav-link</code>.</p>
+
+      <div class="codice">&lt;ul class="navbar-nav ms-auto"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;  &lt;!-- active = pagina corrente --&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Chi siamo&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#"&gt;Disabilitato&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</div>
+
+      <nav class="navbar navbar-dark bg-dark rounded mt-3">
+        <div class="container-fluid px-3">
+          <a class="navbar-brand" href="#">MioSito</a>
+          <ul class="navbar-nav ms-auto flex-row gap-3">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Chi siamo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contatti</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">Disabilitato</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <p class="mt-3">Allineamento dei link:</p>
+      <div class="codice">&lt;ul class="navbar-nav"&gt;         &lt;!-- sinistra (default) --&gt;
+&lt;ul class="navbar-nav mx-auto"&gt;  &lt;!-- centrato --&gt;
+&lt;ul class="navbar-nav ms-auto"&gt;  &lt;!-- destra --&gt;</div>
+    </div>
+
+    <a href="index.html" class="btn btn-outline-teal mb-5">&larr; Torna all'indice</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

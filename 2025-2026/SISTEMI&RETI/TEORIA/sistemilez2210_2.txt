@@ -1,0 +1,91 @@
+frequenza 44.100 campio /secondo per canale
+profondità 16 bit 2 byte epr coampione
+stereo 2 canali
+calcolo 44.100 x 2 byte x 2 canali = 176.400 bytes/sec
+dimenzione 1 min = 10.6 mb 
+5min = 53 mb
+formato .cda cd audio
+
+formato wav waveform audio
+non compresso (lossless) carattere non compresso (lossless)
+standard universal standard: windes ma universale
+frequenza freqenza: 8, 11, 22, 44.1, 48 96 khz tipico 48 khz 
+profondita bit bit: 8, 16, 24, tipico 24 bitcanali audio canali: 1, 2, 4, 6, 7
+uso professionale uso: professionale, archiovio, master
+formati simili formati simili: .aiff (apple), .au (unix)
+
+
+esercizio:
+calcoalre l'accupazione in memoria brano .wav 
+durata 10 minuti
+un campionamento a 48 khz
+24 bit
+2 canali
+
+
+compressione mp3 mpeg layer 3
+anno 1997 gruppo mpeg (muving ???) (iso)
+tipo: lossy (con perdita)
+rapporto compressio: circa 1:12 va a comprimere quelle che sono meno intercettibili dallorecchio umano
+come funziona: compire dinamicamente le frequenze meno poecettibili
+frequenze centrali (1 khz) --> bassa compressione
+frequenza ??? laterale bassa intensita alta compressione
+
+mp3
+formato lossless
+sviluppato negli anni '90 dal fraunhofer institure is germania
+bitrate 128 320 kbit /s ottimopco mpresso qualita dimensiopne
+brecvetti scaduti mnel 2017 ora liberamente utilzzabile 
+formato più diffuso per musica digiattale
+
+ogg vorbis
+open source e libero da brevetti, alternativa all'mp3conenitore ogg per audio, video voce
+codec vorbis per cpmpressione audio (qualità >= mp3)
+foramto ufficale di wikipedia
+.ogg
+
+midi musical instrtsument digital interface
+standaed anni '80 per comunicare tra strumenti elettronici
+non contiene suoni, ma istruzione musicali (note, durata, struemtno)
+partitura digitale interpretata da sintetizzatori
+dimensioni ridottissime (solo dati numerici)
+non supporta voce umana
+
+sistemi audio multicanale
+dolby stereo 1976
+inventato da ray dolby  debutto con star wars 1977 
+4 canali su traccia stereo:  l, r, centrale, posteriore
+compatibile con sitemi stere normali
+dolby suttound 1982- oggi
+ecoluzione a 5.1/7.1 canali
+frontali: l, r, centraleposteriori: ls, ridottissim
+lfe subwoofer
+height sistemi 7.1 +
+standard per dvd blu-ray tv digitale
+evoluzione dolby digital, pro logic, atmos 3d
+
+video = immagini + audio in moviemnto
+video digitale sequanza di immagini (frame) + tracce audiograndi dimensioni  complessità dimensioni enormi (video + audio)
+compressione necessario neccessità di compressione massima
+dimensioni frame risoluzione la alrchezza e latezza dellimmagine video misurate di pixel
+profondità colore il numero di bit usati per rappresentare il colore di ogni pixel tipicamente 24 bit, che permette miglio di centraleposterioridurata la lunghezza totale del video espeesa in secondi o minuti frame rate fps il numeri di mmagini frame visualizzate al secono che determina la fluidità del moviemnto ( es 24, 30, 60 fps meno di questo rende il video a scatti)
+i caccia americani 1 fotogramma ogni 230 un occhio molto allenato 
+
+risuluzioni
+standard: sd hd full hd 2k 4k uhd 8k uhd 
+risouzione: 640* 480
+aspect ratio (y/x): 
+picel totali:
+
+coalcolo dimensioni video non cpmepresso
+esempio 1920 * 1080 * 3 byte= 6220800 bytes/frame
+al seconod 6220800 * 25 = 155 mb/sec
+1 minuto video 155 * 60 = 9300 mb = 9,.3 gb
+audio stereo = ??
+totale = ??
+
+streamini riroduzione mentre si scarica
+bitrate velocità di tramissione dati (mbit/s mb/s)
+
+regola bitrate doenload > bitare rposdione
+calolo btireate minimo dimensione file /durata

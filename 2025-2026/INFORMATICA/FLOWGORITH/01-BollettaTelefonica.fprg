@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es2"/>
+        <attribute name="authors" value="peras"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-10 07:18:07 "/>
+        <attribute name="created" value="cGVyYXM7REVTS1RPUC02VFQySVEwOzIwMjUtMDktMTA7IjA3OjEwOjM1ICI7Mjc4Ng=="/>
+        <attribute name="edited" value="cGVyYXM7REVTS1RPUC02VFQySVEwOzIwMjUtMDktMTA7IjA3OjE4OjA3ICI7MTsyOTAx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ns, costo" type="Real" array="False" size=""/>
+            <assign variable="costo" expression="0"/>
+            <input variable="ns"/>
+            <if expression="ns &lt;= 30">
+                <then>
+                    <assign variable="costo" expression="ns * 0.20 + 2.50"/>
+                </then>
+                <else>
+                    <if expression="ns &lt;= 100">
+                        <then>
+                            <assign variable="costo" expression="30 * 0.20 + (ns - 30) * 0.15 + 2.50"/>
+                        </then>
+                        <else>
+                            <assign variable="costo" expression="30 * 0.20 + 70 * 0.15 + (ns - 100) * 0.10 + 2.50"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;il costo della bolletta &#232; &quot; &amp; costo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

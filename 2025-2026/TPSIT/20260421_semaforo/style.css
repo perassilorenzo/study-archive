@@ -1,0 +1,25 @@
+.container-semaforo{
+    background-color: black;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.semaforo{
+    padding: 5%;
+    margin: 1%;
+    border-radius: 100px;
+}
+
+.semaforo-rosso{
+    background-color: red;
+}
+
+.semaforo-giallo{
+    background-color: yellow;
+}
+
+.semaforo-verde{
+    background-color: green;
+}

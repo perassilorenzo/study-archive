@@ -1,0 +1,102 @@
+body {
+    background-color: #09090f;
+    color: rgb(237, 235, 235);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenitore {
+    display: flex;
+    gap: 20px;
+}
+
+.scheda {
+    background-color: #0b0b16;
+    border: 1px solid #212130;
+    border-radius: 12px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+}
+
+h3 {
+    color: #67678a;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.schermo {
+    color: #70b9bd;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: monospace;
+    margin-bottom: 30px;
+}
+
+.scelta-tempo {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gruppo {
+    display: flex;
+    flex-direction: column;
+}
+
+.gruppo input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #606080;
+    width: 45px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.gruppo label {
+    font-size: 10px;
+    color: #817b7b;
+    margin-top: 5px;
+}
+
+.comandi {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.p-verde { 
+    background-color: #337d37; color: rgb(131, 119, 119);
+}
+
+.p-rosso { 
+    background-color: #e73f3f; color: rgb(217, 199, 199);
+}
+
+.p-grigio { 
+    background-color: #5c7b89; color: rgb(171, 158, 158);
+}
+
+.p-giro { 
+    background-color: #394a53; color: #746f6f; grid-column: span 3;
+}

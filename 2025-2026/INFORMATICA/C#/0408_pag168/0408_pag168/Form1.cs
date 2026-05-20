@@ -1,0 +1,72 @@
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace _0408_pag168
+{
+    struct Libri
+    {
+        public string codLibro;
+        public string titolo;
+        public string autore;
+        public string casaEditrice;
+        public string genere;
+        public string costo;
+
+        public override string ToString()
+        {
+            return $"{codLibro}; {titolo}; {autore}; {casaEditrice}; {genere}; {costo}";
+        }
+    }
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+            using (StreamWriter sw = new StreamWriter("Libri.dat"))
+            {
+                Libri libro = new Libri();
+                string risp = "";
+                do
+                {
+                    libro.codLibro = Interaction.InputBox("Inserisci il Codice");
+                    libro.titolo = Interaction.InputBox("Inserisci il Titolo");
+                    libro.autore = Interaction.InputBox("Inserisci l'Autore");
+                    libro.casaEditrice = Interaction.InputBox("Inserisci la casa editrice");
+                    libro.genere = Interaction.InputBox("Inserisci il genere");
+                    libro.costo = Interaction.InputBox("Inserisci il costo");
+
+                    sw.WriteLine(libro.ToString());
+
+                    risp = Interaction.InputBox("Vuoi continuare? (s/n)");
+                } while (risp.ToUpper() == "S");
+            }
+
+            using (StreamReader sr = new StreamReader("Libri.dat"))
+            {
+                string riga = "";
+
+                while ((riga = sr.ReadLine()) != null)
+                {
+                    string[] libro = new string[6];
+                    libro = riga.Split(';');
+                    string msg = "Dati del libro: \n";
+                    foreach (string s in libro)
+                    {
+                        msg += s + "\n";
+                    }
+                    MessageBox.Show(msg);
+                }
+            }
+        }
+    }
+}

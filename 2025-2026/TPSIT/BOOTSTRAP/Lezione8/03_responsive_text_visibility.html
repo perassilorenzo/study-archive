@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 8 - Responsive, Text e Visibility</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+
+<header class="py-3 mb-4" style="background: linear-gradient(135deg, #0dcaf0, #0aa2c0);">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-white mb-0">Responsive, Text &amp; Visibility</h1>
+        <a href="index.html" class="btn btn-light btn-sm">← Indice</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- RESPONSIVE DISPLAY -->
+    <div class="sezione">
+        <h2>Responsive Display — mostrare e nascondere per schermo</h2>
+        <p>
+            Le classi di display si combinano con i <strong>breakpoint</strong> per mostrare o nascondere
+            elementi in base alla dimensione dello schermo. Sintassi:
+        </p>
+        <pre class="codice">d-{breakpoint}-{valore}
+
+xs (default, nessun prefisso) → qualsiasi dimensione
+sm  → da 576px
+md  → da 768px
+lg  → da 992px
+xl  → da 1200px
+xxl → da 1400px</pre>
+
+        <h5 class="mt-4">Formule ricorrenti</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-info">
+                    <tr>
+                        <th>Classi</th>
+                        <th>xs/mobile</th>
+                        <th>md/tablet</th>
+                        <th>lg/desktop</th>
+                        <th>Significato</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>d-none d-md-block</code></td>
+                        <td>✗</td><td>✓</td><td>✓</td>
+                        <td>Nascosto su mobile, visibile da tablet</td>
+                    </tr>
+                    <tr>
+                        <td><code>d-block d-md-none</code></td>
+                        <td>✓</td><td>✗</td><td>✗</td>
+                        <td>Visibile solo su mobile</td>
+                    </tr>
+                    <tr>
+                        <td><code>d-none d-lg-block</code></td>
+                        <td>✗</td><td>✗</td><td>✓</td>
+                        <td>Visibile solo su desktop</td>
+                    </tr>
+                    <tr>
+                        <td><code>d-lg-none</code></td>
+                        <td>✓</td><td>✓</td><td>✗</td>
+                        <td>Nascosto su desktop</td>
+                    </tr>
+                    <tr>
+                        <td><code>d-none d-md-block d-lg-none</code></td>
+                        <td>✗</td><td>✓</td><td>✗</td>
+                        <td>Visibile solo su tablet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h5 class="mt-3">Demo interattiva — ridimensiona la finestra</h5>
+        <div class="row g-2 mt-1">
+            <div class="col-12">
+                <div class="d-block d-md-none alert alert-warning border-warning mb-0">
+                    🟡 Visibile solo su <strong>mobile</strong> (meno di 768px) — classe: <code>d-block d-md-none</code>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="d-none d-md-block d-lg-none alert alert-info mb-0">
+                    🔵 Visibile solo su <strong>tablet</strong> (768px – 991px) — classe: <code>d-none d-md-block d-lg-none</code>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="d-none d-lg-block alert alert-success mb-0">
+                    🟢 Visibile solo su <strong>desktop</strong> (da 992px) — classe: <code>d-none d-lg-block</code>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="alert alert-secondary mb-0">
+                    ⚫ Sempre visibile su tutti gli schermi — nessuna classe speciale
+                </div>
+            </div>
+        </div>
+
+        <h5 class="mt-4">Caso d'uso reale — menu hamburger vs menu orizzontale</h5>
+        <pre class="codice">&lt;!-- Mostra il pulsante hamburger solo su mobile --&gt;
+&lt;button class="d-block d-md-none btn btn-primary"&gt;☰ Menu&lt;/button&gt;
+
+&lt;!-- Mostra il menu orizzontale solo da tablet in su --&gt;
+&lt;nav class="d-none d-md-flex gap-3"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;Chi siamo&lt;/a&gt;
+    &lt;a href="#"&gt;Contatti&lt;/a&gt;
+&lt;/nav&gt;</pre>
+        <div class="p-3 border rounded bg-light d-flex align-items-center justify-content-between flex-wrap gap-2 mt-2">
+            <strong>Logo</strong>
+            <button class="d-block d-md-none btn btn-info btn-sm text-dark">☰ Menu</button>
+            <nav class="d-none d-md-flex gap-3">
+                <a href="#" class="text-decoration-none" style="color:#0aa2c0;">Home</a>
+                <a href="#" class="text-decoration-none" style="color:#0aa2c0;">Chi siamo</a>
+                <a href="#" class="text-decoration-none" style="color:#0aa2c0;">Contatti</a>
+            </nav>
+        </div>
+        <small class="text-muted">Su desktop vedi i link, su mobile vedresti solo il bottone hamburger.</small>
+    </div>
+
+    <!-- TEXT UTILITIES -->
+    <div class="sezione">
+        <h2>Text Utilities — allineamento testo</h2>
+        <p>Bootstrap 5 usa la terminologia <strong>logica</strong>: <code>start</code> (sinistra per lingue LTR) e <code>end</code> (destra).<br>
+        Non usare <code>text-left</code> / <code>text-right</code>: sono stati rimossi in Bootstrap 5.</p>
+
+        <pre class="codice">text-start   → allineato a sinistra (default)
+text-center  → centrato
+text-end     → allineato a destra</pre>
+
+        <div class="row g-3 mt-2">
+            <div class="col-md-4">
+                <div class="demo-container">
+                    <p class="text-start mb-0">text-start — a sinistra</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="demo-container">
+                    <p class="text-center mb-0">text-center — centrato</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="demo-container">
+                    <p class="text-end mb-0">text-end — a destra</p>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="mt-4">Allineamento responsive</h5>
+        <p>Puoi cambiare l'allineamento del testo in base alle dimensioni dello schermo.</p>
+        <pre class="codice">&lt;!-- Su mobile: centrato. Da tablet in su: a sinistra --&gt;
+&lt;p class="text-center text-md-start"&gt;Testo adattivo&lt;/p&gt;
+
+&lt;!-- Su mobile: a sinistra. Da desktop: centrato --&gt;
+&lt;p class="text-start text-lg-center"&gt;Testo adattivo&lt;/p&gt;</pre>
+
+        <div class="mt-3 p-3 bg-light rounded">
+            <p class="text-center text-md-start fw-bold mb-0" style="color:#0aa2c0;">
+                Su mobile sono centrato, da tablet in su sono a sinistra
+                <br><small class="text-muted fw-normal">classe: <code>text-center text-md-start</code></small>
+            </p>
+        </div>
+
+        <h5 class="mt-4">Altre trasformazioni del testo</h5>
+        <pre class="codice">text-uppercase   → TUTTO MAIUSCOLO
+text-lowercase   → tutto minuscolo
+text-capitalize  → Prima Lettera Di Ogni Parola Maiuscola
+fw-bold          → grassetto
+fw-normal        → peso normale
+fst-italic       → corsivo
+text-decoration-none       → rimuove sottolineatura
+text-decoration-underline  → aggiunge sottolineatura</pre>
+        <div class="row g-2 mt-2">
+            <div class="col-6 col-md-3"><div class="demo-container p-2"><span class="text-uppercase">uppercase</span></div></div>
+            <div class="col-6 col-md-3"><div class="demo-container p-2"><span class="text-lowercase">LOWERCASE</span></div></div>
+            <div class="col-6 col-md-3"><div class="demo-container p-2"><span class="text-capitalize">capitalize me</span></div></div>
+            <div class="col-6 col-md-3"><div class="demo-container p-2"><span class="fw-bold fst-italic">bold italic</span></div></div>
+        </div>
+    </div>
+
+    <!-- TEXT TRUNCATE -->
+    <div class="sezione">
+        <h2>text-truncate — testo troncato con …</h2>
+        <p>
+            Quando il testo è troppo lungo per il suo contenitore, <code>text-truncate</code> lo tronca
+            aggiungendo <code>…</code> alla fine. <strong>Richiede una larghezza fissa</strong> sull'elemento.
+        </p>
+        <pre class="codice">&lt;p class="text-truncate" style="max-width: 200px;"&gt;
+    Testo molto lungo che verrà troncato con i puntini di sospensione...
+&lt;/p&gt;</pre>
+
+        <div class="row g-3 mt-2">
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">Senza text-truncate</p>
+                <div class="demo-container" style="max-width: 250px;">
+                    <p class="mb-0">Questo è un testo molto lungo che va oltre il bordo del contenitore</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">Con text-truncate</p>
+                <div class="demo-container" style="max-width: 250px;">
+                    <p class="mb-0 text-truncate">Questo è un testo molto lungo che va oltre il bordo del contenitore</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-warning mt-3">
+            <strong>Errore comune:</strong> usare <code>text-truncate</code> senza definire una larghezza massima.
+            Senza <code>max-width</code> o <code>width</code>, l'elemento cresce quanto il testo e non si tronca mai.
+        </div>
+
+        <h5 class="mt-3">Uso pratico — cella di tabella con testo lungo</h5>
+        <div class="table-responsive mt-2">
+            <table class="table table-bordered">
+                <thead class="table-info">
+                    <tr><th>Nome</th><th style="max-width:150px;">Descrizione</th><th>Stato</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Progetto Alpha</td>
+                        <td class="text-truncate" style="max-width:150px;">Sviluppo del nuovo portale aziendale con design responsive</td>
+                        <td><span class="badge bg-success">Attivo</span></td>
+                    </tr>
+                    <tr>
+                        <td>Progetto Beta</td>
+                        <td class="text-truncate" style="max-width:150px;">Migrazione del database legacy verso PostgreSQL</td>
+                        <td><span class="badge bg-warning text-dark">In pausa</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- VISIBILITY -->
+    <div class="sezione">
+        <h2>Visibility — visible e invisible</h2>
+        <p>
+            <code>invisible</code> rende un elemento <strong>trasparente</strong> ma mantiene il suo spazio nel layout.
+            È diverso da <code>d-none</code> che rimuove anche lo spazio.
+        </p>
+        <pre class="codice">&lt;div class="visible"&gt;Visibile normalmente&lt;/div&gt;
+&lt;div class="invisible"&gt;Invisibile ma occupa spazio&lt;/div&gt;
+&lt;div&gt;Questo elemento è nella posizione normale&lt;/div&gt;</pre>
+
+        <div class="mt-3 p-3 bg-light rounded">
+            <div class="demo-box mb-2 text-center">Visibile</div>
+            <div class="demo-box invisible mb-2 text-center">Invisibile (occupa spazio)</div>
+            <div class="demo-box text-center">Di nuovo visibile</div>
+        </div>
+        <p class="small text-muted mt-2">Il box centrale è invisibile ma il terzo box è nella sua posizione normale, non si sposta in su.</p>
+
+        <h5 class="mt-4">Caso d'uso: toggle con JavaScript</h5>
+        <p>Un pattern comune è alternare <code>invisible</code> e <code>visible</code> via JS per mostrare/nascondere feedback senza spostare gli altri elementi.</p>
+        <pre class="codice">&lt;p id="messaggio" class="invisible text-success"&gt;✓ Salvato!&lt;/p&gt;
+&lt;button onclick="document.getElementById('messaggio').classList.remove('invisible')"&gt;
+    Salva
+&lt;/button&gt;</pre>
+
+        <div class="mt-3">
+            <p id="msg-demo" class="invisible text-success fw-bold">✓ Salvato con successo!</p>
+            <button class="btn btn-info btn-sm text-dark"
+                onclick="document.getElementById('msg-demo').classList.remove('invisible')">
+                Salva (demo)
+            </button>
+        </div>
+    </div>
+
+    <!-- VISUALLY HIDDEN -->
+    <div class="sezione">
+        <h2>visually-hidden — accessibilità</h2>
+        <p>
+            <code>visually-hidden</code> nasconde l'elemento visivamente ma lo rende leggibile dagli
+            <strong>screen reader</strong> (software usati da persone non vedenti). Era chiamato <code>sr-only</code>
+            nelle versioni precedenti di Bootstrap.
+        </p>
+        <pre class="codice">&lt;span class="visually-hidden"&gt;Questa descrizione è solo per screen reader&lt;/span&gt;</pre>
+
+        <h5 class="mt-3">Perché è importante?</h5>
+        <p>Un'icona senza testo non dice nulla a uno screen reader. Con <code>visually-hidden</code> è possibile aggiungere contesto testuale "invisibile":</p>
+        <pre class="codice">&lt;!-- Bottone con solo icona: inaccessibile --&gt;
+&lt;button class="btn btn-danger"&gt;
+    🗑
+&lt;/button&gt;
+
+&lt;!-- Bottone con solo icona: accessibile --&gt;
+&lt;button class="btn btn-danger"&gt;
+    🗑
+    &lt;span class="visually-hidden"&gt;Elimina elemento&lt;/span&gt;
+&lt;/button&gt;</pre>
+
+        <div class="d-flex gap-3 align-items-center mt-3">
+            <div>
+                <p class="small text-muted mb-1">Bottone inaccessibile</p>
+                <button class="btn btn-danger">🗑</button>
+            </div>
+            <div>
+                <p class="small text-muted mb-1">Bottone accessibile (uguale visivamente)</p>
+                <button class="btn btn-danger">
+                    🗑
+                    <span class="visually-hidden">Elimina elemento</span>
+                </button>
+            </div>
+        </div>
+        <div class="alert alert-info mt-3">
+            I due bottoni sembrano identici, ma il secondo ha il testo "Elimina elemento" che viene
+            letto dagli screen reader. Questo è fondamentale per l'accessibilità web (<strong>WCAG</strong>).
+        </div>
+
+        <h5 class="mt-3">Riepilogo visibility</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-info">
+                    <tr>
+                        <th>Classe</th>
+                        <th>Visibile a schermo</th>
+                        <th>Occupa spazio</th>
+                        <th>Screen reader</th>
+                        <th>Quando usarla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>d-none</code></td>
+                        <td>No</td><td>No</td><td>No</td>
+                        <td>Nascondere elementi temporaneamente (toggle)</td>
+                    </tr>
+                    <tr>
+                        <td><code>invisible</code></td>
+                        <td>No</td><td>Sì</td><td>No</td>
+                        <td>Nascondere senza spostare gli altri elementi</td>
+                    </tr>
+                    <tr>
+                        <td><code>visually-hidden</code></td>
+                        <td>No</td><td>No</td><td>Sì</td>
+                        <td>Aggiungere testo descrittivo per accessibilità</td>
+                    </tr>
+                    <tr>
+                        <td><code>opacity-0</code></td>
+                        <td>No</td><td>Sì</td><td>Sì</td>
+                        <td>Effetti di fade con transizioni CSS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- RIEPILOGO FINALE -->
+    <div class="sezione">
+        <h2>Riepilogo — Lezione 8 completa</h2>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="p-3 border rounded border-info h-100">
+                    <h6 style="color:#0aa2c0;">Flexbox</h6>
+                    <ul class="mb-0 small">
+                        <li><code>d-flex</code> — attiva flexbox</li>
+                        <li><code>justify-content-center</code> — centra orizzontalmente</li>
+                        <li><code>align-items-center</code> — centra verticalmente</li>
+                        <li><code>flex-column</code> — disposizione verticale</li>
+                        <li><code>flex-wrap</code> — a capo automatico</li>
+                        <li><code>gap-*</code> — spazio tra elementi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 border rounded border-info h-100">
+                    <h6 style="color:#0aa2c0;">Sizing</h6>
+                    <ul class="mb-0 small">
+                        <li><code>w-25/50/75/100</code> — larghezza percentuale</li>
+                        <li><code>h-25/50/75/100</code> — altezza percentuale</li>
+                        <li><code>w-auto</code> — larghezza in base al contenuto</li>
+                        <li><code>mw-100</code> — immagini responsive</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 border rounded border-info h-100">
+                    <h6 style="color:#0aa2c0;">Display e Responsive</h6>
+                    <ul class="mb-0 small">
+                        <li><code>d-none / d-block</code> — nascondere/mostrare</li>
+                        <li><code>d-none d-md-block</code> — nascosto su mobile</li>
+                        <li><code>d-block d-md-none</code> — solo mobile</li>
+                        <li><code>d-none d-lg-block</code> — solo desktop</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 border rounded border-info h-100">
+                    <h6 style="color:#0aa2c0;">Testo e Visibility</h6>
+                    <ul class="mb-0 small">
+                        <li><code>text-start / center / end</code> — allineamento</li>
+                        <li><code>text-{bp}-*</code> — allineamento responsive</li>
+                        <li><code>text-truncate</code> — tronca con …</li>
+                        <li><code>invisible</code> — mantiene spazio</li>
+                        <li><code>visually-hidden</code> — per screen reader</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mb-4">
+        <a href="02_sizing_display.html" class="btn btn-outline-secondary me-2">← Sizing &amp; Display</a>
+        <a href="index.html" class="btn btn-info text-dark">↑ Indice Lezione 8</a>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+cache hit 
+cache miss
+
+pipeline 
+questo meccanismo aiuta a risolvere i problemi della pipeline 
+se abbiamo il problema di sincronizzazione quindi abbiamo 
+if(cond)
+	var
+else
+	...
+
+con la cache mi risolvo i problemi perché magari la variabile risultato la troviamo già nella cache
+quindi non bisogna andare di nuovo in ram
+
+però porta anche ad altri problemi:
+-stallo della cpu
+	se la cpu ha bisogno di un dato ma non ce un cache hit e anche un cache miss, t totale = t hit + t miss
+	magari la cpu resta bloccata ma deve aspettare che prima faccia la hit e miss, di prendersi il dato
+	e se è bloccata non può fare altro
+	per risolvere questo problema: 
+
+	-context switch
+		cambio di contesto
+		abbiamo la cpu che fa processi chiamato p1 ma ad una certa ha bisogno di un dato dalla ram, quindi hit e miss, quindi durante il tempo il processo non viene eseguito quindi si cambia il contesto e cambia il processo, passa dal p1 al p2, anche più processi alla volta
+		p1 ------>...........----------->
+		p2 .......---------->............
+		questo vale per la cpu con un core solo
+		quando ce un multicore si portano avanti più processi essendo che ogni core fa questa cosa
+
+gerarchie di memorie (classificiamo tutte le memorie, in ordine):
+-più economiche, più lente e più capienti e grandi:
+	nastri(memoria permanente, poco utilizzati)
+	hard disk (permanente)
+	dischi a stato solido (ssd) (permanete)
+	rom (permanente)	
+	ram (volatile)
+	cache (volatile)
+	i registri cpu:
+		1 dato, un indirizzo, un segnale, un numero in binario con tot bit
+		come si memorizza ogni singolo bit, è memoriazzato dal flip flop piccolissima con all'interno i transistor che fungono da interruttori (0-1)ù
+possiamo applicare la hit e miss nella gerarchia:
+	cpu --> registro --> cache --> ram --> disco
+
+principi di località con quali principi si porta un dato un cache o in ram, quando portiamo dei dati dalla 
+-ram --> cache: cache blocco
+- disco --> ram: pagina
+
+quando devo scegliere che dati portare dei dati alla ram non porto un dato alla volta ma lo porto in gruppetti chiamati cache blocco o pagina
+in questo gruppo ci metto?
+abbiamo due principi di località:
+-località spaziele: se avessimo un vettore, con indice che scorre il vettore con dei dati dentro, se devo scegliere dei dati è meglio mettere i dati più vicini all'indice, se l'indice è verso metà visualizzerà quellii dopo e poi quelli prima, secondo il principio io ritengo più probabili i dati più vicini all'indice, che debba fare il gruppo di un tipo prendo i dati vicini secondo il principio
+ quindi si portano quelli più vicini
+
+-località temporale: supponiamo di avere un ciclo, con variabile i++, quindi ha senso portarla in memoria, quindi questo principio se uso un dato in un certo istante è rpbabile che sevirà in futuro quindi verrà mantenuto in memoria, conviene tenerlo in memoria perché magari si passerà cella prima cella dopo

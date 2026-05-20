@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="div-container">
+
+            <!-- titolo -->
+            <h1 class="h1-chat">Chat</h1>
+
+            <!-- sezione delle chat -->
+            <div id="chat" class="div-chat"></div>
+            
+            <!-- gestione controlli chat -->
+            <div id="controls" class="div-controls">
+                <input type="text" id="message" placeholder="Scrivi messaggio" class="input-message">
+                <button class="btn" id="btn-user1">USER 1</button>
+                <button class="btn" id="btn-user2">USER 2</button>
+                <button onclick="ModifyMessage()" class="btn">MODIFICA</button>
+            </div>
+            
+            <!-- reaction emoji -->
+            <div id="div-reaction-emoji" class="div-reaction-emoji">
+                <div id="emoji-lista" class="div-list-emoji">
+                    <span onclick="AddReactionEmoji('🧡')" class="span-emoji">🧡</span>
+                    <span onclick="AddReactionEmoji('👍')" class="span-emoji">👍</span>
+                    <span onclick="AddReactionEmoji('🤣')" class="span-emoji">🤣</span>
+                    <span onclick="AddReactionEmoji('😊')" class="span-emoji">😊</span>
+                    <span onclick="AddReactionEmoji('👌')" class="span-emoji">👌</span>
+                </div>
+                <button onclick="CloseReactionEmoji()" class="btn btn-cancel">Annulla</button>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* ============================================
+   Bootstrap Lezione 1 — Foglio di stile
+   ============================================ */
+
+/* --- Base --- */
+body {
+  background-color: #f8f9fa;
+}
+
+/* --- Sezione card bianca --- */
+.sezione {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.sezione h2 {
+  border-bottom: 3px solid #0d6efd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+/* --- Blocco codice stile dark --- */
+.codice {
+  background: #272822;
+  color: #f8f8f2;
+  border-radius: 6px;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  white-space: pre-wrap;
+}
+
+/* --- Etichetta sopra gli esempi --- */
+.etichetta {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* --- Demo container (01_container.html) --- */
+.demo-box {
+  background-color: #0d6efd;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.demo-fluid {
+  background-color: #198754;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.sfondo-grigio {
+  background-color: #dee2e6;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+/* --- Card colori (02_testo_colori.html) --- */
+.color-card {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* --- Area demo bottoni (03_bottoni.html) --- */
+.demo-area {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 20px;
+}

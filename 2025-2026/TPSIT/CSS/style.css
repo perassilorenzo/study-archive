@@ -1,0 +1,130 @@
+/* questo file contiene tutti i comandi che abbiamo visto di css e aggiuntivi */
+
+/* stile di tutto il file */
+/* in questo caso abbiamo un reset toale del file eliminando i margini e i padding */
+*{
+    margin: 0;                  /* spazio fuori da un elemento, che lo separa dagli altri. */
+    padding: 0;                 /* spazio dentro un elemento, tra il contenuto e il suo bordo. */
+    box-sizing: border-box;     /* cambia il modo in cui vengono calcolate le dimensioni di un elemento. lo rende più semplice dato che le misure dell'elemento resta quello impostata. quindi padding e border sono inclusi nella larchezza e altezza totale */
+}
+
+/* stile del body */
+
+body{
+    font-family:  Arial, Helvetica, sans-serif;     /* indica il tipo di carattere da usare, dove va a tentativi provandoli in ordine */
+    line-height: 1.2;                               /* indica lo spazio verticale tra le righe di testo */
+}
+
+/* stile dell'header */
+
+header{
+    background-color: #535889;      /* indica il colore delle sfondo */
+    color: white;                   /* indica il colore del testo */
+    text-align: center;               /* indica che il testo è centrato */           
+}
+
+/* stile di tutte le section */
+
+section{
+    border-radius: 10px;    /* arrotonda gli angoli di un elemento. 50% --> cerchio */
+    inset-block: initial;   /* controlla la distanza di un elemento dai bordi verticali: riporta il valore alla condizione di default. quindi non ha regole particolari di posizionamento verticale ma usa quello standard del browser */
+}
+
+/* stile per i link della barra di navigazione */
+/* nav sta per navigation */
+/* a sta per i link */
+nav a {
+    text-decoration: none;      /* toglio le 'decorazioni' in questo caso la sottolineatura del link */
+    margin: 0 15px;             /* qui troviamo due valori, il primo riguarda il margine verticale, il secondo quello orizzontale */
+    font-size: 18px;            /* grandezza del testo */
+}
+
+/* stile del main */
+/* il main è il contenuto principale della pagina */
+main{
+    display: flex;                      /* attiva il layout in modo da poterlo mettere in riga o colonna */
+    gap: 10px;                          /* spazio che separa gli elementi all'interno del contenitore padre */
+    justify-content: space-between;     /* mette gli elementi lungo la riga lasciando spazio uniforme tra loro attaccandoli ai bordi */
+}
+
+/* stili id */
+/* quando troviamo # indica gli id che mettiamo nell'html */
+
+/* stile per id */
+
+#id{
+    text-align: left;                   /* allinea il testo a sinistra */
+    border-left: 4px solid #535889;   /* aggiunge un bordo a sinistra spesso di 4px con il colore indicato */
+    flex: 1;                            /* l'elemento 'id' occupa uno spazio flessibile, si adatta e si espande nel layout flex */
+}
+
+/* stile per classi */
+
+.class{
+    max-width: 1200px;                                                      /* imposta la lunghezza massima di un elemento adattandosi agli schempi più piccoli */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);      /* crea uno sfondo con sfumatura lineare. sfondo: transizione graduale tra tot colori(angolo di sfumatura, colore iniziale, colore finale) */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);                              /* aggiunge un ombra all'elemento: spostamento orizzontale, verticale, raggio si sfocatura, colore */
+    position: fixed;                                                        /* fissa un elemento rispetto alla finestra del browser, rimane sempre lì anche quando si scrolla nella pagina */
+    top: 0;                                                                 /* posiziona l'elemento attaccato al bordo superiore */
+    left: 0;                                                                /* posiziona attaccato a sinistra */
+    right: 0;                                                               /* lo estende fino al bordo destro */
+    z-index: 9999;                                                          /* stabilisce la profondità dell'elemento. molto alto lo porta sopra tutti così non viene coperto */
+    cursor: pointer;                                                        /* quando passi col mouse sull'elemento il cursore diventa la manina */
+    transition: transform 0.3s ease;                                        /* definisce un'animazione fluida quando l'elemento subisce una trasformazione. durata, tipo di curva di velocità */
+}
+
+/* media query */
+/* serve a cambiare lo schrmo quando è più piccolo, in questo caso, di 768px (tablet o telefoni) */
+@media(max-width: 768px) {          /* indica le regole valide per cui vengano usate queste caratteristiche */
+    nav {
+        display: flex;
+        flex-direction: column;     /* la barra di navigazione diventa verticale invece che orizzontale */
+    }
+
+    nav a {                         /* i link occupano tutta la riga e hanno spazio sopra e sotto */
+        display: block;             /* fa si che ogni link si comporti come un blocco, quindi ogni link va a capo a differenza di inline */
+        margin: 10px 0;
+    }
+
+    section{                        /* tutte le sezioni hanno più spazio interno ed esterno per una leggibilità migliore */
+        padding: 20px;
+        margin: 10px;
+    }
+}
+
+/* stile hover */
+
+.class:hover {                   /* quando il mouse passa sull'elemento */
+    transform: scale(1.05);      /* ingrandisce l'elemento */
+}
+
+/* stile nav ul (lista) */
+
+nav ul {
+    list-style: none;       /* controlla i puntini, in questo caso non ci sono */ 
+}
+
+/* stili stati link */
+
+nav a:link {                /* stile dei link nello stato normale, non sono mai stati visitati o cliccati */
+    color: white;
+}
+
+nav a:visited {                             /* è già stato visitato */
+    color: rgba(255, 255, 255, 0.9);
+}  
+
+nav a:active {                                      /* durante il click */
+    transform: translateY(0);                       /* quindi trasla durante il click */
+    background-color: rgba(255,255,255,0.3); 
+}
+
+/* stile per hero */
+
+.hero{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)),      /* usa un immagine di sfondo che scaturisce grazie al gradient */
+    url('../img/monviso-via-normale.png') center/cover;                     /* l'immagine è centrata e ridimensionata per coprire tutto il contanitore */
+    justify-content: center;                                                /* allinea gli elementi figli al centro lungo dell'asse principale */
+    position: relative;                                                     /* mantiene la sua posizione naturale ma diventa un contenitore di riferimento per eventuali elementi posizionati con absolute al suo interno */
+    animation: fadeInDown 1s ease-out;                                      /* fa apparire l'elemento con una dissolvenza mentre scende dall'alto */
+}

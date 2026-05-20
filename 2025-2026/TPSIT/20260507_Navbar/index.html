@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MioSito Full Bootstrap</title>
+    <!-- link di bootstrap 5 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- link a font awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 
+        navbar -> barra di navigazione
+        navbar-expand-lg -> rende la navbar espandibile su schermi grandi
+        navbar-dark -> stile scuro per la navbar
+        bg-dark -> sfondo scuro per la navbar
+        p-3 -> padding di 3 unità su tutti i lati
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+        
+        <!-- container-fluid -> rende il contenuto della navbar a tutta larghezza -->
+        <div class="container-fluid">
+            
+        <!-- 
+            navbar-brand -> classe per il brand/logo della navbar
+            d-flex align-items-center -> rende il brand un flex container e allinea verticalmente al centro
+            fw-bold -> testo in grassetto    
+        -->
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+
+                <!-- 
+                    fas fa-bolt -> icona a forma di fulmine
+                    me-2 -> margin end di 2 unità per distanziare l'icona dal testo
+                -->
+                <i class="fas fa-bolt me-2"></i> MioSito
+            </a>
+
+            <!-- 
+                navbar-toggler -> pulsante per il menu hamburger su schermi piccoli
+                data-bs-toggle -> attiva la funzionalità di toggle per la navbar
+                data-bs-target -> specifica l'elemento da collapsare
+                aria-controls -> controllo per l'accessibilità
+                aria-expanded -> stato di espansione del menu
+                aria-label -> etichetta per l'accessibilità
+            -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <!-- icona del pulsante -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- 
+                collapse navbar-collapse -> contenitore per il menu collapsabile
+                id="navbarNav" -> identificatore per il menu
+            -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- 
+                    navbar-nav -> classe per la lista di navigazione
+                    me-auto -> margin auto a destra
+                    mb-2 -> margin bottom di 2 unità
+                    mb-lg-0 -> margin bottom di 0 su schermi grandi
+                -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <!-- elemento della lista di navigazione -->
+                    <li class="nav-item">
+
+                        <!-- 
+                            nav-link -> classe per i link di navigazione
+                            active -> classe per il link attivo
+                        -->
+                        <a class="nav-link active" href="#"><i class="fas fa-home me-2"></i>Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-users me-2"></i>Chi siamo</a>
+                    </li>
+
+                    <!-- dropdown -> menu a discesa -->
+                    <li class="nav-item dropdown">
+
+                        <!-- 
+                            nav-link dropdown-toggle -> classe per il link del dropdown
+                            text-white -> testo bianco
+                            id="navbarDropdown" -> identificatore per il dropdown
+                            role="button" -> ruolo del pulsante
+                            data-bs-toggle="dropdown" -> attiva la funzionalità di dropdown
+                            aria-expanded="false" -> stato di espansione del dropdown
+                        -->
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-briefcase me-2"></i>Servizi
+                        </a>
+
+                        <!-- 
+                            dropdown-menu -> classe per il menu a discesa
+                            mt-2 -> margin top di 2 unità
+                            shadow -> ombra
+                            border-0 -> senza bordo
+                            aria-labelledby="navbarDropdown" -> associa il menu al link del dropdown
+                        -->
+                        <ul class="dropdown-menu mt-2 shadow border-0" aria-labelledby="navbarDropdown">
+                            <li>
+
+                                <!-- 
+                                    dropdown-item -> classe per gli elementi del dropdown
+                                    py-2 -> padding verticale di 2 unità
+                                -->
+                                <a class="dropdown-item py-2" href="#">
+                                    <i class="fas fa-code me-2"></i> Sviluppo Web
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="#">
+                                    <i class="fas fa-palette me-2"></i> Design
+                                </a>
+                            </li>
+
+                            <!-- divisore -->
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item py-2" href="#">
+                                    <i class="fas fa-list-ul me-2"></i> Tutti i servizi
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-envelope me-2"></i>Contatti</a>
+                    </li>
+                </ul>
+
+                <!-- 
+                    d-flex -> rende il contenitore un flexbox
+                    gap-2 -> gap di 2 unità tra gli elementi
+                -->
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-outline-light d-flex align-items-center">
+                        <i class="fab fa-github me-2"></i> GitHub
+                    </a>
+                    <a href="#" class="btn btn-light d-flex align-items-center">
+                        <i class="fas fa-sign-in-alt me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- link per bootstrap 5 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

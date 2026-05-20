@@ -1,0 +1,13 @@
+esempio
+mov r1, [0042h] --> 0011011000000000 (inidirizzo 0042) 01000010 (codice operativo) è una traduzione in binario 
+
+0002    | 00110110  | <-- pc pc = 0002 h --> mar --> mdr --> ir cu (1. fetch)
+0003    |           |
+0005    |           | <-- pc
+0042    | 11110100  |
+        |           |
+        |           |
+
+2. deconde pc = 0002 +3 = 0005
+3. execute 
+(halt)

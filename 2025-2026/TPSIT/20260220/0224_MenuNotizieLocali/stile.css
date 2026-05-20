@@ -1,0 +1,95 @@
+/* Stile generale */
+*{
+    font-family: Arial;
+    box-sizing: none;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: lightblue;
+}
+
+h2{
+    margin: 10px;
+    text-align: center;
+    background-color: #daaeae;
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+/* Menu principale */
+.menu {
+    list-style: none;
+    background-color: #333;
+    display: inline-flex;
+    margin: 10px 0;
+    width: 500px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.menu>li {
+    position: relative;
+    padding: 15px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu>li:hover {
+    background-color: #555;
+}
+
+/* Sottomenu */
+.sottomenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: none;
+    min-width: 150px;
+}
+
+.sottomenu li {
+    padding: 10px;
+    color: black;
+}
+
+.sottomenu li:hover {
+    background-color: #ddd;
+}
+
+/* Mostra il sottomenu quando si passa sopra */
+.menu li:hover .sottomenu {
+    display: block;
+}
+
+.controlli{
+    margin: 10px;
+}
+
+.controlli>button{
+    background-color: #ccc;
+    border-radius: 25px;
+    height: 30px;
+    width: 200px;
+    margin: 5px 5px 5px 0;
+}
+
+.controlli>input{
+    background-color: #ccc;
+    border-radius: 25px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+#info{
+    margin-top: 10px;
+}

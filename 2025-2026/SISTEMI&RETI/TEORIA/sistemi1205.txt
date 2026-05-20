@@ -1,0 +1,69 @@
+cpu <-----> controller | porta <--------> periferica
+
+[	     computer         ]
+
+buffer --> serve per memorizzare temporaneamente un dato
+
+controller:
+bus dati <------>		[registro di stato]		--> porta
+bus indirizzi ----->		[buffer dei dati]
+bus controllo ---->		[registro di controllo]
+
+controller usb sata quindi di rete
+registro dei dati --> flag 1 / busy 0
+
+computer rd wr --> bus di controllo
+
+???
+
+3 tecniche 
+- polling
+
+input(flag periferica)
+if (date siponibile)
+{
+	read
+}
+else{
+	if (è possibile write){
+		write
+		input (flag periferica){ loop }
+	}
+}
+
+
+2 interrupt 
+cpu ---> fff9 ----> ebc2 ----> efff ---->fff9 -----> loop
+
+
+3 dma (direct memory access)
+
+cpu --> ram 	i/o
+|		|
+-----------------
+
+dma:
+
+cpu	ram	i/o
+	|	!
+	---------
+
+controller: dma
+|interrupt
+cpu wait
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

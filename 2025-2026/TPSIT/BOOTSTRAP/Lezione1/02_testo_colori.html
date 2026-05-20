@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap — Testo e Colori</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <div class="bg-success text-white py-3 mb-4">
+    <div class="container">
+      <a href="index.html" class="text-white text-decoration-none">← Torna all'indice</a>
+      <h1 class="mt-2 mb-0">Classi per il Testo e i Colori</h1>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- SEZIONE ALLINEAMENTO -->
+    <div class="sezione">
+      <h2>Allineamento del Testo</h2>
+      <p>Bootstrap fornisce classi per allineare il testo orizzontalmente.</p>
+
+      <div class="codice">&lt;p class="text-start"&gt;Testo a sinistra&lt;/p&gt;
+&lt;p class="text-center"&gt;Testo centrato&lt;/p&gt;
+&lt;p class="text-end"&gt;Testo a destra&lt;/p&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="border rounded p-3">
+        <p class="text-start bg-light p-2 rounded">text-start → Il testo è allineato a sinistra (default)</p>
+        <p class="text-center bg-light p-2 rounded">text-center → Il testo è centrato nella sua area</p>
+        <p class="text-end bg-light p-2 rounded">text-end → Il testo è allineato a destra</p>
+      </div>
+
+      <div class="alert alert-info mt-3">
+        <strong>Nota Bootstrap 5:</strong> In Bootstrap 5 si usa <code>text-start</code> e <code>text-end</code>.
+        In Bootstrap 4 erano <code>text-left</code> e <code>text-right</code>.
+      </div>
+    </div>
+
+    <!-- SEZIONE TRASFORMAZIONE -->
+    <div class="sezione">
+      <h2>Trasformazione del Testo</h2>
+      <p>Queste classi modificano come vengono mostrate le lettere, senza cambiare l'HTML.</p>
+
+      <div class="codice">&lt;p class="text-uppercase"&gt;questo testo diventa maiuscolo&lt;/p&gt;
+&lt;p class="text-lowercase"&gt;QUESTO TESTO DIVENTA MINUSCOLO&lt;/p&gt;
+&lt;p class="text-capitalize"&gt;ogni parola inizia con la maiuscola&lt;/p&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="border rounded p-3">
+        <p class="text-uppercase fs-5">questo testo diventa maiuscolo</p>
+        <p class="text-lowercase fs-5">QUESTO TESTO DIVENTA MINUSCOLO</p>
+        <p class="text-capitalize fs-5">ogni parola inizia con la maiuscola</p>
+      </div>
+    </div>
+
+    <!-- SEZIONE PESO FONT -->
+    <div class="sezione">
+      <h2>Peso del Font e Stile</h2>
+      <p>Controlla lo spessore (grassetto, normale, leggero) e lo stile (corsivo) del testo.</p>
+
+      <div class="codice">&lt;p class="fw-bold"&gt;Testo in grassetto (fw-bold)&lt;/p&gt;
+&lt;p class="fw-semibold"&gt;Testo semi-grassetto (fw-semibold)&lt;/p&gt;
+&lt;p class="fw-normal"&gt;Testo normale (fw-normal)&lt;/p&gt;
+&lt;p class="fw-light"&gt;Testo leggero (fw-light)&lt;/p&gt;
+&lt;p class="fst-italic"&gt;Testo in corsivo (fst-italic)&lt;/p&gt;
+&lt;p class="fw-bold fst-italic"&gt;Grassetto + corsivo insieme&lt;/p&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="border rounded p-3 fs-5">
+        <p class="fw-bold">fw-bold → Testo in grassetto</p>
+        <p class="fw-semibold">fw-semibold → Testo semi-grassetto</p>
+        <p class="fw-normal">fw-normal → Testo normale</p>
+        <p class="fw-light">fw-light → Testo leggero</p>
+        <p class="fst-italic">fst-italic → Testo in corsivo</p>
+        <p class="fw-bold fst-italic mb-0">fw-bold + fst-italic → Grassetto e corsivo insieme</p>
+      </div>
+    </div>
+
+    <!-- SEZIONE COLORI TESTO -->
+    <div class="sezione">
+      <h2>Colori del Testo: <code>text-*</code></h2>
+      <p>Bootstrap usa colori semantici: ogni colore ha un significato specifico.</p>
+
+      <div class="codice">&lt;p class="text-primary"&gt;Testo primary (blu)&lt;/p&gt;
+&lt;p class="text-secondary"&gt;Testo secondary (grigio)&lt;/p&gt;
+&lt;p class="text-success"&gt;Testo success (verde)&lt;/p&gt;
+&lt;p class="text-danger"&gt;Testo danger (rosso)&lt;/p&gt;
+&lt;p class="text-warning"&gt;Testo warning (giallo)&lt;/p&gt;
+&lt;p class="text-info"&gt;Testo info (azzurro)&lt;/p&gt;
+&lt;p class="text-dark"&gt;Testo dark (scuro)&lt;/p&gt;
+&lt;p class="text-muted"&gt;Testo muted (attenuato)&lt;/p&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="border rounded p-3 fs-5">
+        <p class="text-primary">text-primary → Testo blu (azione principale)</p>
+        <p class="text-secondary">text-secondary → Testo grigio (secondario)</p>
+        <p class="text-success">text-success → Testo verde (successo / ok)</p>
+        <p class="text-danger">text-danger → Testo rosso (errore / pericolo)</p>
+        <p class="text-warning">text-warning → Testo giallo (attenzione)</p>
+        <p class="text-info">text-info → Testo azzurro (informazione)</p>
+        <p class="text-dark">text-dark → Testo scuro</p>
+        <p class="text-muted mb-0">text-muted → Testo attenuato (note, date, descrizioni)</p>
+      </div>
+    </div>
+
+    <!-- SEZIONE COLORI SFONDO -->
+    <div class="sezione">
+      <h2>Colori dello Sfondo: <code>bg-*</code></h2>
+      <p>Le classi <code>bg-*</code> colorano lo sfondo di un elemento.
+        Ricorda di abbinare un colore di testo leggibile!</p>
+
+      <div class="codice">&lt;div class="bg-primary text-white p-3"&gt;bg-primary&lt;/div&gt;
+&lt;div class="bg-success text-white p-3"&gt;bg-success&lt;/div&gt;
+&lt;div class="bg-danger text-white p-3"&gt;bg-danger&lt;/div&gt;
+&lt;div class="bg-warning text-dark p-3"&gt;bg-warning&lt;/div&gt;
+&lt;div class="bg-info text-dark p-3"&gt;bg-info&lt;/div&gt;
+&lt;div class="bg-secondary text-white p-3"&gt;bg-secondary&lt;/div&gt;
+&lt;div class="bg-dark text-white p-3"&gt;bg-dark&lt;/div&gt;
+&lt;div class="bg-light text-dark p-3"&gt;bg-light&lt;/div&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="d-grid gap-2">
+        <div class="color-card bg-primary text-white">bg-primary text-white → Sfondo BLU</div>
+        <div class="color-card bg-success text-white">bg-success text-white → Sfondo VERDE</div>
+        <div class="color-card bg-danger text-white">bg-danger text-white → Sfondo ROSSO</div>
+        <div class="color-card bg-warning text-dark">bg-warning text-dark → Sfondo GIALLO</div>
+        <div class="color-card bg-info text-dark">bg-info text-dark → Sfondo AZZURRO</div>
+        <div class="color-card bg-secondary text-white">bg-secondary text-white → Sfondo GRIGIO</div>
+        <div class="color-card bg-dark text-white">bg-dark text-white → Sfondo SCURO</div>
+        <div class="color-card bg-light text-dark border">bg-light text-dark → Sfondo CHIARO</div>
+      </div>
+
+      <div class="alert alert-warning mt-3">
+        <strong>Attenzione:</strong> Con <code>bg-warning</code> e <code>bg-info</code> usa <code>text-dark</code>
+        (non <code>text-white</code>) perché questi sfondi sono chiari e il testo bianco non è leggibile.
+      </div>
+    </div>
+
+    <!-- SEZIONE COMBINAZIONI -->
+    <div class="sezione">
+      <h2>Combinare più classi insieme</h2>
+      <p>Puoi combinare liberamente le classi di Bootstrap sullo stesso elemento:</p>
+
+      <div class="codice">&lt;!-- Titolo centrato, grassetto, colore primary --&gt;
+&lt;h3 class="text-center fw-bold text-primary"&gt;Titolo&lt;/h3&gt;
+
+&lt;!-- Avviso: sfondo danger, testo bianco, centrato, maiuscolo --&gt;
+&lt;div class="bg-danger text-white text-center text-uppercase p-3"&gt;
+  attenzione!
+&lt;/div&gt;
+
+&lt;!-- Nota: testo muted, piccolo, corsivo --&gt;
+&lt;p class="text-muted fst-italic fw-light"&gt;
+  Ultimo aggiornamento: marzo 2026
+&lt;/p&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="border rounded p-3">
+        <h3 class="text-center fw-bold text-primary">Titolo centrato e grassetto</h3>
+        <div class="bg-danger text-white text-center text-uppercase p-3 rounded mb-3">
+          attenzione!
+        </div>
+        <p class="text-muted fst-italic fw-light mb-0">Ultimo aggiornamento: marzo 2026</p>
+      </div>
+    </div>
+
+    <!-- ESERCIZIO -->
+    <div class="sezione">
+      <h2 class="text-success">Esercizio pratico</h2>
+      <p>Crea un paragrafo con queste caratteristiche:</p>
+      <ul>
+        <li>Testo centrato</li>
+        <li>Tutto maiuscolo</li>
+        <li>Colore danger (rosso)</li>
+        <li>Grassetto</li>
+      </ul>
+      <p>Poi crea un div con:</p>
+      <ul>
+        <li>Sfondo success (verde)</li>
+        <li>Testo bianco</li>
+        <li>Un po' di padding (usa la classe <code>p-3</code>)</li>
+      </ul>
+      <details>
+        <summary class="btn btn-outline-success btn-sm">Mostra soluzione</summary>
+        <div class="codice mt-2">&lt;p class="text-center text-uppercase text-danger fw-bold"&gt;
+  testo di esempio
+&lt;/p&gt;
+
+&lt;div class="bg-success text-white p-3"&gt;
+  Contenuto del div
+&lt;/div&gt;</div>
+        <p class="text-center text-uppercase text-danger fw-bold mt-2 fs-5">testo di esempio</p>
+        <div class="bg-success text-white p-3 rounded">Contenuto del div</div>
+      </details>
+    </div>
+
+    <div class="text-center mb-5">
+      <a href="01_container.html" class="btn btn-secondary me-2">← Container</a>
+      <a href="index.html" class="btn btn-primary me-2">Indice</a>
+      <a href="03_bottoni.html" class="btn btn-danger">Bottoni →</a>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

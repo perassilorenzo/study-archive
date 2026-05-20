@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Layout Moderni e Pseudo-classi Avanzate</title>
+    <link rel="stylesheet" href="lezione2_completo.css">
+</head>
+<body>
+    <h1>Lezione 2 - Layout Moderni e Pseudo-classi Avanzate</h1>
+    <p style="text-align: center; margin-top: -20px; margin-bottom: 30px; font-size: 0.9em; opacity: 0.8;">Prof.ssa Manuela Marchisio</p>
+
+    <!-- ========================================
+         PARTE 1: LAYOUT MODERNI
+    ========================================= -->
+    
+    <!-- FLEXBOX -->
+    <section>
+        <h2>1. Flexbox - Layout Orizzontale</h2>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h2>Flexbox - Allineamento Centrato</h2>
+        <div class="flex-center">
+            <div class="box">Centrato Perfettamente!</div>
+        </div>
+    </section>
+
+    <!-- GRID -->
+    <section>
+        <h2>2. CSS Grid - Griglia 3x3</h2>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+
+        <h2>Grid - Layout Complesso</h2>
+        <div class="grid-layout">
+            <header class="header">Header</header>
+            <aside class="sidebar">Sidebar</aside>
+            <main class="content">Content</main>
+            <footer class="footer">Footer</footer>
+        </div>
+    </section>
+
+    <!-- POSITION -->
+    <section>
+        <h2>3. Position</h2>
+
+        <h3>Position: Relative</h3>
+        <div class="box-relative">Position: relative (spostato di 20px a destra e 10px in basso)</div>
+
+        <h3>Position: Absolute</h3>
+        <div class="parent-relative">
+            Sono il parent (relative)
+            <div class="box-absolute">Absolute (angolo alto-destra)</div>
+        </div>
+
+        <h3>Position: Fixed</h3>
+        <div class="box-fixed">💬 Fixed (sempre visibile)</div>
+
+        <h3>Position: Sticky</h3>
+        <p><em>Lo sticky è subito dopo questa sezione. Scrollate per vederlo "incollarsi" in alto!</em></p>
+    </section>
+
+    <!-- Sticky DEVE essere fuori dalla section per funzionare correttamente -->
+    <div class="box-sticky">📌 Sticky - Scrollate per vedermi rimanere in alto!</div>
+
+    <!-- TRANSFORM -->
+    <section>
+        <h2>4. Transform</h2>
+        <p><em>Passate il mouse sui box per vedere le trasformazioni!</em></p>
+        <div class="transform-container">
+            <div class="transform-box translate">Translate<br>(sposta)</div>
+            <div class="transform-box rotate">Rotate<br>(ruota)</div>
+            <div class="transform-box scale">Scale<br>(ingrandisce)</div>
+            <div class="transform-box skew">Skew<br>(inclina)</div>
+            <div class="transform-box combined">Combined<br>(combinato)</div>
+        </div>
+    </section>
+
+    <!-- TRANSITION -->
+    <section>
+        <h2>5. Transition - Animazioni Fluide</h2>
+        <p><em>Passate il mouse per vedere le animazioni!</em></p>
+        <div class="transition-examples">
+            <div class="transition-box box1">Transition<br>Veloce<br>(0.2s)</div>
+            <div class="transition-box box2">Transition<br>Media<br>(0.5s)</div>
+            <div class="transition-box box3">Transition<br>Lenta<br>(1s)</div>
+            <div class="transition-box box4">Transition<br>con Delay<br>(0.5s delay)</div>
+            <div class="transition-box box5">Transition<br>Multipla<br>(tutto!)</div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PARTE 2: PSEUDO-CLASSI AVANZATE
+    ========================================= -->
+    
+    <!-- FIRST-CHILD e LAST-CHILD -->
+    <section>
+        <h2>6. :first-child e :last-child</h2>
+        <h3>Lista della Spesa</h3>
+        <ul>
+            <li>Pane</li>
+            <li>Latte</li>
+            <li>Uova</li>
+            <li>Pasta</li>
+            <li>Pomodori</li>
+            <li>Frutta</li>
+        </ul>
+    </section>
+
+    <!-- NTH-CHILD -->
+    <section>
+        <h2>7. :nth-child() - Pattern con Formule</h2>
+        <h3>Griglia con pattern 3n</h3>
+        <div class="griglia">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+            <div class="box">10</div>
+        </div>
+    </section>
+
+    <!-- NTH-OF-TYPE -->
+    <section>
+        <h2>8. :nth-of-type() - Differenza con :nth-child</h2>
+        <div class="container">
+            <p>Paragrafo 1</p>
+            <p>Paragrafo 2</p>
+            <div class="div-test">Questo è un DIV (non un paragrafo)</div>
+            <p>Paragrafo 3</p>
+            <p>Paragrafo 4</p>
+        </div>
+    </section>
+
+    <!-- NOT -->
+    <section>
+        <h2>9. :not() - Pseudo-classe di Negazione</h2>
+        <h3>Bottoni</h3>
+        <button>Bottone 1</button>
+        <button class="speciale">Bottone Speciale</button>
+        <button>Bottone 3</button>
+        <button>Bottone 4</button>
+    </section>
+
+    <!-- DISABLED, ENABLED, CHECKED -->
+    <section>
+        <h2>10. :disabled, :enabled, :checked</h2>
+        <h3>Form Interattivo</h3>
+        <form>
+            <div>
+                <label>Nome:</label>
+                <input type="text" placeholder="Scrivi qui" id="nome">
+            </div>
+            
+            <div>
+                <label>Cognome (disabilitato):</label>
+                <input type="text" value="Non modificabile" disabled>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="accetto">
+                <label for="accetto">Accetto i termini e condizioni</label>
+            </div>
+            
+            <button type="submit" id="submitBtn" disabled>Invia</button>
+        </form>
+    </section>
+
+    <!-- EMPTY -->
+    <section>
+        <h2>11. :empty - Elementi Vuoti</h2>
+        <div class="messaggio">Questo div ha contenuto</div>
+        <div class="messaggio"></div>
+        <div class="messaggio">Anche questo ha contenuto</div>
+        <div class="messaggio"></div>
+    </section>
+
+    <!-- ONLY-CHILD e ONLY-OF-TYPE -->
+    <section>
+        <h2>12. :only-child e :only-of-type</h2>
+        
+        <div class="parent">
+            <p>Sono l'unico figlio</p>
+        </div>
+
+        <div class="parent">
+            <p>Ho un fratello</p>
+            <p>Sono il secondo</p>
+        </div>
+
+        <div class="parent">
+            <p>Sono l'unico P</p>
+            <span>Ma c'è anche uno span</span>
+        </div>
+    </section>
+
+    <!-- COMBINARE PSEUDO-CLASSI -->
+    <section>
+        <h2>13. Combinare Pseudo-classi - Menu di Navigazione</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#prodotti">Prodotti</a>
+            <a href="#servizi">Servizi</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+    </section>
+</body>
+</html>

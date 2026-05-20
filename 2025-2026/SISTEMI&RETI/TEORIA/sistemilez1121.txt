@@ -1,0 +1,14 @@
+dram --> ram
+d --> dynamic
+
+ce una riga e una colonna dove ce un matrice e ce il selettore di riga e selettore di colonna collegati da un transistor, con un condensatore che da la carica Q[A] può essere carico o scarico 1 0
+il transistor serve per attivare una cella
+possiamo fare read o write 
+refresh continua
+
+sram --> cache
+s --> static 
+input --> not --> and collegate--> select --> output
+flip flop unita di memoria più piccola con un bit 
+read
+write

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Briscola</title>
+</head>
+<body>
+
+    <!-- parte iniziale con i punti -->
+
+    <div class="point">
+
+        <!-- titolo -->
+
+        <div class="briscola">
+            <h1>Briscola - Io vs Computer</h1>
+            <p>Turno: -</p>
+        </div>
+        
+        <br>
+        
+        <!-- computer vs tu -->
+
+        <div class="versus">
+            
+            <div class="computer">
+                <h3>Computer</h3>
+                <p>Punti: 0</p>
+            </div>
+            
+            <div class="tu">
+                <h3>Tu</h3>
+                <p>Punti: 0</p>
+            </div>
+        
+        </div>
+    
+    </div>
+    
+    <br>
+    
+    <!-- sezione del gioco -->
+
+    <div class="game">
+        
+        <!-- sezione carte del compuer -->
+        
+        <div class="mano-computer">
+            <h4>Mano del Computer</h4>
+            <p class="card-computer">?</p>
+            <p class="card-computer">?</p>
+            <p class="card-computer">?</p>
+        </div>
+        
+        <!-- sezione carte giocate sul tavolo -->
+        
+        <div class="tavolo">
+            
+            <!-- mazzo centrale -->
+
+            <div class="briscola-mazzo">
+                <h3>Briscola</h3>
+                <p class="card-briscola">Briscola</p>
+                <p id="mazzo">Mazzo: 40 carte</p>
+            </div>
+
+            <div class="mazzo-briscola">
+                <h3>Tavolo</h3>
+                
+                <!-- carte giocate -->
+
+                <div class="tavolo-briscola">
+                    
+                    <!-- carte giocate dal computer -->
+                    
+                    <div class="computer-tavolo">
+                        <p>Computer</p>
+                        <h4>Vuoto</h4>
+                    </div>
+                   
+                   <!-- carte giocate dal giocatore -->
+                   
+                    <div class="tu-tavolo">
+                        <p>Tu</p>
+                        <h4>Vuoto</h4>
+                    </div>
+                
+                </div>
+                
+                <!-- sezione testo nuova partita -->
+
+                <div class="nuova-partita">
+                    <p>Premi "Nuova partita" per iniziare.</p>
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <!-- le carte del giocatore -->
+        
+        <div class="mano-tu">
+            <h4>La tua mano</h4>
+            <p class="card-tu">Carta</p>
+            <p class="card-tu">Carta</p>
+            <p class="card-tu">Carta</p>
+        
+        </div>
+    
+    </div>
+    
+    <!-- sezione per ricominciare -->
+    
+    <div class="new">
+        <button>Nuova partita</button>
+    
+    </div>
+</body>
+</html>

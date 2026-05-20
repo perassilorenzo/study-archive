@@ -1,0 +1,23 @@
+.circle{
+    height: 80px;
+    width: 80px;
+}
+
+.pedina{
+    height: 70px;
+    width:  70px;
+    position: absolute;
+    margin-left: 337px;
+}
+
+.drop{ animation: downfall 2s linear; }
+
+.game{
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes downfall{
+    from {margin-top: 0px;}
+    to {margin-top: 632px;}
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0110-Multa", "0110-Multa\0110-Multa.csproj", "{45BC61D8-6565-426E-9699-FADDDD79D2E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45BC61D8-6565-426E-9699-FADDDD79D2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BC61D8-6565-426E-9699-FADDDD79D2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BC61D8-6565-426E-9699-FADDDD79D2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BC61D8-6565-426E-9699-FADDDD79D2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8560FD22-5052-45CF-8173-EBE06F746C75}
+	EndGlobalSection
+EndGlobal

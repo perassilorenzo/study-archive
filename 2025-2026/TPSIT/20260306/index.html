@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Esercitazione Parcheggio</title>
+</head>
+<body>
+    
+    <main>
+        
+        <section class="parcheggi">
+            
+            <div class="disabili" id="0">1</div>
+            <div class="disabili" id="1">2</div>
+
+            <div class="mamme" id="2">3</div>
+            <div class="mamme" id="3">4</div>
+
+            <div class="comune" id="4">5</div>
+            <div class="comune" id="5">6</div>
+            <div class="comune" id="6">7</div>
+            <div class="comune" id="7">8</div>
+            <div class="comune" id="8">9</div>
+            <div class="comune" id="9">10</div>
+            <div class="comune" id="10">11</div>
+            <div class="comune" id="11">12</div>
+            <div class="comune" id="12">13</div>
+            <div class="comune" id="13">14</div>
+            <div class="comune" id="14">15</div>
+            <div class="comune" id="15">16</div>
+            <div class="comune" id="16">17</div>
+            <div class="comune" id="17">18</div>
+            <div class="comune" id="18">19</div>
+            <div class="comune" id="19">20</div>
+            
+        </section>
+
+        <section class="form">
+
+            <div class="targa">
+
+                <input type="text" placeholder="Inserisci la targa" id="targa" required autofocus>
+                
+            </div>
+
+            <br><br>
+            
+            <input type="radio" name="radio" id="disabile" value="disabile">Disabile <br><br>
+            <input type="radio" name="radio" id="mamma" value="mamma">Mamma <br><br>
+            <input type="radio" name="radio" id="comune" value="comune">Comune <br><br><br>
+            
+            <div class="button">
+
+                <button onclick="parcheggia()">Parcheggia</button>
+                
+            </div>
+            
+        </section>
+        
+    </main>
+
+
+</body>
+</html>

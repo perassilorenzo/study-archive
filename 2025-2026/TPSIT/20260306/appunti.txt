@@ -1,0 +1,91 @@
+il browser:
+- legge il codice html
+- parsing (lo analizza)
+- costruisce in memoria uno schema ad albero >> DOM
+
+DOCUMENTI OBJECT MODEL
+modello a oggetti, organizzato ad albero
+
+Ogni tag html è un node della'albero (un padre con potenziali figli)
+
+DOCUMENT OBJECT MODEL
+- window: la finestra del browser
+- document: il documento html caricato in quella window
+
+Cosa possiamo fare con il DOM?
+Interagire tramite il documento:
+- cercare elementi (document.getElementById("id");)
+- leggere e modificare il contenuto
+- creare nuovi nodi
+
+SELEZIONE ELEMENTI
+- getElementById("id") - restituisce 1 solo elemento
+- getElementsByName("name") - restituisce array di elementi
+- querySelector(...) - seleziona per selettore CSS (id, classe, tag), restituisce il primo elemento della pagina a cui corrisponde il selettore CSS
+
+    esempio
+    
+    <h3 class = "titolo">Scegli il tuo linguaggio preferito</h3>
+    document.querySelector(".titolo")
+
+- querySelectorAll(...) - come querySelector ma cerca più elementi, restituisce una variabile indicizzabile, quindi un vettore, una lista di nodi statica ovvero in quel momento di esecuzione, non si aggiorna automaticamente
+
+    esempio
+    
+    <input type="radio" name="linguaggio" id="" value="C#">C# <br><br>
+    <input type="radio" name="linguaggio" id="" value="JavaScript">JavaScript<br><br>
+    <input type="radio" name="linguaggio" id="" value="Python">Python <br><br><br>
+
+    document.querySelectorAll("input")
+
+Iterazione sugli elementi:
+- for classico
+- for of
+
+CAMBIARE E MODIFICARE GLI ELEMENTI DEL DOM
+- cambiare il testo
+- cambiare alcuni attributi
+- cambiare gli stili
+
+TESTO
+- textContent - elemento.textContent = "Nuovo testo"
+- innerHTML - elemento.innerHTML = `<b>Nuovo testo</b>`
+
+STILI
+- style
+    
+    esempio
+    <h3 class = "titolo" id = "id">Scegli il tuo linguaggio preferito</h3>
+    let elemento = document.getElementById("id")
+    elemento.style.backgroundColor = "yellow"
+
+CREARE E RIMUOVERE ELEMENTI DAL DOM
+- createElement("tag")          - crea un elemento nuovo (non esiste nella pagina)
+- padre.appendChild(figlio)     - aggiunge il nodo figlio all'elemento padre
+- nodo.remove()                 - rimuove il nodo dal DOM
+
+esempi:
+
+HTML:
+
+    <ul id="lista">
+        <li>Articolo 1</li>
+        <li>Articolo 2</li>
+    </ul>
+
+JS:
+
+    let lista = document.getElementById("lista");
+    let nuovo = document.createElement("li");
+    nuovo.textContent = "Articolo 3";
+    lista.appendChild(nuovo);
+    nuovo.remove();
+
+result:
+
+    <ul id="lista">
+        <li>Articolo 1</li>
+        <li>Articolo 2</li>
+        <li>Articolo 3</li>
+    </ul>
+

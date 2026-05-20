@@ -1,0 +1,33 @@
+<!--
+
+- un pulsante per generare un numero casuale tra 100 e 200
+- un input text per inserire un numero
+- scaricare 5 immagini dal web diverse
+- se il risultato è tra 100 e 120 mostra immagine 1
+- se il risultato è tra 120 e 140 mostra immagine 2
+- se il risultato è tra 140 e 160 mostra immagine 3
+- se il risultato è tra 160 e 180 mostra immagine 4
+- se il risultato è tra 180 e 200 mostra immagine 5
+- in base al numero inserito dall'utente, modificare il paragrafo indicando la differenza tra il numero inserito e il numero casuale
+
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generate()">Genera un numero casuale</button>
+    <input type="text" id="number" name="number">
+    <button onclick="confirm()">Conferma</button>
+    <p class="result"></p>
+    <div id="img"></div>
+    <div class="text"></div>
+
+
+</body>
+</html>

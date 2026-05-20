@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 5 - Font Awesome</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-teal text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">Font Awesome</h1>
+      <p class="mb-0 fs-5">Installazione CDN, icone base, dimensioni, colori e navbar con icone</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- INSTALLAZIONE -->
+    <div class="sezione">
+      <h2>Installazione via CDN</h2>
+      <p>Aggiungi questo link nell'<code>&lt;head&gt;</code> della pagina, <strong>prima</strong> del tuo CSS personalizzato.</p>
+
+      <div class="codice">&lt;link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"&gt;</div>
+
+      <div class="alert alert-success mt-3">
+        <i class="fas fa-circle-check me-1"></i>
+        Se vedi questa icona, Font Awesome è installato correttamente!
+      </div>
+    </div>
+
+    <!-- USO BASE -->
+    <div class="sezione">
+      <h2>Uso base</h2>
+      <p>Le icone si inseriscono con un tag <code>&lt;i&gt;</code> e le classi appropriate. Il tag rimane vuoto.</p>
+
+      <div class="codice">&lt;i class="fas fa-home"&gt;&lt;/i&gt;     &lt;!-- solida --&gt;
+&lt;i class="far fa-heart"&gt;&lt;/i&gt;    &lt;!-- contorno --&gt;
+&lt;i class="fab fa-github"&gt;&lt;/i&gt;   &lt;!-- brand/logo --&gt;</div>
+
+      <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+          <tr><th>Prefisso</th><th>Tipo</th><th>Esempio</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>fas</code></td>
+            <td>Solid (solida, piena)</td>
+            <td><i class="fas fa-star me-2"></i><code>fas fa-star</code></td>
+          </tr>
+          <tr>
+            <td><code>far</code></td>
+            <td>Regular (solo contorno)</td>
+            <td><i class="far fa-star me-2"></i><code>far fa-star</code></td>
+          </tr>
+          <tr>
+            <td><code>fab</code></td>
+            <td>Brands (loghi aziende)</td>
+            <td><i class="fab fa-github me-2"></i><code>fab fa-github</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ICONE COMUNI -->
+    <div class="sezione">
+      <h2>Icone più usate</h2>
+
+      <div class="row g-3 mt-1">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-home fs-2 text-primary mb-2 d-block"></i>
+            <code>fa-home</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-users fs-2 text-success mb-2 d-block"></i>
+            <code>fa-users</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-envelope fs-2 text-danger mb-2 d-block"></i>
+            <code>fa-envelope</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-phone fs-2 text-info mb-2 d-block"></i>
+            <code>fa-phone</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-magnifying-glass fs-2 text-secondary mb-2 d-block"></i>
+            <code>fa-magnifying-glass</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-bars fs-2 mb-2 d-block"></i>
+            <code>fa-bars</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-star fs-2 text-warning mb-2 d-block"></i>
+            <code>fa-star</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-heart fs-2 text-danger mb-2 d-block"></i>
+            <code>fa-heart</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-trash fs-2 text-danger mb-2 d-block"></i>
+            <code>fa-trash</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fas fa-pen fs-2 text-primary mb-2 d-block"></i>
+            <code>fa-pen</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fab fa-github fs-2 mb-2 d-block"></i>
+            <code>fab fa-github</code>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="border rounded p-3 text-center">
+            <i class="fab fa-instagram fs-2 text-danger mb-2 d-block"></i>
+            <code>fab fa-instagram</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIMENSIONI E COLORI -->
+    <div class="sezione">
+      <h2>Dimensioni e colori</h2>
+      <p>Usa le classi Bootstrap <code>fs-*</code> per la dimensione e <code>text-*</code> per il colore.</p>
+
+      <div class="codice">&lt;!-- Dimensioni --&gt;
+&lt;i class="fas fa-star fs-1"&gt;&lt;/i&gt;   &lt;!-- grandissima --&gt;
+&lt;i class="fas fa-star fs-3"&gt;&lt;/i&gt;   &lt;!-- grande --&gt;
+&lt;i class="fas fa-star fs-5"&gt;&lt;/i&gt;   &lt;!-- normale --&gt;
+&lt;i class="fas fa-star fs-6"&gt;&lt;/i&gt;   &lt;!-- piccola --&gt;
+
+&lt;!-- Colori --&gt;
+&lt;i class="fas fa-heart text-danger"&gt;&lt;/i&gt;
+&lt;i class="fas fa-check text-success"&gt;&lt;/i&gt;</div>
+
+      <div class="mt-3">
+        <p><strong>Dimensioni:</strong></p>
+        <div class="d-flex align-items-end gap-4 mb-4">
+          <div class="text-center"><i class="fas fa-star fs-1 text-warning"></i><br><small>fs-1</small></div>
+          <div class="text-center"><i class="fas fa-star fs-2 text-warning"></i><br><small>fs-2</small></div>
+          <div class="text-center"><i class="fas fa-star fs-3 text-warning"></i><br><small>fs-3</small></div>
+          <div class="text-center"><i class="fas fa-star fs-4 text-warning"></i><br><small>fs-4</small></div>
+          <div class="text-center"><i class="fas fa-star fs-5 text-warning"></i><br><small>fs-5</small></div>
+          <div class="text-center"><i class="fas fa-star fs-6 text-warning"></i><br><small>fs-6</small></div>
+        </div>
+        <p><strong>Colori:</strong></p>
+        <div class="d-flex flex-wrap gap-3 fs-3">
+          <i class="fas fa-circle text-primary"></i>
+          <i class="fas fa-circle text-success"></i>
+          <i class="fas fa-circle text-danger"></i>
+          <i class="fas fa-circle text-warning"></i>
+          <i class="fas fa-circle text-info"></i>
+          <i class="fas fa-circle text-secondary"></i>
+          <i class="fas fa-circle text-dark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICONE NEI BOTTONI -->
+    <div class="sezione">
+      <h2>Icone nei bottoni</h2>
+
+      <div class="codice">&lt;button class="btn btn-primary"&gt;
+  &lt;i class="fas fa-save me-1"&gt;&lt;/i&gt; Salva
+&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;
+  &lt;i class="fas fa-trash me-1"&gt;&lt;/i&gt; Elimina
+&lt;/button&gt;</div>
+
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <button class="btn btn-primary"><i class="fas fa-save me-1"></i> Salva</button>
+        <button class="btn btn-success"><i class="fas fa-check me-1"></i> Conferma</button>
+        <button class="btn btn-danger"><i class="fas fa-trash me-1"></i> Elimina</button>
+        <button class="btn btn-warning"><i class="fas fa-pen me-1"></i> Modifica</button>
+        <button class="btn btn-secondary"><i class="fas fa-times me-1"></i> Annulla</button>
+        <button class="btn btn-info text-white"><i class="fas fa-eye me-1"></i> Visualizza</button>
+        <button class="btn btn-outline-dark"><i class="fab fa-github me-1"></i> GitHub</button>
+      </div>
+    </div>
+
+    <!-- NAVBAR CON ICONE -->
+    <div class="sezione">
+      <h2>Navbar completa con icone Font Awesome</h2>
+
+      <div class="codice">&lt;ul class="navbar-nav ms-auto"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;
+      &lt;i class="fas fa-home me-1"&gt;&lt;/i&gt; Home
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;
+      &lt;i class="fas fa-users me-1"&gt;&lt;/i&gt; Chi siamo
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;
+      &lt;i class="fas fa-envelope me-1"&gt;&lt;/i&gt; Contatti
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded mt-3">
+        <div class="container-fluid px-3">
+          <a class="navbar-brand fw-bold" href="#">
+            <i class="fas fa-bolt me-1"></i> MioSito
+          </a>
+          <button class="navbar-toggler" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#demoFA">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="demoFA">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-users me-1"></i> Chi siamo</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                  <i class="fas fa-briefcase me-1"></i> Servizi
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-code me-2"></i>Sviluppo Web</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-palette me-2"></i>Design</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-list me-2"></i>Tutti i servizi</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i> Contatti</a>
+              </li>
+            </ul>
+            <div class="d-flex gap-2 ms-lg-3 mt-2 mt-lg-0">
+              <a href="#" class="btn btn-outline-light btn-sm">
+                <i class="fab fa-github me-1"></i> GitHub
+              </a>
+              <a href="#" class="btn btn-light btn-sm">
+                <i class="fas fa-sign-in-alt me-1"></i> Login
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- SOCIAL ICONS -->
+    <div class="sezione">
+      <h2>Icone social (brand)</h2>
+      <p>Il prefisso <code>fab</code> (Font Awesome Brands) contiene i loghi di social network e aziende tech.</p>
+
+      <div class="codice">&lt;i class="fab fa-github"&gt;&lt;/i&gt;
+&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;
+&lt;i class="fab fa-facebook"&gt;&lt;/i&gt;
+&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;
+&lt;i class="fab fa-linkedin"&gt;&lt;/i&gt;
+&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;</div>
+
+      <div class="d-flex flex-wrap gap-3 mt-3 fs-2">
+        <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-danger"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-primary"><i class="fab fa-facebook"></i></a>
+        <a href="#" style="color:#1DA1F2"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="color:#0077B5"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-danger"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-dark"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn btn-outline-teal mb-5">&larr; Torna all'indice</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

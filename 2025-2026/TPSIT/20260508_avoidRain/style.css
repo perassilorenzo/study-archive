@@ -1,0 +1,91 @@
+/* stili di base */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    text-align: center;
+}
+
+h1{
+    margin: 20px;
+    color: blue;
+    font-size: 40px;
+}
+
+.game{
+    background-color: blue;
+    height: 80vh;
+    width: 100vh;
+    margin: 0 auto;
+    border: solid 2px lightblue;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info{
+    margin-top: 20px;
+}
+
+/* stili oggetti */
+
+.player{
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 1000;
+}
+
+.drop{
+    background-color: lightblue;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    animation: rain 3s ease-in infinite;
+    z-index: 1;
+}
+
+.drop1{ left: 0; top: 0; animation-delay: 0s;}
+.drop2{ left: 20%; top: 15%; animation-delay: 1s;}
+.drop3{ left: 45%; top: 30%; animation-delay: 2s;}
+.drop4{ left: 70%; top: 45%; animation-delay: 3s;}
+.drop5{ left: 95%; top: 60%; animation-delay: 4s;}
+
+.bonus{
+    background-color: yellow;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    animation: rain 5s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* animazione */
+
+@keyframes rain {
+    from {margin-top: 0px;}
+    to {margin-top: 755px;}
+}
+
+/* ============================================================= comandi ============================================================= */
+/* 
+
+overflow: hidden;
+height: 100vh;
+
+
+
+
+*/

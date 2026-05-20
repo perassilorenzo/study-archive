@@ -1,0 +1,110 @@
+p{
+    color: blue;
+    font-size: 18px;
+
+}
+
+.speciale{
+    color: red;
+    font-weight: bold;
+}
+
+#importante{
+    color: purple;
+    background-color: yellow;
+}
+
+/* combinatore figlio diretto */
+section > p{
+    background-color: aqua;
+    padding: 10px;
+}
+
+/* combinatore fratello adiacente */
+h3 + p {
+    font-weight: bold;
+    color: green;
+
+}
+
+/* compilatore fratelli */
+h3 ~ p{
+    font-size: large;
+}
+
+button{
+    background-color: green;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* non ancora stato visitato */
+
+a:link{
+    color: blue;
+}
+
+/* l'ordine è importante, LVHA */
+/* già visitato */
+
+a:visited{
+    color: purple;
+}
+
+/* passaggio sopra */
+
+a:hover{
+    color:orange;
+    font-size: 20px;
+}
+
+/* mentre clicchi */
+
+a:active{
+    color: red;
+}
+
+#box-block{
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: lightblue;
+}
+
+#box-inline{
+    display: inline;
+    padding: 10px;
+    background-color: lightcoral;
+}
+
+.box-px{
+    width: 300px;
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.box-percent{
+    width: 50%;
+    background-color: red;
+    color: white;
+    
+}
+.box-rem{
+
+}

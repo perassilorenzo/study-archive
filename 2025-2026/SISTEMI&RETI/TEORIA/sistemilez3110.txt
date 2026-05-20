@@ -1,0 +1,72 @@
+ram
+struttura a stack --> pila 
+lifo (last in first out)
+fifo (firsti in first out) 
+sono tutti e due strutture
+
+gestione dinamica di un programma che si ricollega a questo discorso
+è di verso da gestione statiche
+
+un linguaggiocon gestione statica quindi lo spazio in ram con un programma che ha bisogno di tot spazio che viene decison a tempo di compilazione
+
+tempo di compilazione --> guarda se ci sono degli errori di sintassi
+tempo di esecuzione --> lo esegue
+
+prima avviene la compilazione 
+poi la esegue 
+malloc e calloc che gestiscono la parte di memoria 
+
+statica 
+pro 
+il programmatore non deve fare nulla perché fa già tutto la macchina
+contro
+c'è più rigidità e perché c'è una dimensione fissa e non si usano magari celle che vengono sprecate è meno flessibile oppure non c'è abbastanza spazio riservato
+
+dinamica
+pro
+è flessibile gestisce in modo ottimale la memoria 
+contro
+- memory leak --> quando allochiamop una parte di memoria ma è sempre allocata lì 
+-dangling pointers --> che è spazio sprecato per i puntatori
+
+abbiamo 3 puntatori nelle cella della ram
+
+eos ->|___|0000h
+end of|___|
+stack |___|
+      |___|
+      |___|
+      |___| <- sp stack pointer 
+      |___| ffffh
+ ss ->|___|
+stack 
+segment
+
+stack overflow --> fenomeno quando si programma ad esempio in c perché è un ?forum? dove si fanno domande e gli utenti rispondono
+
+ma è anche un errore in c che fa ???
+
+1. push
+- inserisce il dato 
+- sp <-- sp - 1 
+
+2. pop
+- dato prelevato e messo in un registro
+- sp <-- sp + 1
+
+esercizio
+
+||
+||
+||
+||
+||
+ sp |4|
+-sp-|7|ffffc
+    |1|ffffd
+    |3|ffffe
+    |5|ffffh
+ ss | |
+
+push (r1) -> r1 = 4 quindi sp passa dal 7 al 4
+pop (r3) -> r3 = 4 quindi sp passa dal 4 e viene rimesso dove era prima

@@ -1,0 +1,14 @@
+<HTML>
+	<HEAD>
+			<meta charset j= "UTF-8">
+			<meta name = "description" content = "La mia prima esercitazione html">
+			<META name = "author" content = "Perassi Lorenzo">
+		<TITLE> 01-html </TITLE>
+	</HEAD>
+	
+	
+	
+	<BODY>
+		Titolo della pagina
+	</BODY>
+</HTML>

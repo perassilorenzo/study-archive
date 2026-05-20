@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="012-Sconto"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-24 11:47:59 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTI0OyIxMTozNTo0MiAiOzI4MTQ="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTI0OyIxMTo0Nzo1OSAiOzI7MjkzNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="prezzo, spesa" type="Real" array="False" size=""/>
+            <output expression="&quot;Inserire il prezzo.&quot;" newline="True"/>
+            <input variable="prezzo"/>
+            <if expression="prezzo &lt; 100">
+                <then>
+                    <assign variable="spesa" expression="prezzo - (prezzo * 0.05)"/>
+                </then>
+                <else>
+                    <if expression="prezzo &gt;= 100  &amp;&amp; prezzo &lt; 300">
+                        <then>
+                            <assign variable="spesa" expression="prezzo - (prezzo * 0.10)"/>
+                        </then>
+                        <else>
+                            <assign variable="spesa" expression="prezzo - (prezzo * 0.20)"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;La spesa da pagare &quot; &amp; spesa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

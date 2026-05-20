@@ -1,0 +1,347 @@
+   /* ============================================
+           LEZIONE 1: FONDAMENTI CSS
+           - Selettori (elemento, classe, ID)
+           - Priorità e Specificità
+           - Block vs Inline Elements
+           - Display: block, inline, inline-block
+           - Pseudoclassi: :hover, :link, :visited, :active
+           - Cursor e List-style
+           ============================================ */
+
+        /* === RESET BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ESEMPIO: Selettore elemento (specificità: 0,0,1) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        /* ESEMPIO: Selettore classe (specificità: 0,1,0) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ESEMPIO: Selettore ID (specificità: 1,0,0) - massima priorità */
+        #main-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+
+        /* Compensazione per header fisso */
+        body {
+            padding-top: 80px;
+        }
+
+        /* === HEADER E NAVIGAZIONE === */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            /* LEZIONE 1: Cursor - cambia aspetto del mouse */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* LEZIONE 1: List-style - rimozione punti elenco */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2px;
+        }
+
+        /* LEZIONE 1: Display inline-block per elementi lista */
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        /* PSEUDOCLASSE :link - link non ancora visitato */
+        nav a:link {
+            color: white;
+        }
+
+        /* PSEUDOCLASSE :visited - link già visitato */
+        nav a:visited {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* PSEUDOCLASSE :hover - mouse sopra elemento */
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        /* PSEUDOCLASSE :active - durante il click */
+        nav a:active {
+            transform: translateY(0);
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+                        url('../img/monviso-via-normale.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* === BUTTONS === */
+        .btn {
+            /* LEZIONE 1: Display inline-block permette width/height su elementi inline */
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.5);
+            border-color: white;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.5);
+        }
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------- */
+        
+/* esercizio code dal video */
+
+/* pagina delle valli, contenitore grande che contiene tutto */
+
+.valli{
+    margin: 40px;
+}
+
+/* stili del titolo della sezione valli */
+
+.valli h2{
+    font-size: xx-large;
+    text-align: center;
+}
+
+/* stili della linea multicolor */
+
+.linea{
+    width: auto ;
+    height: 4px;
+    background: linear-gradient(to left, blue, yellow, green, red);
+    border-radius: 2px;
+    margin: 10px 45% ;
+
+}
+
+/* stili dei paragrafi della sezione valli */
+
+.valli p{
+    color: gray;
+    text-align: center;
+}
+
+/* griglia delle card la quale le contiene tutte e 3 */
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 80px 10%;
+
+}
+
+/* card singole, stili in comune con tutte e tre le card */
+
+.card{
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+#red{
+    border: solid red;
+}
+
+#blue{
+    border: solid blue;
+}
+
+/* stili delle immagini all'interno delle card */
+
+.card img{
+    height: auto;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* stili dei paragrafi all'interno delle card */
+
+.card p{
+    text-align: left;
+    margin: 10px;
+    color: black;
+}
+
+/* stili dei bottoni all'interno delle card */
+
+.card button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    border: solid transparent;
+    background-color: #1e3c72;
+    color: white;
+    background: linear-gradient(to right, blue, rgb(131, 21, 203));
+
+}
+
+/* stile del footer intero */
+
+footer{
+    text-align: center;
+    background-color: #1e3c72;
+    color: white;
+    text-decoration: none;
+    padding: 0 15% 5%;
+}
+
+/* stile per la griglia dei quattro pezzi */
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 80px 10% 50px;
+}
+
+/* stili per i singoli pezzi */
+
+.footer{
+    text-align: left;
+}
+
+/* stili per la parte finale del footer quindi copy */
+
+.copy{
+    color: grey;
+    margin-top: 20px;
+    font-size: smaller;
+}
+
+/* stili per gli h3 della 'card' */
+
+.footer h3{
+    color: aqua;
+}
+
+/* stili per i link delle 'card' */
+
+.footer a{
+    color: white;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.footer p{
+    font-size: smaller;
+}
+
+/* stili per le linee sotto i titoli nelle 'card' */
+
+.line{
+    width: 40px;
+    height: 2%;
+    background: linear-gradient(to right, blue,  red);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+/* stile per le immagini in grid */
+
+.grid-cuneese{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.grid-cuneese img{
+    height: 25px;
+    width: 25px;
+    border: solid transparent;
+    border-radius: 50px;
+    background-color: grey;
+}

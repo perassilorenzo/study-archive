@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="010-Data"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-24 10:07:00 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJDSElNRURFLTE4OzIwMjUtMDktMjM7IjA4OjA5OjI3ICI7MzE1NQ=="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJDSElNRURFLTE4OzIwMjUtMDktMjM7IjA4OjQ0OjMwICI7MTszMjU2"/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTI0OyIxMDowNzowMCAiOzE7MjkxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="giorno, mese, anno, count" type="Integer" array="False" size=""/>
+            <do expression="count = 1">
+                <do expression="giorno &lt;= 0 or mese &lt;= 0 or mese &gt; 12">
+                    <assign variable="count" expression="0"/>
+                    <output expression="&quot;Inserire il giorno&quot;" newline="True"/>
+                    <input variable="giorno"/>
+                    <output expression="&quot;Inserire il mese&quot;" newline="True"/>
+                    <input variable="mese"/>
+                    <output expression="&quot;Inserire l'anno&quot;" newline="True"/>
+                    <input variable="anno"/>
+                </do>
+                <if expression="mese == 4 || mese == 6 || mese == 9 || mese == 11">
+                    <then>
+                        <if expression="giorno &lt;= 30">
+                            <then>
+                                <output expression="&quot;La data &#232; corretta&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;La data &#232; sbagliata&quot;" newline="True"/>
+                                <assign variable="count" expression="1"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="mese = 2">
+                            <then>
+                                <if expression="giorno &lt;= 28">
+                                    <then>
+                                        <output expression="&quot;La data &#232; corretta&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;La data &#232; sbagliata&quot;" newline="True"/>
+                                        <assign variable="count" expression="1"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="giorno &lt;= 31">
+                                    <then>
+                                        <output expression="&quot;La data &#232; corretta&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;La data &#232; sbagliata&quot;" newline="True"/>
+                                        <assign variable="count" expression="1"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

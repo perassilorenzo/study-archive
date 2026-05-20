@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="011-Multa"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-27 05:54:36 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTI0OyIxMTowMjowMiAiOzI4MDQ="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTI0OyIxMTowOTo1MiAiOzE7MjkyNA=="/>
+        <attribute name="edited" value="TG9yZW56bztERVNLVE9QLThMNjEwSUw7MjAyNS0wOS0yNzsiMDU6NTQ6MzYgIjsxOzMwNzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="multa, spesa" type="Real" array="False" size=""/>
+            <declare name="giorni" type="Integer" array="False" size=""/>
+            <do expression="multa &lt; 0 &amp;&amp; giorni &lt; 0">
+                <output expression="&quot;Inserire l'ammontare della multa (maggiore di 0).&quot;" newline="True"/>
+                <input variable="multa"/>
+                <output expression="&quot;Inserire il numero di giorni in cui &#232; stata pagata la multa (maggiore di 0).&quot;" newline="True"/>
+                <input variable="giorni"/>
+            </do>
+            <if expression="giorni &gt;= 7">
+                <then>
+                    <if expression="giorni &gt;= 14">
+                        <then>
+                            <assign variable="spesa" expression="multa + (multa/30)"/>
+                        </then>
+                        <else>
+                            <assign variable="spesa" expression="multa + (multa/10)"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="spesa" expression="multa"/>
+                </else>
+            </if>
+            <output expression="&quot;La spesa da pagare &#232; di &quot; &amp; spesa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

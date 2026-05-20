@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "esercitazioni",
+			"path": "../../../Progetti Personali/codice/esercitazioni"
+		},
+		{
+			"name": "Corso_Python_18",
+			"path": "../../../Progetti Personali/codice/Corso_Python_18"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "F:"
+	}
+}

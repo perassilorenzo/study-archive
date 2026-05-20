@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="022-Binario"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-08 11:22:36 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTEwLTA4OyIxMToxMDo0NyAiOzI4MDY="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTEwLTA4OyIxMToyMjozNiAiOzE7MjkxNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, resto" type="Integer" array="False" size=""/>
+            <declare name="stringa" type="String" array="False" size=""/>
+            <assign variable="stringa" expression="&quot;&quot;"/>
+            <assign variable="resto" expression="0"/>
+            <do expression="n &lt; 0">
+                <input variable="n"/>
+            </do>
+            <while expression="n &gt; 0">
+                <assign variable="resto" expression="n % 2"/>
+                <assign variable="n" expression="(n - resto)/2"/>
+                <assign variable="stringa" expression="resto &amp; stringa"/>
+            </while>
+            <output expression="stringa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

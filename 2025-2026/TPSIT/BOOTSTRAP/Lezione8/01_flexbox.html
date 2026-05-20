@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 8 - Flexbox Utilities</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+
+<header class="py-3 mb-4" style="background: linear-gradient(135deg, #0dcaf0, #0aa2c0);">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="text-white mb-0">Flexbox Utilities</h1>
+        <a href="index.html" class="btn btn-light btn-sm">← Indice</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- d-flex intro -->
+    <div class="sezione">
+        <h2>Cos'è d-flex</h2>
+        <p>
+            <code>d-flex</code> attiva il layout <strong>Flexbox</strong> su un elemento.
+            I figli diretti di quell'elemento diventano "flex item" e possono essere posizionati
+            orizzontalmente o verticalmente con classi dedicate.
+        </p>
+        <p>Senza <code>d-flex</code> le classi <code>justify-content-*</code> e <code>align-items-*</code> non hanno effetto.</p>
+        <pre class="codice">&lt;!-- Senza d-flex: i div si impilano normalmente --&gt;
+&lt;div&gt;
+    &lt;div&gt;A&lt;/div&gt;   &lt;div&gt;B&lt;/div&gt;   &lt;div&gt;C&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Con d-flex: i div si affiancano --&gt;
+&lt;div class="d-flex"&gt;
+    &lt;div&gt;A&lt;/div&gt;   &lt;div&gt;B&lt;/div&gt;   &lt;div&gt;C&lt;/div&gt;
+&lt;/div&gt;</pre>
+        <div class="row g-3 mt-2">
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">Senza d-flex</p>
+                <div class="demo-container">
+                    <div class="demo-box mb-2">A</div>
+                    <div class="demo-box mb-2">B</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">Con d-flex</p>
+                <div class="demo-container d-flex">
+                    <div class="demo-box me-2">A</div>
+                    <div class="demo-box me-2">B</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- justify-content -->
+    <div class="sezione">
+        <h2>justify-content — allineamento orizzontale</h2>
+        <p>Controlla come gli elementi flex sono distribuiti sull'<strong>asse orizzontale</strong> (asse principale).</p>
+        <pre class="codice">d-flex justify-content-start      → a sinistra (default)
+d-flex justify-content-center     → al centro
+d-flex justify-content-end        → a destra
+d-flex justify-content-between    → spazio tra gli elementi
+d-flex justify-content-around     → spazio attorno a ciascun elemento
+d-flex justify-content-evenly     → spazio uguale tra tutti</pre>
+
+        <div class="mt-3">
+            <p class="fw-bold small text-muted mb-1">justify-content-start (default)</p>
+            <div class="demo-container d-flex justify-content-start mb-3">
+                <div class="demo-box me-2">A</div>
+                <div class="demo-box me-2">B</div>
+                <div class="demo-box">C</div>
+            </div>
+
+            <p class="fw-bold small text-muted mb-1">justify-content-center</p>
+            <div class="demo-container d-flex justify-content-center mb-3">
+                <div class="demo-box me-2">A</div>
+                <div class="demo-box me-2">B</div>
+                <div class="demo-box">C</div>
+            </div>
+
+            <p class="fw-bold small text-muted mb-1">justify-content-end</p>
+            <div class="demo-container d-flex justify-content-end mb-3">
+                <div class="demo-box me-2">A</div>
+                <div class="demo-box me-2">B</div>
+                <div class="demo-box">C</div>
+            </div>
+
+            <p class="fw-bold small text-muted mb-1">justify-content-between</p>
+            <div class="demo-container d-flex justify-content-between mb-3">
+                <div class="demo-box">A</div>
+                <div class="demo-box">B</div>
+                <div class="demo-box">C</div>
+            </div>
+
+            <p class="fw-bold small text-muted mb-1">justify-content-around</p>
+            <div class="demo-container d-flex justify-content-around mb-3">
+                <div class="demo-box">A</div>
+                <div class="demo-box">B</div>
+                <div class="demo-box">C</div>
+            </div>
+
+            <p class="fw-bold small text-muted mb-1">justify-content-evenly</p>
+            <div class="demo-container d-flex justify-content-evenly">
+                <div class="demo-box">A</div>
+                <div class="demo-box">B</div>
+                <div class="demo-box">C</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- align-items -->
+    <div class="sezione">
+        <h2>align-items — allineamento verticale</h2>
+        <p>Controlla come gli elementi flex sono allineati sull'<strong>asse verticale</strong> (asse secondario).</p>
+        <pre class="codice">d-flex align-items-start     → in cima
+d-flex align-items-center   → al centro verticale
+d-flex align-items-end      → in fondo
+d-flex align-items-stretch  → si allungano per riempire il container (default)</pre>
+
+        <div class="row g-3 mt-2">
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">align-items-start</p>
+                <div class="demo-container d-flex align-items-start" style="height:120px;">
+                    <div class="demo-box me-2">A</div>
+                    <div class="demo-box-alt me-2" style="height:60px;">B alto</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">align-items-center</p>
+                <div class="demo-container d-flex align-items-center" style="height:120px;">
+                    <div class="demo-box me-2">A</div>
+                    <div class="demo-box-alt me-2" style="height:60px;">B alto</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">align-items-end</p>
+                <div class="demo-container d-flex align-items-end" style="height:120px;">
+                    <div class="demo-box me-2">A</div>
+                    <div class="demo-box-alt me-2" style="height:60px;">B alto</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">align-items-stretch</p>
+                <div class="demo-container d-flex align-items-stretch" style="height:120px;">
+                    <div class="demo-box me-2 d-flex align-items-center">A</div>
+                    <div class="demo-box-alt me-2 d-flex align-items-center">B</div>
+                    <div class="demo-box d-flex align-items-center">C</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-info mt-3">
+            <strong>Caso d'uso frequente:</strong> per centrare un elemento sia verticalmente che orizzontalmente usa
+            <code>d-flex justify-content-center align-items-center</code> sul contenitore.
+        </div>
+    </div>
+
+    <!-- Direzione -->
+    <div class="sezione">
+        <h2>flex-direction — direzione degli elementi</h2>
+        <p>Di default flexbox dispone gli elementi in riga (<code>flex-row</code>). Con <code>flex-column</code> li metti in pila verticale.</p>
+        <pre class="codice">d-flex flex-row            → orizzontale (default) → A B C
+d-flex flex-row-reverse    → orizzontale inverso   → C B A
+d-flex flex-column         → verticale             ↓ A B C
+d-flex flex-column-reverse → verticale inverso     ↓ C B A</pre>
+
+        <div class="row g-3 mt-2">
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">flex-row (default)</p>
+                <div class="demo-container d-flex flex-row gap-2">
+                    <div class="demo-box">A</div>
+                    <div class="demo-box">B</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">flex-row-reverse</p>
+                <div class="demo-container d-flex flex-row-reverse gap-2">
+                    <div class="demo-box">A</div>
+                    <div class="demo-box">B</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">flex-column</p>
+                <div class="demo-container d-flex flex-column gap-2">
+                    <div class="demo-box">A</div>
+                    <div class="demo-box">B</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">flex-column-reverse</p>
+                <div class="demo-container d-flex flex-column-reverse gap-2">
+                    <div class="demo-box">A</div>
+                    <div class="demo-box">B</div>
+                    <div class="demo-box">C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- flex-wrap -->
+    <div class="sezione">
+        <h2>flex-wrap — a capo automatico</h2>
+        <p>Di default gli elementi flex non vanno mai a capo. Con <code>flex-wrap</code> possono farlo quando manca spazio.</p>
+        <pre class="codice">d-flex flex-nowrap   → non va a capo (default), può sforare il bordo
+d-flex flex-wrap     → va a capo automaticamente se non c'è spazio</pre>
+
+        <div class="row g-3 mt-2">
+            <div class="col-12">
+                <p class="fw-bold small text-muted mb-1">flex-nowrap — gli elementi escono dal bordo</p>
+                <div class="demo-container d-flex flex-nowrap gap-2 overflow-auto">
+                    <div class="demo-box" style="min-width:120px;">Elemento 1</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 2</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 3</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 4</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 5</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 6</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <p class="fw-bold small text-muted mb-1">flex-wrap — vanno a capo ordinatamente</p>
+                <div class="demo-container d-flex flex-wrap gap-2">
+                    <div class="demo-box" style="min-width:120px;">Elemento 1</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 2</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 3</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 4</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 5</div>
+                    <div class="demo-box" style="min-width:120px;">Elemento 6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- align-self e gap -->
+    <div class="sezione">
+        <h2>align-self e gap</h2>
+
+        <h5>align-self</h5>
+        <p>Sovrascrive <code>align-items</code> per un <strong>singolo elemento</strong> figlio.</p>
+        <pre class="codice">&lt;div class="d-flex align-items-center" style="height:120px;"&gt;
+    &lt;div class="align-self-start"&gt;In alto&lt;/div&gt;
+    &lt;div&gt;Al centro&lt;/div&gt;           &lt;!-- eredita align-items-center --&gt;
+    &lt;div class="align-self-end"&gt;In basso&lt;/div&gt;
+&lt;/div&gt;</pre>
+        <div class="demo-container d-flex align-items-center gap-3 mt-2" style="height:120px;">
+            <div class="demo-box align-self-start">In alto</div>
+            <div class="demo-box">Al centro</div>
+            <div class="demo-box align-self-end">In basso</div>
+        </div>
+
+        <h5 class="mt-4">gap</h5>
+        <p>Aggiunge spazio tra gli elementi flex (equivale a <code>gap</code> in CSS). Sostituisce l'uso di <code>me-*</code> su ogni figlio.</p>
+        <pre class="codice">&lt;div class="d-flex gap-1"&gt;...&lt;/div&gt;  &lt;!-- 4px --&gt;
+&lt;div class="d-flex gap-2"&gt;...&lt;/div&gt;  &lt;!-- 8px --&gt;
+&lt;div class="d-flex gap-3"&gt;...&lt;/div&gt;  &lt;!-- 16px --&gt;
+&lt;div class="d-flex gap-4"&gt;...&lt;/div&gt;  &lt;!-- 24px --&gt;
+&lt;div class="d-flex gap-5"&gt;...&lt;/div&gt;  &lt;!-- 48px --&gt;</pre>
+        <div class="row g-3 mt-2">
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">gap-1 (4px)</p>
+                <div class="demo-container d-flex gap-1">
+                    <div class="demo-box">1</div><div class="demo-box">2</div><div class="demo-box">3</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="fw-bold small text-muted mb-1">gap-4 (24px)</p>
+                <div class="demo-container d-flex gap-4">
+                    <div class="demo-box">1</div><div class="demo-box">2</div><div class="demo-box">3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Esempio pratico -->
+    <div class="sezione">
+        <h2>Esempio pratico — Card con flexbox</h2>
+        <p>Una card con icona, testo e pulsante allineati usando solo flexbox utilities.</p>
+        <pre class="codice">&lt;div class="d-flex align-items-center gap-3 p-3 border rounded"&gt;
+    &lt;div class="bg-info text-dark rounded-circle d-flex justify-content-center
+                align-items-center" style="width:50px; height:50px; font-size:1.5rem;"&gt;
+        📦
+    &lt;/div&gt;
+    &lt;div class="flex-grow-1"&gt;
+        &lt;h6 class="mb-0"&gt;Prodotto in consegna&lt;/h6&gt;
+        &lt;small class="text-muted"&gt;Arrivo previsto: domani&lt;/small&gt;
+    &lt;/div&gt;
+    &lt;button class="btn btn-info btn-sm"&gt;Traccia&lt;/button&gt;
+&lt;/div&gt;</pre>
+
+        <div class="d-flex align-items-center gap-3 p-3 border rounded mt-3">
+            <div class="bg-info text-dark rounded-circle d-flex justify-content-center align-items-center"
+                 style="width:50px; height:50px; font-size:1.5rem; flex-shrink:0;">
+                📦
+            </div>
+            <div class="flex-grow-1">
+                <h6 class="mb-0">Prodotto in consegna</h6>
+                <small class="text-muted">Arrivo previsto: domani</small>
+            </div>
+            <button class="btn btn-info btn-sm">Traccia</button>
+        </div>
+
+        <div class="alert alert-info mt-3">
+            <code>flex-grow-1</code> fa sì che il div del testo si allarghi per occupare tutto lo spazio disponibile,
+            spingendo il bottone a destra.
+        </div>
+    </div>
+
+    <div class="text-center mb-4">
+        <a href="index.html" class="btn btn-outline-secondary me-2">← Indice</a>
+        <a href="02_sizing_display.html" class="btn btn-info text-dark">Sizing &amp; Display →</a>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="info10_092"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-10 07:06:52 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTEwOyIxMTozMjowMSAiOzI4MDE="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0xMzsyMDI1LTA5LTEwOyIxMTo1Mjo1NiAiOzE7MjkyMQ=="/>
+        <attribute name="edited" value="cGVyYXM7REVTS1RPUC02VFQySVEwOzIwMjUtMDktMTA7IjA3OjA2OjUyICI7MjsyODk5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c, x1, x2, delta" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <do expression="a=0"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <assign variable="delta" expression="b^2 - 4*a*c"/>
+            <if expression="delta &gt;= 0">
+                <then>
+                    <assign variable="x1" expression="-b + sqrt(delta)"/>
+                    <assign variable="x2" expression="-b - sqrt(delta)"/>
+                    <if expression="x1 = x2">
+                        <then>
+                            <output expression="&quot;l'equazione ha una soluzione reale che &#232; &quot; &amp; x1" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;l'equazione ha due soluzioni reali che sono &quot; &amp; x1 &amp;&quot; e &quot; &amp; x2" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;l'equazione non ha soluzioni reali&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

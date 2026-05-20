@@ -1,0 +1,19 @@
+memorie 
+i/o
+disco
+
+memorie:
+permanenti
+temporanee (volatili):
+ram cache
+
+memoria = capacità la misuriramo quante info ci stanno nella memoria (byte) quanti ce ne possono essere memorizzati
+
+random access memory
+struttura a stack
+dati e info ogni cella ha un suo indirizzo
+
+accesso direto
+accesso sequenzalie 
+
+referenziale

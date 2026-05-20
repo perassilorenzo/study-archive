@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="04-Compleanno"/>
+        <attribute name="authors" value="l.perassi.4103"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-24 04:57:13 "/>
+        <attribute name="created" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0yNDsyMDI1LTA5LTE3OyIxMTo1MjoxMCAiOzI4MTI="/>
+        <attribute name="edited" value="bC5wZXJhc3NpLjQxMDM7QVJWUi0yNDsyMDI1LTA5LTE3OyIxMTo1NDo1MCAiOzI7MjkyNw=="/>
+        <attribute name="edited" value="QXN1cztERVNLVE9QLTZUVDJJUTA7MjAyNS0wOS0yNDsiMDQ6NTc6MTMgIjsxOzI3NzY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="budget, costoPizza" type="Real" array="False" size=""/>
+            <declare name="amici" type="Integer" array="False" size=""/>
+            <do expression="budget &lt; amici * costoPizza">
+                <do expression="budget &lt; 0 &amp;&amp; amici &lt; 0 &amp;&amp; costoPizza &lt; 0">
+                    <output expression="&quot;Inserire il budget iniziale (maggiore di 0).&quot;" newline="True"/>
+                    <input variable="budget"/>
+                    <output expression="&quot;Inserire il numero di amici (maggiore di 0).&quot;" newline="True"/>
+                    <input variable="amici"/>
+                    <output expression="&quot;Inserire il costo di una pizza (maggiore di 0).&quot;" newline="True"/>
+                    <input variable="costoPizza"/>
+                </do>
+            </do>
+            <output expression="&quot;Il resto dalle pizze equivale a &quot; &amp; budget - (amici * costoPizza)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

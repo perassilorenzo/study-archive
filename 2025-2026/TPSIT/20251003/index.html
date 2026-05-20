@@ -1,0 +1,55 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    <div id="inizio"></div>  
+        
+   su wiki troviamo dei link blu che aprono altre pagine web
+    in generale per creare un tag link dobbiamo
+    link azione di apertura di una pagina interna o esterna attraveso il click per crealo usiamo il tag <a> con un attributo indicante la pagina su cui andare di destinazione --> <a href="indirizzo web https...">la frase che andrà sulla pagine sotto la quale ci sarà il link</a> con gli stili si potrà cambiare il comportamento del mouse
+    hyper link reference
+    riferimento assoluto del link percorso assoluto pat assoluto perché sto indicando tutto l'inteero url con tutta la radice
+    al posto del link possiamo anche avere un percorso relativo perché i link partono dalla posizione nel caso dell https specifico percorso assoluto lui va direttamente in quella posiozione se metto un .html non c'è un indirizzo di domninio non ho una chiamata https quel file lo cerca a partire in quella posizione cercando solo in quella cartella o posizione
+    nel primo non c'è e nel secondo sì perché possono essere scritti come sono di destizionazione, wiki non è html diretta essa punta a una cartella
+    perché di fa questo? perché quando abbiamo un sito e abbiamo una struttura con un index con diverse pagine, con immagini 
+    ad esempio
+    
+    -sito web 
+    index.html 
+    images
+    img1.jpg
+    img4.png
+    ciao.gif
+    
+    servizi
+    serv1.html
+    serv2.html
+    serv3.html
+    
+    crea un link a ciao.gif
+    crea un link a serv2.html
+    
+    <a href = "images/ciao.gif" >Immagine</a>
+    <a href = "servizi/serv2" >Servizio numero 2</a>
+    
+    una parent folder su scrive ../ ovvero includi una cartella che si trova ad un livello superiore a cui mi trovo e si possono fare più cartelle figlio
+    h ref attributo e la pagina viene aperta ???
+    e se voglio aprire un sito in un altra pagina? in una scheda? 
+    possiamo attivare un altro attributo chiamato target 
+    <a href = "" target = "_blank" rel = "noopener noreferrer"></a>
+    balnk --> nuova pagina nuova scheda
+    self 
+    rel = "noopener noreferrer --> si può trovare in progetti word con un link ad un sito esterno c'è un intrecci tra le varie pagine, molti inseriscono questo quindi nonvengono riferiti ci sono metadati alla pagina precedente si può mettere oppure no
+    
+    <a href = "https://it.wikipedia.org/wiki/Pila_di_Volta#Storia" target="_blank">prova 
+        storia</a>
+        
+    <a href="#inizio"> Torna su </a>
+    <a href="#fine"> Torna giù </a>
+        
+    dobbiamo usare gli id attributo da inserire su qualsiasi tag quindi andiamo all'inizio del body e scriviamo un <div id="fine">qui è dove viene considerato la "fine"</div>
+        
+    </body>
+        </html>

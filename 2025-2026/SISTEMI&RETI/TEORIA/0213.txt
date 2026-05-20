@@ -1,0 +1,20 @@
+sistemi 13/02
+
+1. formattazione basso livello (fisica)
+2. partizionamento
+3. formattaz. alto livello (logica)	file system
+					--> file	--> nome.estenzione
+					--> direstory
+traccia
+|	|	|	|	|	
+file
+record blocchi (= settori)
+astrazione
+
+codice sorgente .c	--> file oggetto .obj	--> file eseguibile .exe .out
+
+metodi di accesso ad un file
+
+1. accesso sequenziale
+
+2. accesso diretto

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap — Bottoni</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stile.css" rel="stylesheet">
+  <style>
+    /* Override colore titoli sezione per la pagina Bottoni */
+    .sezione h2 { border-color: #dc3545; color: #dc3545; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <div class="bg-danger text-white py-3 mb-4">
+    <div class="container">
+      <a href="index.html" class="text-white text-decoration-none">← Torna all'indice</a>
+      <h1 class="mt-2 mb-0">I Bottoni in Bootstrap</h1>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- REGOLA BASE -->
+    <div class="sezione">
+      <h2>La Regola Base dei Bottoni</h2>
+      <p>Ogni bottone Bootstrap richiede <strong>sempre due classi minime:</strong></p>
+      <ol class="fs-5">
+        <li><code>btn</code> — classe base obbligatoria (fornisce padding, bordi, cursor, ecc.)</li>
+        <li><code>btn-[variante]</code> — definisce il colore del bottone</li>
+      </ol>
+
+      <div class="codice">&lt;!-- GIUSTO ✅ --&gt;
+&lt;button class="btn btn-primary"&gt;Clicca qui&lt;/button&gt;
+
+&lt;!-- SBAGLIATO ❌ — manca btn-* --&gt;
+&lt;button class="btn"&gt;Bottone senza colore&lt;/button&gt;
+
+&lt;!-- SBAGLIATO ❌ — manca btn base --&gt;
+&lt;button class="btn-primary"&gt;Non funziona&lt;/button&gt;</div>
+
+      <p class="etichetta">Confronto</p>
+      <div class="demo-area d-flex gap-3 align-items-center flex-wrap">
+        <button class="btn btn-primary">btn btn-primary ✅</button>
+        <button class="btn">Solo btn ❌</button>
+        <span style="font-size:0.85rem; color:#6c757d">← senza stile visibile</span>
+      </div>
+
+      <div class="alert alert-info mt-3">
+        <strong>Tag HTML:</strong> I bottoni si possono creare con <code>&lt;button&gt;</code>,
+        <code>&lt;a&gt;</code> o <code>&lt;input type="button"&gt;</code> — Bootstrap si adatta a tutti.
+      </div>
+    </div>
+
+    <!-- STILI BASE -->
+    <div class="sezione">
+      <h2>Stili Base: <code>btn-*</code></h2>
+
+      <div class="codice">&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-light"&gt;Light&lt;/button&gt;
+&lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="demo-area d-flex flex-wrap gap-2">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-light border">Light</button>
+        <button class="btn btn-dark">Dark</button>
+      </div>
+
+      <table class="table table-bordered mt-4">
+        <thead class="table-danger">
+          <tr><th>Classe</th><th>Colore</th><th>Uso tipico</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>btn-primary</code></td><td>Blu</td><td>Azione principale (salva, invia, conferma)</td></tr>
+          <tr><td><code>btn-secondary</code></td><td>Grigio</td><td>Azione secondaria (annulla, indietro)</td></tr>
+          <tr><td><code>btn-success</code></td><td>Verde</td><td>Conferma positiva, completato</td></tr>
+          <tr><td><code>btn-danger</code></td><td>Rosso</td><td>Elimina, azione distruttiva</td></tr>
+          <tr><td><code>btn-warning</code></td><td>Giallo</td><td>Avviso, richiede attenzione</td></tr>
+          <tr><td><code>btn-info</code></td><td>Azzurro</td><td>Informazione, aiuto</td></tr>
+          <tr><td><code>btn-light</code></td><td>Bianco/Grigio chiaro</td><td>Su sfondi scuri</td></tr>
+          <tr><td><code>btn-dark</code></td><td>Nero/Grigio scuro</td><td>Su sfondi chiari</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DIMENSIONI -->
+    <div class="sezione">
+      <h2>Dimensioni: <code>btn-lg</code> e <code>btn-sm</code></h2>
+      <p>Si aggiunge una terza classe per modificare la dimensione del bottone.</p>
+
+      <div class="codice">&lt;button class="btn btn-primary btn-lg"&gt;Bottone Grande&lt;/button&gt;
+
+&lt;button class="btn btn-primary"&gt;Bottone Normale&lt;/button&gt;
+
+&lt;button class="btn btn-primary btn-sm"&gt;Bottone Piccolo&lt;/button&gt;</div>
+
+      <p class="etichetta">Risultato</p>
+      <div class="demo-area d-flex align-items-center gap-3 flex-wrap">
+        <button class="btn btn-primary btn-lg">btn-lg (grande)</button>
+        <button class="btn btn-primary">Default (normale)</button>
+        <button class="btn btn-primary btn-sm">btn-sm (piccolo)</button>
+      </div>
+
+      <div class="demo-area mt-2 d-flex align-items-center gap-3 flex-wrap">
+        <button class="btn btn-danger btn-lg">Elimina</button>
+        <button class="btn btn-success btn-lg">Conferma</button>
+        <button class="btn btn-secondary btn-sm">Annulla</button>
+        <button class="btn btn-info btn-sm">Dettagli</button>
+      </div>
+    </div>
+
+    <!-- OUTLINE BUTTONS -->
+    <div class="sezione">
+      <h2>Outline Buttons: <code>btn-outline-*</code></h2>
+      <p>I bottoni outline hanno <strong>solo il bordo colorato</strong> e lo sfondo trasparente.
+        Al passaggio del mouse (hover) si riempiono di colore.</p>
+
+      <div class="codice">&lt;button class="btn btn-outline-primary"&gt;Outline Primary&lt;/button&gt;
+&lt;button class="btn btn-outline-secondary"&gt;Outline Secondary&lt;/button&gt;
+&lt;button class="btn btn-outline-success"&gt;Outline Success&lt;/button&gt;
+&lt;button class="btn btn-outline-danger"&gt;Outline Danger&lt;/button&gt;
+&lt;button class="btn btn-outline-warning"&gt;Outline Warning&lt;/button&gt;
+&lt;button class="btn btn-outline-info"&gt;Outline Info&lt;/button&gt;
+&lt;button class="btn btn-outline-light"&gt;Outline Light&lt;/button&gt;
+&lt;button class="btn btn-outline-dark"&gt;Outline Dark&lt;/button&gt;</div>
+
+      <p class="etichetta">Su sfondo bianco</p>
+      <div class="demo-area d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-primary">Outline Primary</button>
+        <button class="btn btn-outline-secondary">Outline Secondary</button>
+        <button class="btn btn-outline-success">Outline Success</button>
+        <button class="btn btn-outline-danger">Outline Danger</button>
+        <button class="btn btn-outline-warning">Outline Warning</button>
+        <button class="btn btn-outline-info">Outline Info</button>
+        <button class="btn btn-outline-dark">Outline Dark</button>
+      </div>
+
+      <p class="etichetta">Su sfondo scuro (btn-outline-light si vede meglio)</p>
+      <div class="demo-area bg-dark d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-light">Outline Light</button>
+        <button class="btn btn-outline-primary">Outline Primary</button>
+        <button class="btn btn-outline-success">Outline Success</button>
+      </div>
+
+      <div class="alert alert-secondary mt-3">
+        <strong>Confronto:</strong> <code>btn-primary</code> = sfondo pieno blu |
+        <code>btn-outline-primary</code> = solo bordo blu, sfondo trasparente.
+      </div>
+    </div>
+
+    <!-- BUTTON GROUPS -->
+    <div class="sezione">
+      <h2>Button Groups</h2>
+      <p>Il <strong>button group</strong> raggruppa più bottoni in una riga unita,
+        eliminando lo spazio tra di loro e unendo i bordi.</p>
+      <p>Struttura: <code>&lt;div class="btn-group"&gt;</code> che contiene i bottoni.</p>
+
+      <p class="etichetta">Button Group Base</p>
+      <div class="codice">&lt;div class="btn-group" role="group"&gt;
+  &lt;button class="btn btn-primary"&gt;Sinistra&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Centro&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;Destra&lt;/button&gt;
+&lt;/div&gt;</div>
+      <div class="demo-area">
+        <div class="btn-group" role="group">
+          <button class="btn btn-primary">Sinistra</button>
+          <button class="btn btn-primary">Centro</button>
+          <button class="btn btn-primary">Destra</button>
+        </div>
+      </div>
+
+      <p class="etichetta">Button Group con Outline (uso comune: selezione opzioni)</p>
+      <div class="codice">&lt;div class="btn-group" role="group"&gt;
+  &lt;button class="btn btn-outline-primary"&gt;HTML&lt;/button&gt;
+  &lt;button class="btn btn-outline-primary"&gt;CSS&lt;/button&gt;
+  &lt;button class="btn btn-outline-primary"&gt;JavaScript&lt;/button&gt;
+  &lt;button class="btn btn-outline-primary"&gt;Bootstrap&lt;/button&gt;
+&lt;/div&gt;</div>
+      <div class="demo-area">
+        <div class="btn-group" role="group">
+          <button class="btn btn-outline-primary">HTML</button>
+          <button class="btn btn-outline-primary">CSS</button>
+          <button class="btn btn-outline-primary">JavaScript</button>
+          <button class="btn btn-outline-primary">Bootstrap</button>
+        </div>
+      </div>
+
+      <p class="etichetta">Button Group con stili misti</p>
+      <div class="codice">&lt;div class="btn-group" role="group"&gt;
+  &lt;button class="btn btn-success"&gt;✅ Approva&lt;/button&gt;
+  &lt;button class="btn btn-danger"&gt;❌ Rifiuta&lt;/button&gt;
+  &lt;button class="btn btn-secondary"&gt;⏸ In attesa&lt;/button&gt;
+&lt;/div&gt;</div>
+      <div class="demo-area">
+        <div class="btn-group" role="group">
+          <button class="btn btn-success">✅ Approva</button>
+          <button class="btn btn-danger">❌ Rifiuta</button>
+          <button class="btn btn-secondary">⏸ In attesa</button>
+        </div>
+      </div>
+
+      <p class="etichetta">Button Group Verticale: <code>btn-group-vertical</code></p>
+      <div class="codice">&lt;div class="btn-group-vertical" role="group"&gt;
+  &lt;button class="btn btn-outline-success"&gt;Opzione 1&lt;/button&gt;
+  &lt;button class="btn btn-outline-success"&gt;Opzione 2&lt;/button&gt;
+  &lt;button class="btn btn-outline-success"&gt;Opzione 3&lt;/button&gt;
+&lt;/div&gt;</div>
+      <div class="demo-area">
+        <div class="btn-group-vertical" role="group">
+          <button class="btn btn-outline-success">Opzione 1</button>
+          <button class="btn btn-outline-success">Opzione 2</button>
+          <button class="btn btn-outline-success">Opzione 3</button>
+        </div>
+      </div>
+
+      <p class="etichetta">Più Button Group affiancati (Toolbar)</p>
+      <div class="codice">&lt;div class="btn-toolbar" role="toolbar"&gt;
+  &lt;div class="btn-group me-2" role="group"&gt;
+    &lt;button class="btn btn-secondary"&gt;1&lt;/button&gt;
+    &lt;button class="btn btn-secondary"&gt;2&lt;/button&gt;
+    &lt;button class="btn btn-secondary"&gt;3&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="btn-group me-2" role="group"&gt;
+    &lt;button class="btn btn-secondary"&gt;4&lt;/button&gt;
+    &lt;button class="btn btn-secondary"&gt;5&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="btn-group" role="group"&gt;
+    &lt;button class="btn btn-secondary"&gt;6&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+      <div class="demo-area">
+        <div class="btn-toolbar" role="toolbar">
+          <div class="btn-group me-2" role="group">
+            <button class="btn btn-secondary">1</button>
+            <button class="btn btn-secondary">2</button>
+            <button class="btn btn-secondary">3</button>
+          </div>
+          <div class="btn-group me-2" role="group">
+            <button class="btn btn-secondary">4</button>
+            <button class="btn btn-secondary">5</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button class="btn btn-secondary">6</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTONI COME LINK -->
+    <div class="sezione">
+      <h2>Bottoni come Link</h2>
+      <p>Si può usare il tag <code>&lt;a&gt;</code> con le classi bottone per creare link che sembrano bottoni:</p>
+      <div class="codice">&lt;a href="index.html" class="btn btn-primary"&gt;Vai alla Home&lt;/a&gt;
+&lt;a href="02_testo_colori.html" class="btn btn-outline-success"&gt;Lezione precedente&lt;/a&gt;</div>
+      <div class="demo-area d-flex gap-2 flex-wrap">
+        <a href="index.html" class="btn btn-primary">Vai alla Home</a>
+        <a href="02_testo_colori.html" class="btn btn-outline-success">Lezione precedente</a>
+      </div>
+    </div>
+
+    <!-- ESERCIZIO -->
+    <div class="sezione">
+      <h2 class="text-success" style="border-color: #198754;">Esercizio Pratico</h2>
+      <p>Crea la seguente interfaccia:</p>
+      <ol>
+        <li>Un bottone grande verde con testo "Salva"</li>
+        <li>Un bottone normale outline rosso con testo "Elimina"</li>
+        <li>Un group con 3 bottoni: "Giorno" | "Settimana" | "Mese" (stile outline secondary)</li>
+      </ol>
+      <details>
+        <summary class="btn btn-outline-success btn-sm">Mostra soluzione</summary>
+        <div class="codice mt-2">&lt;button class="btn btn-success btn-lg"&gt;Salva&lt;/button&gt;
+
+&lt;button class="btn btn-outline-danger"&gt;Elimina&lt;/button&gt;
+
+&lt;div class="btn-group" role="group"&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;Giorno&lt;/button&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;Settimana&lt;/button&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;Mese&lt;/button&gt;
+&lt;/div&gt;</div>
+        <div class="demo-area mt-2 d-flex flex-wrap gap-3 align-items-center">
+          <button class="btn btn-success btn-lg">Salva</button>
+          <button class="btn btn-outline-danger">Elimina</button>
+          <div class="btn-group" role="group">
+            <button class="btn btn-outline-secondary">Giorno</button>
+            <button class="btn btn-outline-secondary">Settimana</button>
+            <button class="btn btn-outline-secondary">Mese</button>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- RIEPILOGO -->
+    <div class="sezione">
+      <h2>Riepilogo Classi Bottoni</h2>
+      <table class="table table-bordered table-striped">
+        <thead class="table-danger">
+          <tr><th>Classe</th><th>Descrizione</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>btn</code></td><td>Classe base obbligatoria</td></tr>
+          <tr><td><code>btn-primary/secondary/success/danger/warning/info/light/dark</code></td><td>Bottone colorato pieno</td></tr>
+          <tr><td><code>btn-outline-*</code></td><td>Bottone con solo bordo colorato</td></tr>
+          <tr><td><code>btn-lg</code></td><td>Bottone grande</td></tr>
+          <tr><td><code>btn-sm</code></td><td>Bottone piccolo</td></tr>
+          <tr><td><code>btn-group</code></td><td>Contenitore per gruppo di bottoni orizzontale</td></tr>
+          <tr><td><code>btn-group-vertical</code></td><td>Contenitore per gruppo di bottoni verticale</td></tr>
+          <tr><td><code>btn-toolbar</code></td><td>Toolbar con più gruppi di bottoni</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mb-5">
+      <a href="02_testo_colori.html" class="btn btn-secondary me-2">← Testo e Colori</a>
+      <a href="index.html" class="btn btn-primary">Indice Lezione 1</a>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

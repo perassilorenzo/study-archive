@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 4 - Alerts e Badges</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-purple text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="fw-bold mb-1">Alerts e Badges</h1>
+      <p class="mb-0 fs-5">Messaggi di avviso e etichette colorate</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ALERT BASE -->
+    <div class="sezione">
+      <h2>Alert base</h2>
+      <p>Combina <code>alert</code> con una classe colore per definire il tipo di messaggio.</p>
+
+      <div class="codice">&lt;div class="alert alert-success"&gt;Operazione riuscita!&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;Si è verificato un errore.&lt;/div&gt;
+&lt;div class="alert alert-warning"&gt;Attenzione, controlla i dati.&lt;/div&gt;
+&lt;div class="alert alert-info"&gt;Informazione utile.&lt;/div&gt;
+&lt;div class="alert alert-primary"&gt;Messaggio primario.&lt;/div&gt;
+&lt;div class="alert alert-secondary"&gt;Messaggio secondario.&lt;/div&gt;</div>
+
+      <div class="mt-3">
+        <div class="alert alert-success">Operazione riuscita!</div>
+        <div class="alert alert-danger">Si è verificato un errore.</div>
+        <div class="alert alert-warning">Attenzione, controlla i dati.</div>
+        <div class="alert alert-info">Informazione utile.</div>
+        <div class="alert alert-primary">Messaggio primario.</div>
+        <div class="alert alert-secondary">Messaggio secondario.</div>
+      </div>
+    </div>
+
+    <!-- ALERT DISMISSIBLE -->
+    <div class="sezione">
+      <h2>Alert chiudibile (dismissible)</h2>
+      <p>Aggiungendo <code>alert-dismissible fade show</code> e un pulsante <code>btn-close</code>, l'utente può chiudere il messaggio.</p>
+
+      <div class="codice">&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+  Questo messaggio può essere chiuso.
+  &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+&lt;/div&gt;</div>
+
+      <div class="mt-3">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Attenzione!</strong> Questo messaggio può essere chiuso.
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Errore!</strong> Qualcosa è andato storto. Riprova.
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Fatto!</strong> I dati sono stati salvati correttamente.
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALERT CON JAVASCRIPT -->
+    <div class="sezione">
+      <h2>Alert generato con JavaScript</h2>
+      <p>È possibile creare alert dinamicamente tramite JavaScript, ad esempio dopo un'azione dell'utente.</p>
+
+      <div class="codice">&lt;button class="btn btn-danger" onclick="mostraErrore()"&gt;Simula errore&lt;/button&gt;
+&lt;button class="btn btn-success" onclick="mostraSuccesso()"&gt;Simula successo&lt;/button&gt;
+&lt;div id="zona-alert" class="mt-3"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  function mostraErrore() {
+    document.getElementById('zona-alert').innerHTML =
+      '&lt;div class="alert alert-danger alert-dismissible fade show"&gt;' +
+      '&lt;strong&gt;Errore!&lt;/strong&gt; Operazione non riuscita.' +
+      '&lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;' +
+      '&lt;/div&gt;';
+  }
+  function mostraSuccesso() {
+    document.getElementById('zona-alert').innerHTML =
+      '&lt;div class="alert alert-success alert-dismissible fade show"&gt;' +
+      '&lt;strong&gt;Successo!&lt;/strong&gt; Operazione completata.' +
+      '&lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;' +
+      '&lt;/div&gt;';
+  }
+&lt;/script&gt;</div>
+
+      <div class="mt-3">
+        <div class="d-flex gap-2">
+          <button class="btn btn-danger" onclick="mostraErrore()">Simula errore</button>
+          <button class="btn btn-success" onclick="mostraSuccesso()">Simula successo</button>
+          <button class="btn btn-warning" onclick="mostraAvviso()">Simula avviso</button>
+        </div>
+        <div id="zona-alert" class="mt-3"></div>
+      </div>
+    </div>
+
+    <!-- BADGES -->
+    <div class="sezione">
+      <h2>Badges — Colori base</h2>
+      <p>La classe <code>badge</code> + <code>bg-*</code> crea etichette colorate.</p>
+
+      <div class="codice">&lt;span class="badge bg-primary"&gt;Primario&lt;/span&gt;
+&lt;span class="badge bg-success"&gt;Successo&lt;/span&gt;
+&lt;span class="badge bg-danger"&gt;Pericolo&lt;/span&gt;
+&lt;span class="badge bg-warning text-dark"&gt;Avviso&lt;/span&gt;
+&lt;span class="badge bg-info text-dark"&gt;Info&lt;/span&gt;
+&lt;span class="badge bg-secondary"&gt;Secondario&lt;/span&gt;
+&lt;span class="badge bg-dark"&gt;Scuro&lt;/span&gt;</div>
+
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <span class="badge bg-primary">Primario</span>
+        <span class="badge bg-success">Successo</span>
+        <span class="badge bg-danger">Pericolo</span>
+        <span class="badge bg-warning text-dark">Avviso</span>
+        <span class="badge bg-info text-dark">Info</span>
+        <span class="badge bg-secondary">Secondario</span>
+        <span class="badge bg-dark">Scuro</span>
+      </div>
+    </div>
+
+    <!-- BADGE PILL -->
+    <div class="sezione">
+      <h2>Badge arrotondato (pill)</h2>
+      <p>Usa <code>rounded-pill</code> per ottenere la forma a capsula.</p>
+
+      <div class="codice">&lt;span class="badge rounded-pill bg-primary"&gt;Primario&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-danger"&gt;Pericolo&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-success"&gt;Successo&lt;/span&gt;</div>
+
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <span class="badge rounded-pill bg-primary">Primario</span>
+        <span class="badge rounded-pill bg-danger">Pericolo</span>
+        <span class="badge rounded-pill bg-success">Successo</span>
+        <span class="badge rounded-pill bg-warning text-dark">Avviso</span>
+        <span class="badge rounded-pill bg-info text-dark">Info</span>
+      </div>
+    </div>
+
+    <!-- BADGE IN BOTTONI -->
+    <div class="sezione">
+      <h2>Badge nei bottoni e nei titoli</h2>
+
+      <div class="codice">&lt;!-- Badge nel bottone (contatore) --&gt;
+&lt;button class="btn btn-primary"&gt;
+  Messaggi &lt;span class="badge bg-light text-dark"&gt;4&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Badge nel titolo --&gt;
+&lt;h4&gt;Novità &lt;span class="badge bg-danger"&gt;Nuovo&lt;/span&gt;&lt;/h4&gt;</div>
+
+      <div class="mt-3 d-flex flex-wrap gap-3 align-items-center">
+        <button class="btn btn-primary">
+          Messaggi <span class="badge bg-light text-dark">4</span>
+        </button>
+        <button class="btn btn-secondary">
+          Notifiche <span class="badge bg-danger">12</span>
+        </button>
+        <button class="btn btn-success">
+          Carrello <span class="badge bg-warning text-dark">3</span>
+        </button>
+      </div>
+
+      <div class="mt-3">
+        <h4>Ultime novità <span class="badge bg-danger">Nuovo</span></h4>
+        <h5>Versione 2.0 <span class="badge bg-primary rounded-pill">Stabile</span></h5>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn btn-outline-warning mb-5">&larr; Torna all'indice</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function mostraErrore() {
+      document.getElementById('zona-alert').innerHTML =
+        '<div class="alert alert-danger alert-dismissible fade show">' +
+        '<strong>Errore!</strong> Operazione non riuscita.' +
+        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+        '</div>';
+    }
+    function mostraSuccesso() {
+      document.getElementById('zona-alert').innerHTML =
+        '<div class="alert alert-success alert-dismissible fade show">' +
+        '<strong>Successo!</strong> Operazione completata correttamente.' +
+        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+        '</div>';
+    }
+    function mostraAvviso() {
+      document.getElementById('zona-alert').innerHTML =
+        '<div class="alert alert-warning alert-dismissible fade show">' +
+        '<strong>Attenzione!</strong> Controlla i dati inseriti.' +
+        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+        '</div>';
+    }
+  </script>
+</body>
+</html>

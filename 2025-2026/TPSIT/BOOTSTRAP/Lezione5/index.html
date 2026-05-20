@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap - Lezione 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="css/stile.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR DEMO (sticky) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-teal sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="fas fa-bolt me-1"></i> Lezione5
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navDemo">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navDemo">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="01_navbar_base.html"><i class="fas fa-bars me-1"></i>Navbar base</a></li>
+          <li class="nav-item"><a class="nav-link" href="02_navbar_responsive.html"><i class="fas fa-mobile-alt me-1"></i>Responsive</a></li>
+          <li class="nav-item"><a class="nav-link" href="03_navbar_fontawesome.html"><i class="fas fa-icons me-1"></i>Font Awesome</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="bg-teal text-white py-5 mb-4">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-1">Bootstrap - Lezione 5</h1>
+      <p class="mb-0 fs-5">Navbar, posizionamento, dropdown e icone con Font Awesome</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- NAVIGAZIONE -->
+    <div class="sezione">
+      <h2>Indice della Lezione</h2>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="01_navbar_base.html" class="btn btn-outline-teal">
+          <i class="fas fa-bars me-1"></i> 1. Navbar base e stili
+        </a>
+        <a href="02_navbar_responsive.html" class="btn btn-outline-teal">
+          <i class="fas fa-mobile-alt me-1"></i> 2. Navbar responsive e dropdown
+        </a>
+        <a href="03_navbar_fontawesome.html" class="btn btn-outline-teal">
+          <i class="fas fa-icons me-1"></i> 3. Font Awesome
+        </a>
+      </div>
+    </div>
+
+    <!-- STRUTTURA BASE -->
+    <div class="sezione">
+      <h2>1. Struttura base della Navbar</h2>
+      <p>Una navbar Bootstrap si costruisce con <code>&lt;nav&gt;</code> e almeno tre classi fondamentali.</p>
+
+      <div class="codice">&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;div class="container"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;MioSito&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</div>
+
+      <nav class="navbar navbar-dark bg-dark mt-3 rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MioSito</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- STILI -->
+    <div class="sezione">
+      <h2>2. Stili e colori</h2>
+      <p>Combina <code>navbar-dark</code> o <code>navbar-light</code> con una classe di sfondo.</p>
+
+      <div class="d-flex flex-column gap-2 mt-3">
+        <nav class="navbar navbar-dark bg-dark rounded px-3"><a class="navbar-brand" href="#">navbar-dark bg-dark</a></nav>
+        <nav class="navbar navbar-dark bg-primary rounded px-3"><a class="navbar-brand" href="#">navbar-dark bg-primary</a></nav>
+        <nav class="navbar navbar-dark bg-success rounded px-3"><a class="navbar-brand" href="#">navbar-dark bg-success</a></nav>
+        <nav class="navbar navbar-dark bg-danger rounded px-3"><a class="navbar-brand" href="#">navbar-dark bg-danger</a></nav>
+        <nav class="navbar navbar-light bg-light rounded border px-3"><a class="navbar-brand" href="#">navbar-light bg-light</a></nav>
+      </div>
+    </div>
+
+    <!-- POSIZIONAMENTO -->
+    <div class="sezione">
+      <h2>3. Posizionamento</h2>
+      <table class="table table-bordered table-striped mt-2">
+        <thead class="table-dark">
+          <tr><th>Classe</th><th>Effetto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>(nessuna)</code></td><td>Normale nel flusso della pagina</td></tr>
+          <tr><td><code>fixed-top</code></td><td>Fissa in cima, si sovrappone al contenuto</td></tr>
+          <tr><td><code>fixed-bottom</code></td><td>Fissa in fondo alla pagina</td></tr>
+          <tr><td><code>sticky-top</code></td><td>Rimane in cima solo dopo aver scrollato fino a lei</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-warning mt-2">
+        <i class="fas fa-triangle-exclamation me-1"></i>
+        Con <code>fixed-top</code>, aggiungi <code>padding-top</code> al <code>body</code> per evitare che il contenuto finisca coperto dalla navbar.
+      </div>
+    </div>
+
+    <!-- NAVBAR RESPONSIVE -->
+    <div class="sezione">
+      <h2>4. Navbar responsive con hamburger</h2>
+      <p>Su schermi piccoli, i link si nascondono e appare il bottone hamburger <code>navbar-toggler</code>.</p>
+
+      <div class="codice">&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;div class="container"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;MioSito&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavbar"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="menuNavbar"&gt;
+      &lt;ul class="navbar-nav ms-auto"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Chi siamo&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Contatti&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</div>
+    </div>
+
+    <!-- FONT AWESOME -->
+    <div class="sezione">
+      <h2>5. Font Awesome — Icone nei link</h2>
+      <p>Aggiungi il CDN nell'<code>&lt;head&gt;</code> e usa il tag <code>&lt;i&gt;</code> con le classi icona.</p>
+
+      <div class="codice">&lt;link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"&gt;
+
+&lt;i class="fas fa-home"&gt;&lt;/i&gt;
+&lt;i class="fas fa-envelope"&gt;&lt;/i&gt;
+&lt;i class="fab fa-github"&gt;&lt;/i&gt;</div>
+
+      <div class="d-flex flex-wrap gap-3 mt-3 fs-4">
+        <span title="fa-home"><i class="fas fa-home text-primary"></i></span>
+        <span title="fa-users"><i class="fas fa-users text-success"></i></span>
+        <span title="fa-envelope"><i class="fas fa-envelope text-danger"></i></span>
+        <span title="fa-phone"><i class="fas fa-phone text-warning"></i></span>
+        <span title="fa-search"><i class="fas fa-search text-info"></i></span>
+        <span title="fa-star"><i class="fas fa-star text-warning"></i></span>
+        <span title="fa-bars"><i class="fas fa-bars text-secondary"></i></span>
+        <span title="fa-github"><i class="fab fa-github text-dark"></i></span>
+        <span title="fa-instagram"><i class="fab fa-instagram text-danger"></i></span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

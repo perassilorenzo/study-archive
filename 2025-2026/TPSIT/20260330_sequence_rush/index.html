@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence Rush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="testa">
+        <h1>Sequence Rush</h1>
+        <div class="info">Esercitazione JS - Simon Says</div>
+    </header>
+
+    <main class="tutto">
+        <section class="gioco">
+            <div class="scritta">Sequenza da riprodurre — Round <span id="round-num">—</span> —</div>
+            <div class="striscia">
+                <div id="sym0" class="buco seq-slot">?</div>
+                <div id="sym1" class="buco seq-slot">?</div>
+                <div id="sym2" class="buco seq-slot">?</div>
+                <div id="sym3" class="buco seq-slot">?</div>
+                <div id="sym4" class="buco seq-slot">?</div>
+                <div id="sym5" class="buco seq-slot">?</div>
+                <div id="sym6" class="buco seq-slot">?</div>
+                <div id="sym7" class="buco seq-slot">?</div>
+                <div id="sym8" class="buco seq-slot">?</div>
+                <div id="sym9" class="buco seq-slot">?</div>
+            </div>
+
+            <div class="tempo">Tempo rimasto —</div>
+
+            <div class="scritta">Premi i simboli nell'ordine corretto</div>
+            <div class="griglia" id="btn-grid">
+                <button class="tasto" onclick="chooseSymbol(0)"><div class="faccina">💻</div><div class="nome">CPU</div></button>
+                <button class="tasto" onclick="chooseSymbol(1)"><div class="faccina">🌐</div><div class="nome">NET</div></button>
+                <button class="tasto" onclick="chooseSymbol(2)"><div class="faccina">🗄️</div><div class="nome">DB</div></button>
+                <button class="tasto" onclick="chooseSymbol(3)"><div class="faccina">🐛</div><div class="nome">BUG</div></button>
+                <button class="tasto" onclick="chooseSymbol(4)"><div class="faccina">🔑</div><div class="nome">KEY</div></button>
+                <button class="tasto" onclick="chooseSymbol(5)"><div class="faccina">📦</div><div class="nome">PKG</div></button>
+                <button class="tasto" onclick="chooseSymbol(6)"><div class="faccina">🔒</div><div class="nome">SEC</div></button>
+                <button class="tasto" onclick="chooseSymbol(7)"><div class="faccina">☁️</div><div class="nome">CLD</div></button>
+            </div>
+
+            <div id="risRound" class="fine">Risultato del round: —</div>
+        </section>
+
+        <div class="lato">
+            <div class="box">
+                <label>Punteggio</label>
+                <div id="score" class="punti">0</div>
+            </div>
+            <div class="box">
+                <label>Lunghezza sequenza</label>
+                <div id="seq-len-display">0</div>
+                <hr class="linea">
+            </div>
+            <div class="box">
+                <label>Vite</label>
+                <div id="lives-row" class="cuori"></div>
+            </div>
+            <button id="btn-start" class="vai" onclick="start()">▶ INIZIA PARTITA</button>
+        </div>
+    </main>
+    <script src="script_sol.js"></script>
+</body>
+</html>

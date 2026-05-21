@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<title>Document</title>
+	</head>
+
+	<body>
+		<nav class="bg-emerald-950 text-white p-4 flex items-center justify-between px-8 py-1 h-16">
+			<div class="flex space-x-12">
+				<div class="font-bold">Rich Notes</div>
+			</div>
+		</nav>
+
+		<main class="flex items-center justify-center py-6">
+			<div id="container" class="mx-auto px-4 max-w-5xl w-full">
+				<form method="post" action="/register" class="max-w-lg mx-auto mt-8">
+					<h2 class="text-3xl font-bold mb-6 text-center">Register</h2>
+					<div class="mb-4">
+						<label class="block text-mauve-700">Username</label>
+						<input
+							type="text"
+							name="username"
+							class="border border-mauve-300 p-2 w-full rounded-md focus:outline-emerald-700"
+							required />
+					</div>
+					<div class="text-center">
+						<button type="submit" class="cursor-pointer bg-emerald-700 text-white px-4 py-2 rounded-md">
+							Register
+						</button>
+					</div>
+				</form>
+				<div class="my-12 text-center italic text-neutral-700">otherwise</div>
+				<form method="post" action="/login" class="max-w-lg mx-auto mt-8">
+					<h2 class="text-3xl font-bold mb-6 text-center">Login</h2>
+					<div class="mb-4">
+						<label for="username" class="block text-mauve-700">Username</label>
+						<input
+							type="text"
+							id="username"
+							name="username"
+							class="border border-mauve-300 p-2 w-full rounded-md focus:outline-emerald-700"
+							required />
+					</div>
+					<div class="mb-4">
+						<label for="password" class="block text-mauve-700">Password</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							class="border border-mauve-300 p-2 w-full rounded-md focus:outline-emerald-700"
+							required />
+					</div>
+					<div class="text-center">
+						<button type="submit" class="cursor-pointer bg-emerald-700 text-white px-4 py-2 rounded-md">
+							Login
+						</button>
+					</div>
+				</form>
+			</div>
+		</main>
+	</body>
+</html>

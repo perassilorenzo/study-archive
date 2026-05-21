@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<title>Document</title>
+	</head>
+
+	<body>
+		<nav class="bg-emerald-950 text-white p-4 flex items-center justify-between px-8 py-1 h-16">
+			<div class="flex space-x-12">
+				<div class="font-bold">Rich Notes</div>
+				<a href="/notes" class="cursor-pointer hover:underline">My notes</a>
+				<a href="/new" class="cursor-pointer hover:underline">New note</a>
+				<a href="/report" class="cursor-pointer hover:underline">Report</a>
+			</div>
+			<ul class="flex space-x-12" id="menu">
+				<li>
+					<a href="/logout" class="cursor-pointer hover:underline">Logout</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main class="flex items-center justify-center py-24">
+			<div id="container" class="mx-auto px-4 max-w-3xl w-full">
+				<h1 class="text-4xl font-bold text-center mb-8">Welcome back, <%= username %>!</h1>
+
+				<% if (notes.length === 0) { %>
+					<p class="text-center mt-16">You don't have any note, create one to see it here</p>
+				<% } %>
+				<% for (let i = 0; i < notes.length; i++) { %>
+					<a href="/note/<%= notes[i].id %>" class="block py-4">
+						<div class="font-semibold underline hover:no-underline">
+							note #<%= notes[i].id %>
+						</div>
+					</a>
+					<% if (i !== notes.length - 1) { %>
+						<hr />
+					<% } %>
+				<% } %>
+			</div>
+		</main>
+	</body>
+</html>

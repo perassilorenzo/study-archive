@@ -1,7 +1,5 @@
-const player = document.getElementById("player")
-let x = 0;
-let isAnimating = false;
 let isRedTurn = true;
+let currentCol = 1;
 let grid = [
     [0,0,0,0,0,0],
     [0,0,0,0,0,0],
@@ -11,67 +9,84 @@ let grid = [
     [0,0,0,0,0,0],
 ];
 
+function colChangeToWhite(colIndex){
+    let col = document.getElementById(`col${colIndex}`);
+    col.classList.remove("bg-danger");
+    col.classList.remove("bg-warning");
+    col.classList.add("bg-white");
+}
+
+function colChangeColor(colIndex){
+    let col = document.getElementById(`col${colIndex}`);
+    col.classList.remove("bg-white");
+    col.classList.remove("bg-danger");
+    col.classList.remove("bg-warning");
+    if (isRedTurn) col.classList.add("bg-danger");
+    else col.classList.add("bg-warning");
+}
+
 window.addEventListener('keydown', (e) => {
+
     if (e.key == "ArrowRight"){
-        if (isAnimating) return;
-        x += 216;
+        if (currentCol >= 6) return;
+
+        colChangeToWhite(currentCol);
+        currentCol++;
+        colChangeColor(currentCol);
     }
 
     else if (e.key == "ArrowLeft"){
-        if (isAnimating) return;
-        x -= 216;
+        if (currentCol <= 1) return;
+
+        colChangeToWhite(currentCol);
+        currentCol--;
+        colChangeColor(currentCol);
     } 
     
     else if (e.key == "ArrowDown"){
-        if (isAnimating) return;
-
-        isAnimating = true;
-
-        player.classList.add("drop");
-
-        player.addEventListener('animationend', () =>{
-            player.classList.remove("drop");
-            isAnimating = false;
-
-            isRedTurn = !isRedTurn;
-
-            if (isRedTurn){
-                player.classList.remove("bg-warning");
-                player.classList.add("bg-danger");
-            }
-            else{
-                player.classList.remove("bg-danger");
-                player.classList.add("bg-warning");
-            }
-            
-            dropPiece();
-
-        }, {once: true});
+        const dropped = addPiece(currentCol); 
+        if (dropped){
+            isRedTurn = !isRedTurn;           
+            colChangeColor(currentCol);
+        }            
     }
-    if (x <= 0) x = 0;
-    if (x >= 1080) x = 1080;
-
-    player.style.left = `${x}px`;
 })
 
-function dropPiece(col, player) {
+function addPiece(col){
+    let allCells = document.querySelectorAll(".gameArea .row");
+    for(let row = 5; row > 0; row--){
+        if (grid[col-1][row] == 0){
 
-    for (let row = 5; row >= 0; row--) {
+            grid[col-1][row] = isRedTurn ? 1 : 2;
 
-        if (grid[col][row] === null) {
-
-            grid[col][row] = player;
-
-            render(col, row, player);
-
-            return;
+            let cell = allCells[row].querySelectorAll(".cicle")[col-1];
+            cell.classList.remove("bg-white");
+            if (!isRedTurn) cell.classList.add("bg-danger");
+            else cell.classList.add("bg-warning");
+        
+            
         }
     }
 }
 
-function render(col, row, player) {
+// function dropPiece(col, player) {
 
-    const index = row * 7 + col; // 7 colonne
+//     for (let row = 5; row >= 0; row--) {
 
-    cells[index].classList.add(player);
-}
+//         if (grid[col][row] === null) {
+
+//             grid[col][row] = player;
+
+//             render(col, row, player);
+
+//             return;
+//         }
+//     }
+// }
+
+// function render(col, row, player) {
+
+//     const index = row * 7 + col; // 7 colonne
+
+//     cells[index].classList.add(player);
+// }

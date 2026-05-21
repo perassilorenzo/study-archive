@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<title>Document</title>
+	</head>
+
+	<body>
+		<nav class="bg-emerald-950 text-white p-4 flex items-center justify-between px-8 py-1 h-16">
+			<% if (username) { %>
+				<div class="flex space-x-12">
+					<div class="font-bold">Rich Notes</div>
+					<a href="/notes" class="cursor-pointer hover:underline">My notes</a>
+					<a href="/new" class="cursor-pointer hover:underline">New note</a>
+					<a href="/report" class="cursor-pointer hover:underline">Report</a>
+				</div>
+				<ul class="flex space-x-12" id="menu">
+					<li>
+						<a href="/logout" class="cursor-pointer hover:underline">Logout</a>
+					</li>
+				</ul>
+			<% } %>
+		</nav>
+
+		<main class="max-w-4xl mx-auto w-full py-24">
+			<h1 class="text-3xl font-bold mb-3">Note #<%= id %></h1>
+			<h1 class="text-xl font-semibold mb-12">by <%= owner %></h1>
+
+			<div>
+				<%- content %>
+			</div>
+		</main>
+	</body>
+
+	<script>
+		function insertAtCursor(defaultText, before, after) {
+			after = after ?? before;
+
+			if (document.selection) {
+				// IE support
+				inputTextarea.focus();
+				sel = document.selection.createRange();
+				sel.text = defaultText;
+			} else if (inputTextarea.selectionStart || inputTextarea.selectionStart == '0') {
+				// MOZILLA and others
+				var startPos = inputTextarea.selectionStart;
+				var endPos = inputTextarea.selectionEnd;
+				if (startPos === endPos) {
+					inputTextarea.value =
+						inputTextarea.value.substring(0, startPos) +
+						before +
+						defaultText +
+						after +
+						inputTextarea.value.substring(endPos, inputTextarea.value.length);
+				} else {
+					inputTextarea.value =
+						inputTextarea.value.substring(0, startPos) +
+						before +
+						inputTextarea.value.substring(startPos, endPos) +
+						after +
+						inputTextarea.value.substring(endPos, inputTextarea.value.length);
+				}
+			} else {
+				inputTextarea.value += defaultText;
+			}
+		}
+	</script>
+</html>

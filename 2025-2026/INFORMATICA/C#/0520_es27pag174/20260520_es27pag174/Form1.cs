@@ -59,41 +59,20 @@ namespace _20260520_es27pag174
             dgvCercaProf.DataSource = lstCerca;
         }
 
-        private void btnContaMateria_Click(object sender, EventArgs e)
+        private void btnCercaInsegnantiPerMateria_Click(object sender, EventArgs e)
         {
-            string materia = txtMateria.Text.Trim();
+            int count = 0;
+            string materiaInput = txtMateria.Text;
 
-            if (string.IsNullOrEmpty(materia))
+            foreach (Professori p in list)
             {
-                MessageBox.Show("Inserisci il nome di una materia.", "Attenzione",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Ordina per Scuola come richiesto dall'esercizio
-            List<Professori> listOrdinata = list.OrderBy(p => p.Scuola).ToList();
-
-            lstCerca.Clear();
-            int contatore = 0;
-
-            foreach (Professori p in listOrdinata)
-            {
-                if (p.Materia.Equals(materia, StringComparison.OrdinalIgnoreCase))
+                if (p.Materia == materiaInput)
                 {
-                    lstCerca.Add(p);
-                    contatore++;
+                    count++;
                 }
             }
 
-            dgvCercaProf.DataSource = null;
-            dgvCercaProf.DataSource = lstCerca;
-
-            MessageBox.Show(
-                $"Insegnanti che insegnano '{materia}': {contatore}",
-                "Risultato",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            MessageBox.Show($"Sono stati trovati: {count} professori che insegnano la materia {materiaInput}");
         }
     }
 }

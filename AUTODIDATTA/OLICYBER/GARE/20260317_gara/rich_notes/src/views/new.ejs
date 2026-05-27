@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<title>Document</title>
+	</head>
+
+	<body>
+		<nav class="bg-emerald-950 text-white p-4 flex items-center justify-between px-8 py-1 h-16">
+			<div class="flex space-x-12">
+				<div class="font-bold">Rich Notes</div>
+				<a href="/notes" class="cursor-pointer hover:underline">My notes</a>
+				<a href="/new" class="cursor-pointer hover:underline">New note</a>
+				<a href="/report" class="cursor-pointer hover:underline">Report</a>
+			</div>
+			<ul class="flex space-x-12" id="menu">
+				<li>
+					<a href="/logout" class="cursor-pointer hover:underline">Logout</a>
+				</li>
+			</ul>
+		</nav>
+
+		<% if(flash) { %>
+			<div class="max-w-4xl mx-auto w-full mt-24 -mb-12 bg-green-100 px-4 py-2.5 rounded-lg border border-green-900 text-green-950"><%= flash %></div>
+		<% } %>
+
+		<main class="max-w-4xl mx-auto w-full py-24">
+			<h1 class="text-3xl font-bold mb-6">Create new note</h1>
+
+			<form method="post" action="/new">
+			<div class="w-full bg-neutral-100 border border-neutral-500 rounded-lg">
+				<div class="p-2 border-b border-default-medium">
+					<div class="flex flex-wrap items-center">
+						<div class="flex items-center space-x-1 rtl:space-x-reverse flex-wrap">
+							<button
+								onclick="insertAtCursor('', '[b]', '[/b]')"
+								type="button"
+								class="p-1.5 text-body rounded-sm cursor-pointer hover:bg-neutral-50 hover:border-neutral-300 border border-transparent active:bg-neutral-200">
+								<svg
+									class="w-5 h-5"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M8 5h4.5a3.5 3.5 0 1 1 0 7H8m0-7v7m0-7H6m2 7h6.5a3.5 3.5 0 1 1 0 7H8m0-7v7m0 0H6" />
+								</svg>
+								<span class="sr-only">Bold</span>
+							</button>
+							<button
+								onclick="insertAtCursor('', '[i]', '[/i]')"
+								type="button"
+								class="p-1.5 text-body rounded-sm cursor-pointer hover:bg-neutral-50 hover:border-neutral-300 border border-transparent active:bg-neutral-200">
+								<svg
+									class="w-5 h-5"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m8.874 19 6.143-14M6 19h6.33m-.66-14H18" />
+								</svg>
+								<span class="sr-only">Italic</span>
+							</button>
+							<button
+								onclick="insertAtCursor('', '[u]', '[/u]')"
+								type="button"
+								class="p-1.5 text-body rounded-sm cursor-pointer hover:bg-neutral-50 hover:border-neutral-300 border border-transparent active:bg-neutral-200">
+								<svg
+									class="w-5 h-5"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-width="2"
+										d="M6 19h12M8 5v9a4 4 0 0 0 8 0V5M6 5h4m4 0h4" />
+								</svg>
+								<span class="sr-only">Underline</span>
+							</button>
+							<button
+								onclick="insertAtCursor('', '[s]', '[/s]')"
+								type="button"
+								class="p-1.5 text-body rounded-sm cursor-pointer hover:bg-neutral-50 hover:border-neutral-300 border border-transparent active:bg-neutral-200">
+								<svg
+									class="w-5 h-5"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M7 6.2V5h12v1.2M7 19h6m.2-14-1.677 6.523M9.6 19l1.029-4M5 5l6.523 6.523M19 19l-7.477-7.477" />
+								</svg>
+								<span class="sr-only">Strike</span>
+							</button>
+							<div class="px-1">
+								<span class="block w-px h-4 bg-neutral-400"></span>
+							</div>
+							<button
+								onclick="insertAtCursor('http://example.com', '[link=', ']Link[/link]')"
+								type="button"
+								class="p-1.5 text-body rounded-sm cursor-pointer hover:bg-neutral-50 hover:border-neutral-300 border border-transparent active:bg-neutral-200">
+								<svg
+									class="w-5 h-5"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961" />
+								</svg>
+								<span class="sr-only">Link</span>
+							</button>
+							<button
+								onclick="insertAtCursor('https://www.placekittens.com/300/200', '[img]', '[/img]')"
+								type="button"
+								class="p-1.5 text-body rounded-sm cursor-pointer hover:bg-neutral-50 hover:border-neutral-300 border border-transparent active:bg-neutral-200">
+								<svg
+									class="w-5 h-5"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24">
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+								</svg>
+								<span class="sr-only">Add image</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<textarea
+				name="content"
+					id="inputTextarea"
+					class="w-full min-h-96 block px-4 py-2 bg-white rounded-b-lg focus:outline-0"></textarea>
+			</div>
+			<div class="text-center mt-8">
+				<button type="submit" class="cursor-pointer bg-emerald-700 text-white px-4 py-2 rounded-md">
+					Publish note
+				</button>
+			</div>
+			</form>
+		</main>
+	</body>
+
+	<script>
+		function insertAtCursor(defaultText, before, after) {
+			after = after ?? before;
+
+			if (document.selection) {
+				// IE support
+				inputTextarea.focus();
+				sel = document.selection.createRange();
+				sel.text = defaultText;
+			} else if (inputTextarea.selectionStart || inputTextarea.selectionStart == '0') {
+				// MOZILLA and others
+				var startPos = inputTextarea.selectionStart;
+				var endPos = inputTextarea.selectionEnd;
+				if (startPos === endPos) {
+					inputTextarea.value =
+						inputTextarea.value.substring(0, startPos) +
+						before +
+						defaultText +
+						after +
+						inputTextarea.value.substring(endPos, inputTextarea.value.length);
+				} else {
+					inputTextarea.value =
+						inputTextarea.value.substring(0, startPos) +
+						before +
+						inputTextarea.value.substring(startPos, endPos) +
+						after +
+						inputTextarea.value.substring(endPos, inputTextarea.value.length);
+				}
+			} else {
+				inputTextarea.value += defaultText;
+			}
+		}
+	</script>
+</html>

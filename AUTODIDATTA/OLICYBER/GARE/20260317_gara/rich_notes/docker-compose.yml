@@ -1,0 +1,36 @@
+services:
+    service:
+        build: .
+        restart: unless-stopped
+        environment:
+            FLAG: flag{REDACTED}
+            DOMAIN: http://service:3000
+            HEADLESS_HOST: headless:5000
+            HEADLESS_AUTH: supersecret
+        ports:
+            - '40002:3000'
+
+    headless:
+        image: cybersecnatlab/challenge-headless:latest-manager
+        restart: unless-stopped
+        environment:
+            AUTH_TOKEN: supersecret
+            RABBITMQ_HOST: headless-rabbitmq
+            RABBITMQ_QUEUE: headless-jobs
+        depends_on:
+            - headless-rabbitmq
+
+    headless-rabbitmq:
+        image: rabbitmq:3.11
+        restart: unless-stopped
+
+    headless-worker:
+        image: cybersecnatlab/challenge-headless:latest-worker
+        restart: unless-stopped
+        environment:
+            RABBITMQ_HOST: headless-rabbitmq
+            RABBITMQ_QUEUE: headless-jobs
+        deploy:
+            replicas: 1
+        depends_on:
+            - headless-rabbitmq

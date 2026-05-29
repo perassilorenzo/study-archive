@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Parking City</title>
+</head>
+
+<body>
+
+    <h1>Parking City</h1>
+
+    <div class="macchina">
+
+        <div class="display">
+            AUTOMATIC PARKING
+        </div>
+
+        <div class="slot"></div>
+
+        <div id="ticket" class="ticket nascosto">
+            <h3>BIGLIETTO</h3>
+            <p id="numero"></p>
+            <p id="data"></p>
+            <p id="ora"></p>
+        </div>
+
+        <div class="bottoni">
+            <button onclick="prendiBiglietto()" id="btnPrendi">
+                Prendi biglietto
+            </button>
+
+            <button onclick="inserisciBiglietto()" id="btnInserisci">
+                Inserisci biglietto
+            </button>
+        </div>
+
+    </div>
+
+    <div id="risultato"></div>
+
+</body>
+
+</html>

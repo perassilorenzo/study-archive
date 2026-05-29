@@ -1,0 +1,124 @@
+/* style.css */
+
+body {
+    background: #1f1f1f;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.macchina {
+    width: 320px;
+    height: 500px;
+    background: #444;
+    margin: auto;
+    border-radius: 15px;
+    padding-top: 20px;
+    position: relative;
+    box-shadow: 0 0 20px black;
+}
+
+.display {
+    width: 220px;
+    margin: auto;
+    background: #00aa00;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.slot {
+    width: 140px;
+    height: 12px;
+    background: black;
+    margin: 30px auto;
+    border-radius: 10px;
+}
+
+.ticket {
+    width: 180px;
+    background: white;
+    color: black;
+    margin: auto;
+    padding: 15px;
+    border: 3px dashed black;
+    border-radius: 10px;
+    position: relative;
+    top: -20px;
+    opacity: 0;
+}
+
+.bottoni {
+    margin-top: 40px;
+}
+
+button {
+    padding: 12px 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background: orange;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: orangered;
+    transform: scale(1.05);
+}
+
+#risultato {
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+/* ANIMAZIONE USCITA */
+
+.esce {
+    animation: esceBiglietto 2s forwards;
+}
+
+@keyframes esceBiglietto {
+
+    from {
+        top: -80px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* ANIMAZIONE ENTRATA */
+
+.entra {
+    animation: entraBiglietto 2s forwards;
+}
+
+@keyframes entraBiglietto {
+
+    from {
+        top: 0;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        top: -120px;
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
+.nascosto {
+    display: none;
+}

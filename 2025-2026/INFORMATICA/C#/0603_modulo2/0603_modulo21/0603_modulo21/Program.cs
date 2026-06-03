@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _0603_modulo1c
+namespace _0603_modulo21
 {
- 
+
     public class Persona
     {
-        private const int MAX_LENGHT = 100;
         // Attributi privati
         private string nome;
         private string cognome;
@@ -31,8 +28,8 @@ namespace _0603_modulo1c
             get { return nome; }
             set
             {
-                if (value.Length > 0 && value.Length < MAX_LENGHT) nome = value;
-                else throw new ArgumentException($"Il nome non può superare {MAX_LENGHT} char o non può avere char negativi");
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Il nome non può essere nullo");
+                nome = value;
             }
         }
 
@@ -42,8 +39,8 @@ namespace _0603_modulo1c
             get { return cognome; }
             set
             {
-                if (value.Length > 0 && value.Length < MAX_LENGHT) cognome = value;
-                else throw new ArgumentException($"Il cognome non può superare {MAX_LENGHT} char o non può avere char negativi");
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Il cognome non può essere nullo");
+                cognome = value;
             }
         }
 
@@ -53,14 +50,11 @@ namespace _0603_modulo1c
             get { return eta; }
             set
             {
-                if (value > 0) eta = value;
-                else throw new ArgumentException("L'età deve essere positiva");
+                if (value > 0)
+                    eta = value;
+                else
+                    Console.WriteLine("Errore: l'età deve essere maggiore di 0.");
             }
-        }
-
-        public override string ToString()
-        {
-            return $"{Nome} {Cognome}, Età: {Eta}";
         }
     }
 
@@ -70,33 +64,17 @@ namespace _0603_modulo1c
         static void Main(string[] args)
         {
             Persona persona1 = new Persona("Mario", "Rossi", 25);
-            persona1.ToString();
+            Console.WriteLine($"{persona1.Nome} {persona1.Cognome}, Età: {persona1.Eta}");
 
             // Test: tentativo di impostare un'età negativa
             persona1.Eta = -5;  // Verrà visualizzato un messaggio di errore
             Console.WriteLine($"Età corrente: {persona1.Eta}");
+
+            persona1.Cognome = "";
+            Console.WriteLine($"Cognome corrente: {persona1.Cognome}");
 
             Console.WriteLine("Premi un tasto per uscire...");
             Console.ReadKey();
         }
     }
 }
-
-// miglioramenti e refactoring:
-//- utilizzo delle eccezioni al posto dei Console.WriteLine()
-//- aggiunta del metodo ToString();
-
-//+------------------------------+
-//|          Persona             |
-//+------------------------------+
-//| - MAX_LENGTH: const int      |
-//| - nome: string               |
-//| - cognome: string            |
-//| - eta: int                   |
-//+------------------------------+
-//| +Persona(nome, cognome, eta) |
-//| +Nome: string {get; set;}    |
-//| +Cognome: string {get; set;} |
-//| +Eta: int {get; set;}        |
-//| +ToString: ovveride string   |
-//+------------------------------+

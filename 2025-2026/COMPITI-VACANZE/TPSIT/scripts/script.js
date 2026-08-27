@@ -28,6 +28,7 @@ function Grid() {
         }
     }
 
+    document.getElementsByClassName("area")[0].style.display = "flex";
     document.getElementById("btn-start").style.display = "none";
 
     count = 0;
@@ -45,6 +46,8 @@ function Grid() {
         divTime.textContent = `Tempo: ${time}`;
     }, 1000);
 }
+
+
 
 function Cell(row, col, cell) {
 
@@ -71,16 +74,20 @@ function Cell(row, col, cell) {
         cell.style.backgroundColor = "red";
         remain--;
         navi.splice(foundIndex, 1);
+        cell.classList = "damage";
+        cell.textContent = "🎯";
     } else {
         cell.style.backgroundColor = "#00e1ff";
+        cell.classList = "water";
+        cell.textContent = "💦";
     }
 
     divCount.textContent = `Tentativi: ${count}`;
     divRemain.textContent = `Caselle rimaste: ${remain}`;
 
     if (remain === 0) {
-
         document.getElementById("final-message").textContent = `Hai trovato tutte le navi in ${count} tentativi e ${time} secondi!`;
         document.getElementById("btn-start").style.display = "block";
+        
     }
 }

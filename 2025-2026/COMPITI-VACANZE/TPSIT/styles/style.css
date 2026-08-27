@@ -29,15 +29,35 @@ body{
     display: flex;
 }
 
-.cell{
+.water{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 20px;
+    font-weight: bold;
     border-radius: 5px;
-    border-color:black;
+    cursor: not-allowed;
+}
+
+.damage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+.cell {
+    border-radius: 5px;
     height: 50px;
     width: 50px;
     background-color: #A3D6E0;
     cursor: pointer;
 }
-
 .cell:hover{
     background-color: #85ecfa;
 }
@@ -51,13 +71,20 @@ body{
 }
 
 .area{
-    display: flex;
     justify-content: center;
+    display: none;
+    margin: 0 0 30px 0;
+}
+
+.card{
+    justify-content: center;
+    display: flex;
 }
 
 .dat{
-    padding: 10px;
     background-color: aqua;
-    margin: 0 100px;
     border-radius: 10px;
+    height: auto;
+    width: 200px;
+    text-align: center;
 }

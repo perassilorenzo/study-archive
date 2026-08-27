@@ -86,8 +86,9 @@ function Cell(row, col, cell) {
     divRemain.textContent = `Caselle rimaste: ${remain}`;
 
     if (remain === 0) {
+        cell.classList = "cellDone";
         document.getElementById("final-message").textContent = `Hai trovato tutte le navi in ${count} tentativi e ${time} secondi!`;
         document.getElementById("btn-start").style.display = "block";
-        
+
     }
 }

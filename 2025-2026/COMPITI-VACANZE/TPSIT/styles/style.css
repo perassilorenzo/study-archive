@@ -88,6 +88,7 @@ body{
 .card{
     justify-content: center;
     display: flex;
+    display: none;
 }
 
 .dat{

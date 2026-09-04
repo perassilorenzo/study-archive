@@ -1,7 +1,8 @@
 let naviIniziali = [
     { row: 0, col: 0 },
     { row: 1, col: 0 },
-    { row: 2, col: 0 }
+    { row: 2, col: 0 },
+    {row: 3, col: 0}
 ];
 
 let navi = [...naviIniziali];
@@ -30,6 +31,7 @@ function Grid() {
 
     document.getElementsByClassName("area")[0].style.display = "flex";
     document.getElementById("btn-start").style.display = "none";
+    document.getElementsByClassName("card")[0].style.display = "flex";
 
     count = 0;
     remain = navi.length;
@@ -89,6 +91,11 @@ function Cell(row, col, cell) {
         cell.classList = "cellDone";
         document.getElementById("final-message").textContent = `Hai trovato tutte le navi in ${count} tentativi e ${time} secondi!`;
         document.getElementById("btn-start").style.display = "block";
+        clearInterval(timerId);
+        
+        divCount.style.display = "none";
+        divRemain.style.display = "none";
+        divTime.style.display = "none";
 
     }
 }

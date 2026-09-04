@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "C: Compila file corrente",
-            "type": "shell",
+            "type": "process",
             "command": "gcc",
             "args": [
                 "-Wall",
@@ -27,13 +27,18 @@
         },
         {
             "label": "C: Compila ed esegui file corrente",
-            "type": "shell",
+            "type": "process",
             "dependsOn": "C: Compila file corrente",
+            "dependsOrder": "sequence",
             "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": []
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

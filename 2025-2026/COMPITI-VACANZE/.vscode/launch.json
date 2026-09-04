@@ -2,34 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C: Avvia file corrente",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "${fileDirname}",
-      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
-      "preLaunchTask": "C: Compila file corrente",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
-    },
-    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2025-2026/COMPITI-VACANZE/SISTEMI&RETI/0904_esercizio-2",
-      "program": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2025-2026/COMPITI-VACANZE/SISTEMI&RETI/0904_esercizio-2/build/Debug/outDebug",
+      "cwd": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2025-2026/COMPITI-VACANZE/SISTEMI&RETI/0904_esercizio-3",
+      "program": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2025-2026/COMPITI-VACANZE/SISTEMI&RETI/0904_esercizio-3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -33,6 +33,12 @@ function Grid() {
     document.getElementById("btn-start").style.display = "none";
     document.getElementsByClassName("card")[0].style.display = "flex";
 
+    divCount.style.display = "block";
+    divRemain.style.display = "block";
+    divTime.style.display = "block";
+    document.getElementById("final-message").style.textContent = "";
+
+
     count = 0;
     remain = navi.length;
     time = 0;
@@ -48,8 +54,6 @@ function Grid() {
         divTime.textContent = `Tempo: ${time}`;
     }, 1000);
 }
-
-
 
 function Cell(row, col, cell) {
 
@@ -76,11 +80,11 @@ function Cell(row, col, cell) {
         cell.style.backgroundColor = "red";
         remain--;
         navi.splice(foundIndex, 1);
-        cell.classList = "damage";
+        cell.style.cursor = "not-allowed";
         cell.textContent = "🎯";
     } else {
         cell.style.backgroundColor = "#00e1ff";
-        cell.classList = "water";
+        cell.style.cursor = "not-allowed";
         cell.textContent = "💦";
     }
 
@@ -91,6 +95,13 @@ function Cell(row, col, cell) {
         cell.classList = "cellDone";
         document.getElementById("final-message").textContent = `Hai trovato tutte le navi in ${count} tentativi e ${time} secondi!`;
         document.getElementById("btn-start").style.display = "block";
+        document.getElementById("btn-start").textContent = "Ricomincia";
+
+        document.querySelectorAll("#grid > div").forEach((cell) => {
+            cell.classList.add("clicked");
+            cell.style.cursor = "not-allowed";
+        });
+
         clearInterval(timerId);
         
         divCount.style.display = "none";

@@ -29,29 +29,14 @@ body{
     display: flex;
 }
 
-.water{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: not-allowed;
-}
-
-.damage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: not-allowed;
-}
-
 .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
     border-radius: 5px;
     height: 50px;
     width: 50px;
@@ -96,5 +81,5 @@ body{
     border-radius: 10px;
     height: auto;
     width: 200px;
-    text-align: center;
+    text-align: center; 
 }

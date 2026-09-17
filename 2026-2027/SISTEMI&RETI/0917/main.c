@@ -4,8 +4,9 @@
 void main()
 {
     FILE *fp; //puntatore che contiene l'indirizzo del file
-    fp = fopen("file.txt", "r");
+    char name[30+1];
 
+    fp = fopen("file.txt", "r");
     if (fp == NULL)
     {
         fclose(fp);
@@ -14,10 +15,18 @@ void main()
     }
     else
         printf("\nFile esistente\n");
+    fclose(fp);
 
-        
+    // insert
+    fp = fopen("file.txt", "w");
 
+    printf("\nInserisci il nome ==> ");
+    //scanf("%s", name);
+    gets(name);
+
+    fprintf(fp, "%s", name);
 
 
     fclose(fp);
+    printf("\n\n");
 }

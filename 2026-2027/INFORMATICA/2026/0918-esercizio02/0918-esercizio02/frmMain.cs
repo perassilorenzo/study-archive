@@ -40,8 +40,11 @@ namespace _0918_esercizio02
             MessageBox.Show($"frmMain - S2 = \"{f3.s2}\"");
 
             f3.ShowDialog();
+        }
 
-
+        private void chiudiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

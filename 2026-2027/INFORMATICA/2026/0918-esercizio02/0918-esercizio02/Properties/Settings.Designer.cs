@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _0916_ripasso.Properties
+namespace _0918_esercizio02.Properties
 {
 
 

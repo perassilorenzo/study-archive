@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _0916_ripasso
+namespace _0918_esercizio02
 {
     internal static class Program
     {
+        // variabile GLOBALE al progetto
+        public static string s1 = string.Empty;
+
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
@@ -16,7 +19,7 @@ namespace _0916_ripasso
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -29,6 +29,16 @@ namespace _0918_esercizio02
             this.Close();
         }
 
+        // ==================
+
+        public void cambia(string str)
+        {
+            s2 = str;
+            lblVariabile.Text = s2;
+
+
+        }
+
 
     }
 }

@@ -35,5 +35,18 @@ namespace _0921_oop
                 }
             }
         }
+        
+        public Persona(string nome, string cognome, int eta)
+        {
+            // uso le property
+            Nome = nome;
+            Cognome = cognome;
+            Eta = eta;
+
+            //// non si usano gli attributi
+            //this.nome = nome;
+            //this.cognome = cognome;
+            //this.eta = eta;
+        }
     }
 }

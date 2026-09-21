@@ -1,9 +1,18 @@
 body{
     display: flex;
-     flex-direction: column;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
     height: 100vh;
     margin: 0px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+main > div + button{
+    margin: 10px 5px;
 }

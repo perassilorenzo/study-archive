@@ -76,14 +76,81 @@ namespace _0923_esercizio4
             // dati studente scrittura su file
             public override string ToString()
             {
-                return NumeroMatricola.ToString() + ";";
-
-                // DA CONCLUDERE
+                return NumeroMatricola.ToString() + ";" +
+                    Cognome + ";" +
+                    Nome + ";" +
+                    DataNascita.Day.ToString() + "/" +
+                    DataNascita.Month.ToString() + "/" +
+                    DataNascita.Year.ToString() + ";" +
+                    Classe + ";" +
+                    Specializzazione + ";";
             }
 
         }
 
+        public Studente[] classe4A = new Studente[30];
+        public string[] int_Studente = { "N. Matricola", "Cognome", "Nome", "Data di Nascita", "Classe", "Specializzazione"};
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            grbStudente.Enabled = false;
+            dtpDataNascita.Value = DateTime.Now;
 
+            // carico combo specializzazioni
+            cmbSpecializzazione.Items.Add("INF");
+            cmbSpecializzazione.Items.Add("MEC");
+            cmbSpecializzazione.Items.Add("LSSA");
+            cmbSpecializzazione.Items.Add("TUR");
+            cmbSpecializzazione.Items.Add("ECO");
+        }
+
+        private void esciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void inserisciStudenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grbStudente.Enabled = true;
+        }
+
+        private void btnInserisci_Click(object sender, EventArgs e)
+        {
+            // controllo dati input
+            if (chkDatiStudente())
+            {
+
+            }
+        }
+
+        // ==================================
+
+        private bool chkDatiStudente()
+        {
+            bool error = false;
+
+            if (chkNMatricola())
+            {
+                // numero matricola
+                nudMatricola.Focus();
+                MessageBox.Show("N° Matricola già presente");
+                error = true;
+            }
+            else if 
+
+            return error;
+        }
+
+        private bool chkNMatricola()
+        {
+
+            for(int i = 0; i < classe4A.Length; i++)
+            {
+                if (classe4A[i].NumeroMatricola == Convert.ToInt32(nudMatricola.Value))
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

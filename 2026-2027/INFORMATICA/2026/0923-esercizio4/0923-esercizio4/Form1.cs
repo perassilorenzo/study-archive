@@ -102,6 +102,8 @@ namespace _0923_esercizio4
             cmbSpecializzazione.Items.Add("LSSA");
             cmbSpecializzazione.Items.Add("TUR");
             cmbSpecializzazione.Items.Add("ECO");
+
+            cmbClasse.SelectedIndex = -1;
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,29 +118,69 @@ namespace _0923_esercizio4
 
         private void btnInserisci_Click(object sender, EventArgs e)
         {
-            // controllo dati input
-            if (chkDatiStudente())
-            {
+            int i;
 
+            // controllo dati input
+            if (!chkDatiStudente())
+            {
+                if ((i = posizioneStudente()) == -1)
+                {
+                    MessageBox.Show("La Classe è completa");
+                    return;
+                }
+                
+                classe4A[i].NumeroMatricola = Convert.ToInt32(nudMatricola.Value);
+                classe4A[i].Cognome = txtCognome.Text;
+                classe4A[i].Nome = txtNome.Text;
+                classe4A[i].DataNascita = dtpDataNascita.Value;
+                classe4A[i].Classe = cmbClasse.Text;
+                classe4A[i].Specializzazione = cmbSpecializzazione.Text;
+
+                MessageBox.Show("Studente inserito con successo");
             }
         }
+
+        
 
         // ==================================
 
         private bool chkDatiStudente()
         {
-            bool error = false;
-
             if (chkNMatricola())
             {
                 // numero matricola
                 nudMatricola.Focus();
                 MessageBox.Show("N° Matricola già presente");
-                error = true;
+                return true;
             }
-            else if 
+            else if (txtCognome.Text == string.Empty)
+            {
+                // cognome
+                txtCognome.Focus();
+                MessageBox.Show("Cognome non inserito");
+                return true;
+            }
+            else if (txtNome.Text == string.Empty)
+            {
+                // nome
+                txtNome.Focus();
+                MessageBox.Show("Nome non inserito");
+                return true;
+            }
+            else if (cmbClasse.Text == string.Empty)
+            {
+                cmbClasse.Focus();
+                MessageBox.Show("Classe non selezionata");
+                return true;
+            }
+            else if (cmbSpecializzazione.Text == string.Empty)
+            {
+                cmbSpecializzazione.Focus();
+                MessageBox.Show("Specializzazione non selezionata");
+                return true;
+            }
 
-            return error;
+            return false;
         }
 
         private bool chkNMatricola()
@@ -151,6 +193,15 @@ namespace _0923_esercizio4
             }
 
             return false;
+        }
+        
+        private int posizioneStudente()
+        {
+            for (int i = 0; i < classe4A.Length; i++)
+                if (classe4A[i].NumeroMatricola == 0)
+                    return i;
+
+            return -1;
         }
     }
 }

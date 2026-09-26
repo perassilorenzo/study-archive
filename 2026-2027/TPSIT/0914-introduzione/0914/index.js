@@ -82,6 +82,10 @@ function stampa (filter = ""){
             let divPresenze = document.createElement("div");
             let btnGiustificazione = document.createElement("button");
             
+            div.className = `cella${i}`;
+            divPresenze.className = `cella${i}`;
+            btnGiustificazione.className = `cella${i}`;
+
             div.textContent = nomi[i]
             divPresenze.textContent = presenze[i];
             btnGiustificazione.textContent = "Giustifica";
@@ -159,5 +163,12 @@ for (let i = 0; i < 3; i++){
 }
 
 const timer2 = setInterval(() => {
-    //verificare i valori di presenza e colorarle la cella di rosso se false, verde se true 
-}, 3000)
+    //verificare i valori di presenza e colorarle la cella di rosso se false, verde se true
+    for (let i = 0; i < presenze.length; i++) {
+    const celle = document.querySelectorAll(`.cella${i}`);
+
+    celle.forEach((cella) => {
+      cella.style.backgroundColor = presenze[i] ? "green" : "red";
+    });
+  }
+}, 3000);

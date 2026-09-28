@@ -172,3 +172,16 @@ const timer2 = setInterval(() => {
     });
   }
 }, 3000);
+
+// timer();
+
+// function timer(){
+//     for (let i = 0; i < presenze.length; i++) {
+//         const celle = document.querySelectorAll(`.cella${i}`);
+
+//         celle.forEach((cella) => {
+//           cella.style.backgroundColor = presenze[i] ? "green" : "red";
+//         });
+//     }
+//     setTimeout(timer, 3000);
+// }

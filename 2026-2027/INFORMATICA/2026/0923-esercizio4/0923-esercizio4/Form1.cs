@@ -56,9 +56,7 @@ namespace _0923_esercizio4
             public int CalcoloEta()
             {
                 int eta;
-
                 eta = DateTime.Now.Year - DataNascita.Year;
-
                 return eta;
             }
 

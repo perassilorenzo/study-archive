@@ -122,26 +122,28 @@
             // visualizzaToolStripMenuItem
             // 
             this.visualizzaToolStripMenuItem.Name = "visualizzaToolStripMenuItem";
-            this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.visualizzaToolStripMenuItem.Text = "Visualizza ";
             // 
             // ordinaAZToolStripMenuItem
             // 
             this.ordinaAZToolStripMenuItem.Name = "ordinaAZToolStripMenuItem";
-            this.ordinaAZToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.ordinaAZToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ordinaAZToolStripMenuItem.Text = "Ordina (A-Z)";
             // 
             // salvaSuFileToolStripMenuItem
             // 
             this.salvaSuFileToolStripMenuItem.Name = "salvaSuFileToolStripMenuItem";
-            this.salvaSuFileToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.salvaSuFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salvaSuFileToolStripMenuItem.Text = "Salva su File";
+            this.salvaSuFileToolStripMenuItem.Click += new System.EventHandler(this.salvaSuFileToolStripMenuItem_Click);
             // 
             // caricaDaFileToolStripMenuItem
             // 
             this.caricaDaFileToolStripMenuItem.Name = "caricaDaFileToolStripMenuItem";
-            this.caricaDaFileToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.caricaDaFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.caricaDaFileToolStripMenuItem.Text = "Carica da File";
+            this.caricaDaFileToolStripMenuItem.Click += new System.EventHandler(this.caricaDaFileToolStripMenuItem_Click);
             // 
             // esciToolStripMenuItem
             // 
@@ -193,6 +195,7 @@
             this.btnAnnulla.TabIndex = 13;
             this.btnAnnulla.Text = "Annulla";
             this.btnAnnulla.UseVisualStyleBackColor = true;
+            this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click);
             // 
             // cmbSpecializzazione
             // 
@@ -205,6 +208,7 @@
             // 
             // cmbClasse
             // 
+            this.cmbClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClasse.FormattingEnabled = true;
             this.cmbClasse.Items.AddRange(new object[] {
             "1A",

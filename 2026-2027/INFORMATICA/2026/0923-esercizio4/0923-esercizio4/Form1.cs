@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace _0923_esercizio4
 {
@@ -114,6 +115,7 @@ namespace _0923_esercizio4
             grbStudente.Enabled = true;
         }
 
+
         private void btnInserisci_Click(object sender, EventArgs e)
         {
             int i;
@@ -136,11 +138,59 @@ namespace _0923_esercizio4
 
                 MessageBox.Show("Studente inserito con successo");
             }
+
+            clearInserimento();
+            grbStudente.Enabled = false;
+        }
+        private void btnAnnulla_Click(object sender, EventArgs e)
+        {
+            clearInserimento();
+            grbStudente.Enabled = false;
+        }
+        private void salvaSuFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (verificaStudenti())
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                //TextWriter sw= new StreamWritero("Classe4A.txt");
+                //StreamWriter sw = new StreamWritero("Classe4A.txt");
+                using (StreamWriter sw = new StreamWriter("Classe4A.txt"))
+                {
+                    for (int i = 0; i < classe4A.Length; i++)
+                        if (classe4A[i].NumeroMatricola != 0)
+                            sw.WriteLine(classe4A[i].ToString());
+                }
+
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("Classe salvata con successo sul file");
+            }
+            else
+                MessageBox.Show("La classe non contiene studenti");
         }
 
-        
+        private void caricaDaFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool leggiDati = false;
 
-        // ==================================
+            if (verificaStudenti())
+            {
+                if (MessageBox.Show("La classe contiene già degli studenti, sovrascriverli?", "Caricamento studenti da file", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    inzializzaClasse();
+                    leggiDati = true;
+                }
+            }
+            else
+                leggiDati = true;
+
+            // DA FINIRE
+        }
+
+
+
+
+        // ================================== PROCEDURE ==================================
 
         private bool chkDatiStudente()
         {
@@ -201,5 +251,27 @@ namespace _0923_esercizio4
 
             return -1;
         }
+        private void clearInserimento()
+        {
+            nudMatricola.Value = 1;
+            txtCognome.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            dtpDataNascita.Value = DateTime.Now;
+            cmbClasse.SelectedIndex = -1;
+            cmbSpecializzazione.SelectedIndex = -1;
+        }
+        private bool verificaStudenti()
+        {
+            for (int i = 0; i < classe4A.Length; i++)
+                if (classe4A[i].NumeroMatricola != 0)
+                    return true;
+
+            return false;
+        }
+        private void inzializzaClasse()
+        {
+            
+        }
+
     }
 }

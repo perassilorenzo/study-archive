@@ -59,10 +59,13 @@
             this.txtCognome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbClasse = new System.Windows.Forms.GroupBox();
+            this.dgvClasse = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.grbStudente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMatricola)).BeginInit();
+            this.grbClasse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasse)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +79,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(907, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,6 +127,7 @@
             this.visualizzaToolStripMenuItem.Name = "visualizzaToolStripMenuItem";
             this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.visualizzaToolStripMenuItem.Text = "Visualizza ";
+            this.visualizzaToolStripMenuItem.Click += new System.EventHandler(this.visualizzaToolStripMenuItem_Click);
             // 
             // ordinaAZToolStripMenuItem
             // 
@@ -340,21 +344,32 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // groupBox1
+            // grbClasse
             // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 351);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(762, 87);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grbClasse.Controls.Add(this.dgvClasse);
+            this.grbClasse.Location = new System.Drawing.Point(12, 351);
+            this.grbClasse.Name = "grbClasse";
+            this.grbClasse.Size = new System.Drawing.Size(762, 254);
+            this.grbClasse.TabIndex = 2;
+            this.grbClasse.TabStop = false;
+            this.grbClasse.Text = "Elenco Classe";
+            // 
+            // dgvClasse
+            // 
+            this.dgvClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClasse.Location = new System.Drawing.Point(9, 22);
+            this.dgvClasse.Name = "dgvClasse";
+            this.dgvClasse.RowHeadersWidth = 51;
+            this.dgvClasse.RowTemplate.Height = 24;
+            this.dgvClasse.Size = new System.Drawing.Size(747, 226);
+            this.dgvClasse.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(907, 617);
+            this.Controls.Add(this.grbClasse);
             this.Controls.Add(this.grbStudente);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -367,6 +382,8 @@
             this.grbStudente.ResumeLayout(false);
             this.grbStudente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMatricola)).EndInit();
+            this.grbClasse.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +420,8 @@
         private System.Windows.Forms.ComboBox cmbSpecializzazione;
         private System.Windows.Forms.ComboBox cmbClasse;
         private System.Windows.Forms.NumericUpDown nudMatricola;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbClasse;
+        private System.Windows.Forms.DataGridView dgvClasse;
     }
 }
 

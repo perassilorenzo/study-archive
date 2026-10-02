@@ -93,6 +93,7 @@ namespace _0923_esercizio4
         private void Form1_Load(object sender, EventArgs e)
         {
             grbStudente.Enabled = false;
+            grbClasse.Enabled = false;
             dtpDataNascita.Value = DateTime.Now;
 
             // carico combo specializzazioni
@@ -172,6 +173,9 @@ namespace _0923_esercizio4
         private void caricaDaFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool leggiDati = false;
+            string s;
+            string[] vDati = new string[6];
+            int pos = -1;
 
             if (verificaStudenti())
             {
@@ -184,7 +188,39 @@ namespace _0923_esercizio4
             else
                 leggiDati = true;
 
-            // DA FINIRE
+            if (leggiDati)
+            {
+                using (StreamReader sr = new StreamReader("Classe4A.txt"))
+                {
+                    while(!sr.EndOfStream)
+                    //while(sr.Peek() > -1)
+                    {
+                        s = sr.ReadLine();
+                        vDati = s.Split(';');
+                        pos++;
+                        classe4A[pos].NumeroMatricola = Convert.ToInt32(vDati[0]);
+                        classe4A[pos].Cognome = (vDati[1]);
+                        classe4A[pos].Nome = (vDati[2]);
+                        classe4A[pos].DataNascita = Convert.ToDateTime(vDati[3]);
+                        classe4A[pos].Classe = (vDati[4]);
+                        classe4A[pos].Specializzazione = (vDati[5]);
+
+
+                    }
+                }
+
+                MessageBox.Show("La classe è stata recuperata da file con successo");
+                visualizzaClasse();
+
+
+
+            }
+        }
+
+        private void visualizzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grbStudente.Enabled = true;
+            grbStudente.Enabled = false;
         }
 
 
@@ -272,6 +308,50 @@ namespace _0923_esercizio4
         {
             
         }
+        public void visualizzaClasse()
+        {
+            grbClasse.Enabled = true;
+            clearInserimento();
 
+            grbStudente.Enabled = false;
+
+            // impostazioni del datagridview
+            dgvClasse.Rows.Clear();
+            dgvClasse.ReadOnly = true;
+            dgvClasse.ColumnCount = 6;
+            dgvClasse.RowHeadersVisible = false;
+            dgvClasse.AllowUserToAddRows = false;
+            dgvClasse.AllowUserToResizeColumns = false;
+            dgvClasse.AllowUserToResizeRows = false;
+
+            dgvClasse.ClearSelection();
+
+            if (verificaStudenti())
+            {
+                // intestazione dgv
+                for (int i = 0; i < int_Studente.Length; i++)
+                    dgvClasse.Columns[i].HeaderText = int_Studente[i];
+
+
+                // carico gli studenti  
+                for(int i = 0; i < classe4A.Length; i++)
+                    if (classe4A[i].NumeroMatricola != 0)
+                    {
+                        dgvClasse.Rows.Add(
+                            classe4A[i].NumeroMatricola.ToString(),
+                            classe4A[i].Cognome,
+                            classe4A[i].Nome,
+                            classe4A[i].DataNascita.ToString(@"dd\/MM\/yyyy"),
+                            classe4A[i].Classe,
+                            classe4A[i].Specializzazione
+                            );
+                    }
+
+                dgvClasse.AutoResizeColumn();
+            }
+
+        }
+
+        
     }
 }

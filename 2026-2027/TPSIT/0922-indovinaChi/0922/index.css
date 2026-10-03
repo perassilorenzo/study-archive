@@ -1,19 +1,24 @@
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    
-    height: 100vh;
+    align-items: center;
     margin: 0px;
+    height: 100vh;
 }
 
-.cell{
-    border: solid 1px black;
-    padding: 10px;
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.grid{
+main{
     display: grid;
     grid-template-columns: repeat(4, auto);
+
+    div{    /* main div */
+        font-size: 30pt;
+        cursor: pointer;
+    }
 }

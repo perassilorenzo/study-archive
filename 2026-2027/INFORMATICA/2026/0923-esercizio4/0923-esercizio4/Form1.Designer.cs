@@ -61,11 +61,21 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.grbClasse = new System.Windows.Forms.GroupBox();
             this.dgvClasse = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grbStudente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMatricola)).BeginInit();
             this.grbClasse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasse)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -79,7 +89,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(907, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(919, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,13 +112,14 @@
             // ricercaToolStripMenuItem
             // 
             this.ricercaToolStripMenuItem.Name = "ricercaToolStripMenuItem";
-            this.ricercaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.ricercaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ricercaToolStripMenuItem.Text = "Ricerca";
+            this.ricercaToolStripMenuItem.Click += new System.EventHandler(this.ricercaToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             // 
             // gestioneClasseToolStripMenuItem
@@ -125,27 +136,27 @@
             // visualizzaToolStripMenuItem
             // 
             this.visualizzaToolStripMenuItem.Name = "visualizzaToolStripMenuItem";
-            this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.visualizzaToolStripMenuItem.Text = "Visualizza ";
             this.visualizzaToolStripMenuItem.Click += new System.EventHandler(this.visualizzaToolStripMenuItem_Click);
             // 
             // ordinaAZToolStripMenuItem
             // 
             this.ordinaAZToolStripMenuItem.Name = "ordinaAZToolStripMenuItem";
-            this.ordinaAZToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ordinaAZToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.ordinaAZToolStripMenuItem.Text = "Ordina (A-Z)";
             // 
             // salvaSuFileToolStripMenuItem
             // 
             this.salvaSuFileToolStripMenuItem.Name = "salvaSuFileToolStripMenuItem";
-            this.salvaSuFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salvaSuFileToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.salvaSuFileToolStripMenuItem.Text = "Salva su File";
             this.salvaSuFileToolStripMenuItem.Click += new System.EventHandler(this.salvaSuFileToolStripMenuItem_Click);
             // 
             // caricaDaFileToolStripMenuItem
             // 
             this.caricaDaFileToolStripMenuItem.Name = "caricaDaFileToolStripMenuItem";
-            this.caricaDaFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.caricaDaFileToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.caricaDaFileToolStripMenuItem.Text = "Carica da File";
             this.caricaDaFileToolStripMenuItem.Click += new System.EventHandler(this.caricaDaFileToolStripMenuItem_Click);
             // 
@@ -364,11 +375,97 @@
             this.dgvClasse.Size = new System.Drawing.Size(747, 226);
             this.dgvClasse.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.domainUpDown1);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Location = new System.Drawing.Point(21, 612);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(371, 219);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(398, 611);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(370, 220);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "label8";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 90);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 16);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "label9";
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(101, 28);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(136, 22);
+            this.domainUpDown1.TabIndex = 3;
+            this.domainUpDown1.Text = "domainUpDown1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(101, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(136, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(101, 86);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(136, 22);
+            this.textBox2.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 137);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 26);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 617);
+            this.ClientSize = new System.Drawing.Size(919, 843);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grbClasse);
             this.Controls.Add(this.grbStudente);
             this.Controls.Add(this.menuStrip1);
@@ -384,6 +481,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMatricola)).EndInit();
             this.grbClasse.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasse)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,6 +521,15 @@
         private System.Windows.Forms.NumericUpDown nudMatricola;
         private System.Windows.Forms.GroupBox grbClasse;
         private System.Windows.Forms.DataGridView dgvClasse;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

@@ -224,6 +224,27 @@ namespace _0923_esercizio4
         }
 
 
+        private void ricercaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grbRicerca.Enable = true;
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // tipo ricerca
+            if (txtRicCognome.Text != string.Empty && txtRicNome.Text != string.Empty)
+                tipoR = "CN";
+            else
+                tipoR = "NM";
+
+            // ricerca eventuale studente
+            for (int i = 0; i < classe4A.Length; i++)
+            {
+
+            }
+        }
 
 
         // ================================== PROCEDURE ==================================
@@ -351,7 +372,5 @@ namespace _0923_esercizio4
             }
 
         }
-
-        
     }
 }

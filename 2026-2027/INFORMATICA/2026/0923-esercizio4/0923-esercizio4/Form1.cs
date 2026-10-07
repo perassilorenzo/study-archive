@@ -18,93 +18,109 @@ namespace _0923_esercizio4
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Struct Studente
-        /// </summary>
-        public struct Studente
+        /**********************/
+        /* Struttura Studente */
+        /**********************/
+
+        public struct studente
         {
-            // definisco le caratteristiche
-            public int NumeroMatricola;
-            public string Cognome;
-            public string Nome;
-            public DateTime DataNascita;
-            public string Classe;
-            public string Specializzazione;
 
-            // costruttore
-            public Studente(int nMatricola, string cognome, string nome, DateTime dataNascita, string classe, string specializzazione)
+            // Definisco le Caratteristiche
+            public int nMatr;
+            public string cognome;
+            public string nome;
+            public DateTime dataN;
+            public string classe; // 3A - 4B - 5C
+            public string spec; // INF - MEC - ELT
+
+            // Costruttore
+            public studente(int nM,
+                             string co,
+                             string no,
+                             DateTime dN,
+                             string cl,
+                             string sp)
             {
-                NumeroMatricola = nMatricola;
-                Cognome = cognome;
-                Nome = nome;
-                DataNascita = dataNascita;
-                Classe = classe;
-                Specializzazione = specializzazione;
+                nMatr = nM;
+                cognome = co;
+                nome = no;
+                dataN = dN;
+                classe = cl;
+                spec = sp;
             }
 
-            // pulizia dati studente
-            public void Clear()
+            // Pulizia Dati Studente
+            public void clear()
             {
-                NumeroMatricola = 0;
-                Cognome = string.Empty;
-                Nome = string.Empty;
-                DataNascita = DateTime.MinValue;
-                Classe = string.Empty;
-                Specializzazione= string.Empty;
+                nMatr = 0;
+                cognome = string.Empty;
+                nome = string.Empty;
+                dataN = DateTime.MinValue;
+                classe = string.Empty;
+                spec = string.Empty;
             }
 
-            // calcolo eta studente
-            public int CalcoloEta()
+            // Calcolo Età Studente
+            public int calcolaEta()
             {
                 int eta;
-                eta = DateTime.Now.Year - DataNascita.Year;
+
+                eta = DateTime.Now.Year - dataN.Year;
+
                 return eta;
             }
 
-            // dati studente 
-            public string GetStudente()
+            // Dati dello Studente
+            public string getStudente()
             {
-                return $"N° Matricola: {NumeroMatricola}\n" +
-                    $"Cognome: {Cognome}\n" +
-                    $"Nome: {Nome}\n" +
-                    $"Data di nascita: {DataNascita.ToString(@"dd\/MM\/yyyy")}\n" +
-                    $"Classe: {Classe}\n" +
-                    $"Specializzazione: {Specializzazione}";
+                return $"N° Matricola = {nMatr} " +
+                        $" | Cognome = {cognome}" +
+                        $" | Nome = {nome}" +
+                        $" | Data Nascita = {dataN.ToString(@"dd\/MM\/yyyy")}" +
+                        $" | Classe = {classe}" +
+                        $" | Specializzazione = {spec}";
             }
 
-            // dati studente scrittura su file
+            // Dati Studente per Salvare su File
             public override string ToString()
             {
-                return NumeroMatricola.ToString() + ";" +
-                    Cognome + ";" +
-                    Nome + ";" +
-                    DataNascita.Day.ToString() + "/" +
-                    DataNascita.Month.ToString() + "/" +
-                    DataNascita.Year.ToString() + ";" +
-                    Classe + ";" +
-                    Specializzazione + ";";
+                return nMatr.ToString() + ";" +
+                       cognome + ";" +
+                       nome + ";" +
+                         dataN.Day.ToString() + "/" +
+                         dataN.Month.ToString() + "/" +
+                         dataN.Year.ToString() + ";" +
+                       classe + ";" +
+                       spec + ";";
+
             }
 
         }
 
-        public Studente[] classe4A = new Studente[30];
-        public string[] int_Studente = { "N. Matricola", "Cognome", "Nome", "Data di Nascita", "Classe", "Specializzazione"};
+        public studente[] classe4A = new studente[30];
+        public string[] int_Studente = { "N.MATRICOLA", "COGNOME", "NOME", "DATA NASCITA", "CLASSE", "SPECIALIZZAZIONE" };
+        public int posStudente = -1;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             grbStudente.Enabled = false;
             grbClasse.Enabled = false;
+            grbRicerca.Enabled = false;
+            grpDatiStudente.Enabled = false;
+
             dtpDataNascita.Value = DateTime.Now;
 
-            // carico combo specializzazioni
+            // Carico Combo Specializzazioni
             cmbSpecializzazione.Items.Add("INF");
             cmbSpecializzazione.Items.Add("MEC");
+            cmbSpecializzazione.Items.Add("ELT");
             cmbSpecializzazione.Items.Add("LSSA");
-            cmbSpecializzazione.Items.Add("TUR");
             cmbSpecializzazione.Items.Add("ECO");
+            cmbSpecializzazione.Items.Add("TUR");
 
             cmbClasse.SelectedIndex = -1;
         }
+
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -114,60 +130,43 @@ namespace _0923_esercizio4
         private void inserisciStudenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             grbStudente.Enabled = true;
+            grbClasse.Enabled = false;
+            grbRicerca.Enabled = false;
+            grpDatiStudente.Enabled = false;
         }
 
-
-        private void btnInserisci_Click(object sender, EventArgs e)
-        {
-            int i;
-
-            // controllo dati input
-            if (!chkDatiStudente())
-            {
-                if ((i = posizioneStudente()) == -1)
-                {
-                    MessageBox.Show("La Classe è completa");
-                    return;
-                }
-                
-                classe4A[i].NumeroMatricola = Convert.ToInt32(nudMatricola.Value);
-                classe4A[i].Cognome = txtCognome.Text;
-                classe4A[i].Nome = txtNome.Text;
-                classe4A[i].DataNascita = dtpDataNascita.Value;
-                classe4A[i].Classe = cmbClasse.Text;
-                classe4A[i].Specializzazione = cmbSpecializzazione.Text;
-
-                MessageBox.Show("Studente inserito con successo");
-            }
-
-            clearInserimento();
-            grbStudente.Enabled = false;
-        }
-        private void btnAnnulla_Click(object sender, EventArgs e)
-        {
-            clearInserimento();
-            grbStudente.Enabled = false;
-        }
         private void salvaSuFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (verificaStudenti())
             {
+
                 this.Cursor = Cursors.WaitCursor;
 
-                //TextWriter sw= new StreamWritero("Classe4A.txt");
-                //StreamWriter sw = new StreamWritero("Classe4A.txt");
+                // Imposto il File di Salvataggio
+                // TextWriter fClasse = new StreamWriter("Classe4A.txt");
+
+                /*
+                StreamWriter sw = new StreamWriter("Classe4A.txt");
+                for (int I = 0; I < classe4A.Length; I++)
+                    if (classe4A[I].nMatr != 0)
+                        sw.WriteLine(classe4A[I].ToString());
+                sw.Close();
+                */
+
                 using (StreamWriter sw = new StreamWriter("Classe4A.txt"))
                 {
-                    for (int i = 0; i < classe4A.Length; i++)
-                        if (classe4A[i].NumeroMatricola != 0)
-                            sw.WriteLine(classe4A[i].ToString());
+                    for (int I = 0; I < classe4A.Length; I++)
+                        if (classe4A[I].nMatr != 0)
+                            sw.WriteLine(classe4A[I].ToString());
                 }
 
                 this.Cursor = Cursors.Default;
-                MessageBox.Show("Classe salvata con successo sul file");
+                MessageBox.Show("Classe salvata con successo su File !!!");
+
             }
             else
-                MessageBox.Show("La classe non contiene studenti");
+                MessageBox.Show("La Classe non contiene Studenti !!!");
+
         }
 
         private void caricaDaFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,136 +178,283 @@ namespace _0923_esercizio4
 
             if (verificaStudenti())
             {
-                if (MessageBox.Show("La classe contiene già degli studenti, sovrascriverli?", "Caricamento studenti da file", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("La Classe contiene già degli Studenti, sovrascriverli ?",
+                                    "Caricameno Studenti da File",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    inzializzaClasse();
+                    inizializzaClasse();
                     leggiDati = true;
                 }
             }
             else
+            {
                 leggiDati = true;
+            }
 
             if (leggiDati)
             {
                 using (StreamReader sr = new StreamReader("Classe4A.txt"))
                 {
-                    while(!sr.EndOfStream)
-                    //while(sr.Peek() > -1)
+                    while (!sr.EndOfStream)
                     {
                         s = sr.ReadLine();
                         vDati = s.Split(';');
                         pos++;
-                        classe4A[pos].NumeroMatricola = Convert.ToInt32(vDati[0]);
-                        classe4A[pos].Cognome = (vDati[1]);
-                        classe4A[pos].Nome = (vDati[2]);
-                        classe4A[pos].DataNascita = Convert.ToDateTime(vDati[3]);
-                        classe4A[pos].Classe = (vDati[4]);
-                        classe4A[pos].Specializzazione = (vDati[5]);
-
-
+                        classe4A[pos].nMatr = Convert.ToInt32(vDati[0]);
+                        classe4A[pos].cognome = vDati[1];
+                        classe4A[pos].nome = vDati[2];
+                        classe4A[pos].dataN = Convert.ToDateTime(vDati[3]);
+                        classe4A[pos].classe = vDati[4];
+                        classe4A[pos].spec = vDati[5];
                     }
                 }
-
-                MessageBox.Show("La classe è stata recuperata da file con successo");
+                MessageBox.Show("La classe è stata recuperata dal File con successo");
                 visualizzaClasse();
-
-
-
             }
         }
 
         private void visualizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grbStudente.Enabled = true;
-            grbStudente.Enabled = false;
+            visualizzaClasse();
         }
-
-
         private void ricercaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            grbRicerca.Enable = true;
+            grbRicerca.Enabled = true;
+            grpDatiStudente.Enabled = false;
+
+            clearInserimento();
+            grbStudente.Enabled = false;
+            grbClasse.Enabled = false;
+            btnElimina.Enabled = true;
+        }
+
+        private void btnInserisci_Click(object sender, EventArgs e)
+        {
+            studente stuAus = new studente();
+            int pos;
+
+            // Controllo Dati Input
+            if (chkDatiStudente())
+            {
+                pos = posizioneStudente();
+
+                if (pos != -1)
+                {
+                    stuAus.nMatr = Convert.ToInt32(nudMatricola.Value);
+                    stuAus.cognome = txtCognome.Text;
+                    stuAus.nome = txtNome.Text;
+                    stuAus.dataN = dtpDataNascita.Value;
+                    stuAus.classe = cmbClasse.Text;
+                    stuAus.spec = cmbSpecializzazione.Text;
+                    classe4A[pos] = stuAus;
+                    MessageBox.Show("Studente inserito con successo !!!");
+                }
+                else
+                    MessageBox.Show("La Classe è comleta !!!");
+
+                clearInserimento();
+                grbStudente.Enabled = false;
+
+            }
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAnnulla_Click(object sender, EventArgs e)
         {
-            // tipo ricerca
+            clearInserimento();
+            grbStudente.Enabled = false;
+        }
+        private void brnRicerca_Click(object sender, EventArgs e)
+        {
+            string tipoRicerca = string.Empty;
             if (txtRicCognome.Text != string.Empty && txtRicNome.Text != string.Empty)
-                tipoR = "CN";
+            {
+                tipoRicerca = "CognomeNome";
+            }
             else
-                tipoR = "NM";
-
-            // ricerca eventuale studente
+            {
+                tipoRicerca = "Matricola";
+            }
+            bool trovato = false;
+            //Ricerca eventuale studente
             for (int i = 0; i < classe4A.Length; i++)
             {
+                //Ricerca per matricola
+                if (tipoRicerca == "Matricola")
+                {
+                    if (classe4A[i].nMatr == nudRicMatricola.Value)
+                    {
+                        trovato = true;
+                        visDatiStudente(i);
+                        break;
+                    }
+                }
+                else
+                {
+                    if (string.Compare(classe4A[i].cognome, txtRicCognome.Text) == 0 &&
+                        string.Compare(classe4A[i].nome, txtRicNome.Text) == 0)
+                    {
+                        trovato = true;
+                        visDatiStudente(i);
+                        break;
+                    }
+                }
+            }
 
+            if (!trovato)
+            {
+                MessageBox.Show($"Lo studente non è stato trovato ");
+            }
+        }
+
+        private void eliminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grbRicerca.Enabled = true;
+
+            clearInserimento();
+            grbStudente.Enabled = false;
+            grbRicerca.Enabled = false;
+
+            dtpDataNascita.Value = DateTime.Now;
+        }
+        private void ordinaAZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool ordinaOk = false;
+            if (verificaStudenti())
+            {
+                for (int i = 0; i < classe4A.Length - 1; i++)
+                {
+                    if (classe4A[i].nMatr != 0)
+                    {
+                        for (int j = i + 1; j < classe4A.Length; j++)
+                        {
+                            if (string.Compare(classe4A[i].cognome, classe4A[j].cognome) > 0)
+                            {
+                                studente stuAus = classe4A[i];
+                                classe4A[i] = classe4A[j];
+                                classe4A[j] = stuAus;
+                                ordinaOk = true;
+                            }
+                            else if (string.Compare(classe4A[i].cognome, classe4A[j].cognome) == 0)
+                            {
+                                if (string.Compare(classe4A[i].nome, classe4A[j].nome) > 0)
+                                {
+                                    studente stuAus = classe4A[i];
+                                    classe4A[i] = classe4A[j];
+                                    classe4A[j] = stuAus;
+                                    ordinaOk = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (ordinaOk)
+                {
+                    MessageBox.Show("La classe è stata ordinata con successo");
+                    visualizzaClasse();
+                }
+                else
+                {
+                    MessageBox.Show("La classe è gia ordinata");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La classe non ha studenti");
             }
         }
 
 
-        // ================================== PROCEDURE ==================================
-
-        private bool chkDatiStudente()
+        private void btnElimina_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Eliminare lo Studente selezionato ? ", "Cancellazione Studente",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                classe4A[posStudente].clear();
+                MessageBox.Show("Studente Cancellato con successo");
+                clearDatiRicerca();
+                clearDatiStudenti();
+                visualizzaClasse();
+            }
+        }
+        // =====================================================
+
+        public bool chkDatiStudente()
+        {
+            bool errore = false;
+
             if (chkNMatricola())
             {
-                // numero matricola
+                // Numero Matricola
                 nudMatricola.Focus();
-                MessageBox.Show("N° Matricola già presente");
-                return true;
+                MessageBox.Show("N° Matricola già presente nella Classe");
+                errore = true;
             }
             else if (txtCognome.Text == string.Empty)
             {
-                // cognome
+                // Cognome
                 txtCognome.Focus();
                 MessageBox.Show("Cognome non inserito");
-                return true;
+                errore = true;
             }
             else if (txtNome.Text == string.Empty)
             {
-                // nome
+                // Nome
                 txtNome.Focus();
                 MessageBox.Show("Nome non inserito");
-                return true;
+                errore = true;
             }
             else if (cmbClasse.Text == string.Empty)
             {
+                // Classe
                 cmbClasse.Focus();
                 MessageBox.Show("Classe non selezionata");
-                return true;
+                errore = true;
             }
             else if (cmbSpecializzazione.Text == string.Empty)
             {
+                // Specializzazione
                 cmbSpecializzazione.Focus();
                 MessageBox.Show("Specializzazione non selezionata");
-                return true;
+                errore = true;
             }
 
-            return false;
+            return !errore;
         }
 
-        private bool chkNMatricola()
+        public bool chkNMatricola()
         {
+            bool errore = false;
 
-            for(int i = 0; i < classe4A.Length; i++)
+            for (int I = 0; I < classe4A.Length; I++)
             {
-                if (classe4A[i].NumeroMatricola == Convert.ToInt32(nudMatricola.Value))
-                    return true;
+                if (classe4A[I].nMatr == Convert.ToInt32(nudMatricola.Value))
+                {
+                    errore = true;
+                    break;
+                }
             }
 
-            return false;
+            return errore;
         }
-        
-        private int posizioneStudente()
-        {
-            for (int i = 0; i < classe4A.Length; i++)
-                if (classe4A[i].NumeroMatricola == 0)
-                    return i;
 
-            return -1;
+        public int posizioneStudente()
+        {
+            int pos = -1;
+
+            for (int I = 0; I < classe4A.Length; I++)
+                if (classe4A[I].nMatr == 0)
+                {
+                    pos = I;
+                    break;
+                }
+
+            return pos;
         }
-        private void clearInserimento()
+
+        public void clearInserimento()
         {
             nudMatricola.Value = 1;
             txtCognome.Text = string.Empty;
@@ -317,26 +463,46 @@ namespace _0923_esercizio4
             cmbClasse.SelectedIndex = -1;
             cmbSpecializzazione.SelectedIndex = -1;
         }
-        private bool verificaStudenti()
+
+        public bool verificaStudenti()
         {
-            for (int i = 0; i < classe4A.Length; i++)
-                if (classe4A[i].NumeroMatricola != 0)
+            //int cont = 0;
+            // int I =  0;
+
+            for (int I = 0; I < classe4A.Length; I++)
+                if (classe4A[I].nMatr != 0)
                     return true;
+            //{
+            //    cont++;
+            //    break;
+            //}
+
+            /*
+            while (classe4A[I].nMatr == 0 && I < classe4A.Length)
+                I++;
+
+            if (classe4A[I].nMatr != 0)
+                return 1;
+            */
 
             return false;
         }
-        private void inzializzaClasse()
+
+        public void inizializzaClasse()
         {
-            
+            for (int I = 0; I < classe4A.Length; I++)
+                classe4A[I].clear();
         }
-        public void visualizzaClasse()
+        private void visualizzaClasse()
         {
             grbClasse.Enabled = true;
+
             clearInserimento();
-
             grbStudente.Enabled = false;
+            grbRicerca.Enabled = false;
+            grpDatiStudente.Enabled = false;
 
-            // impostazioni del datagridview
+            //Impostazione della DGV: pulisce, rende fisse le colonne
             dgvClasse.Rows.Clear();
             dgvClasse.ReadOnly = true;
             dgvClasse.ColumnCount = 6;
@@ -346,31 +512,61 @@ namespace _0923_esercizio4
             dgvClasse.AllowUserToResizeRows = false;
 
             dgvClasse.ClearSelection();
-
             if (verificaStudenti())
             {
-                // intestazione dgv
+                //Intestazione DGV
                 for (int i = 0; i < int_Studente.Length; i++)
+                {
                     dgvClasse.Columns[i].HeaderText = int_Studente[i];
-
-
-                // carico gli studenti  
-                for(int i = 0; i < classe4A.Length; i++)
-                    if (classe4A[i].NumeroMatricola != 0)
+                }
+                //Carico gli studenti
+                for (int i = 0; i < classe4A.Length; i++)
+                {
+                    if (classe4A[i].nMatr != 0)
                     {
                         dgvClasse.Rows.Add(
-                            classe4A[i].NumeroMatricola.ToString(),
-                            classe4A[i].Cognome,
-                            classe4A[i].Nome,
-                            classe4A[i].DataNascita.ToString(@"dd\/MM\/yyyy"),
-                            classe4A[i].Classe,
-                            classe4A[i].Specializzazione
-                            );
+                            classe4A[i].nMatr.ToString(),
+                            classe4A[i].cognome,
+                            classe4A[i].nome,
+                            classe4A[i].dataN.ToString(@"dd\/MM\/yyyy"),
+                            classe4A[i].classe,
+                            classe4A[i].spec
+                        );
                     }
-
-                dgvClasse.AutoResizeColumn();
+                }
+                dgvClasse.AutoResizeColumns();
             }
-
         }
+
+        public void clearDatiRicerca()
+        {
+            nudRicMatricola.Value = 1;
+            txtRicCognome.Text = string.Empty;
+            txtRicNome.Text = string.Empty;
+        }
+        public void clearDatiStudenti()
+        {
+            lblMatricola.Text = string.Empty;
+            lblCognome.Text = string.Empty;
+            lblNome.Text = string.Empty;
+            lblDataNascita.Text = string.Empty;
+            lblClasse.Text = string.Empty;
+            lblSpec.Text = string.Empty;
+            btnElimina.Enabled = false;
+        }
+        public void visDatiStudente(int i)
+        {
+            grpDatiStudente.Enabled = true;
+
+            lblMatricola.Text = classe4A[i].nMatr.ToString();
+            lblCognome.Text = classe4A[i].cognome;
+            lblNome.Text = classe4A[i].nome;
+            lblDataNascita.Text = classe4A[i].dataN.ToString(@"dd\/MM\/yyyy");
+            lblClasse.Text = classe4A[i].classe;
+            lblSpec.Text = classe4A[i].spec;
+
+            posStudente = i;
+        }
+
     }
 }

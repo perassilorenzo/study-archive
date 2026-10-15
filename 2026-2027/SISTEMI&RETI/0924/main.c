@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Funzioni.h"
+#include "../funzioni/Funzioni.h"
 
 /// Studenti.txt :
 /// Num. Matricola
@@ -23,15 +23,18 @@ void eliminaStudente();
 int getUltimaMatricola();
 void aggiungiDati(FILE *pFStu, int ultimoNM);
 
-void main()
+int main(void)
 {
     int scelta;
     FILE *fp;
 
     fp = fopen("Studenti.txt","r");
     if (fp == NULL) {
-        fclose(fp);
         fp = fopen("Studenti.txt","w");
+    }
+    if (fp == NULL) {
+        perror("Impossibile aprire Studenti.txt");
+        return 1;
     }
     fclose(fp);
 
@@ -79,6 +82,7 @@ void main()
     }
     while(scelta != 0);
 
+    return 0;
 }
 
 void disegnaMenu()
@@ -98,9 +102,14 @@ void disegnaMenu()
 
 void attesa()
 {
+    int carattere;
+
+    while ((carattere = getchar()) != '\n' && carattere != EOF)
+    {
+    }
+
     printf("\n\nPremi un carattere per continuare ...");
-    fflush(stdin);
-    getch();
+    (void)getchar();
 }
 
 
@@ -179,7 +188,7 @@ void ricercaClasse()
     clrscr();
     printf("\nInserisci la Classe da ricerca ==> ");
     fflush(stdin);
-    gets(ricClasse);
+    scanf("%2s", ricClasse);
 
     printf("\n\nStudenti Classe %s :", ricClasse);
 
@@ -256,11 +265,11 @@ void modificaStudente()
 
                     printf("\nInserisci la Nuova Classe ==> ");
                     fflush(stdin);
-                    gets(cl);
+                    scanf("%2s", cl);
 
                     printf("\nInserisci la Nuova Specializzazione ==> ");
                     fflush(stdin);
-                    gets(spec);
+                    scanf("%3s", spec);
 
                 }
 
@@ -289,7 +298,6 @@ void modificaStudente()
             printf("\n\nLo Studente e' stato modificato con successo !!!");
 
         }
-
     }
 
 }

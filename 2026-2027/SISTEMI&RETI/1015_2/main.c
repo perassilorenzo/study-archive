@@ -1,28 +1,36 @@
 #include <stdio.h>
 
-int main(void){
-    char c;
-    int n;
+int main()
+{
+
+    char C;
+    int N;
 
     char *pc;
     int *pn;
 
-    printf("\n\nEsercizio 2: gestione puntatori in base al tipo");
+    printf("\n\nEsercizio 2 : gestione Puntatori in base la Tipo\n\n");
 
-    pc = &c;
-    pn = &n;
+    pc = &C;
+    pn = &N;
 
     *pc = 'A';
     *pn = 5;
 
-    for (int i = 0; i < *pn; i++){
+    for(int I=0; I<*pn; I++)
         printf("\n- %c", *pc);
 
-        printf("\n\nValore del contenuto del puntare intero: %d", *pn);
-        printf("\n\nValore contenuto del puntare intero: %p", pn);
-        printf("\n\nValore del puntare intero: %p", &pn);
-        printf("\n\nValore del contenuto del puntare intero: %c", *pc);
-        printf("\n\nValore del contenuto del puntare intero: %p", pc);
-        printf("\n\nValore del contenuto del puntare intero: %p", &pc);
-    }
+    printf("\n\nValore del Contenuto del Puntatore Intero : %d", *pn);
+    printf("\n\nIndirizzo Contenuto nel Puntatore Intero : %p", pn);
+    printf("\n\nIndirizzo del Puntatore Intero : %p", &pn);
+
+    printf("\n\nValore del Contenuto del Puntatore Carattere : %c", *pc);
+    printf("\n\nIndirizzo Contenuto nel Puntatore Carattere : %p", pc);
+    printf("\n\nIndirizzo del Puntatore Carattere : %p", &pc);
+
+
+
+    printf("\n\n");
+
+    return 0;
 }

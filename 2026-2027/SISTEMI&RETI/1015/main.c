@@ -1,28 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-    int n;
+int main()
+{
+
+    int N;
     int *p;
 
-    printf("\nEsercizio 1: utilizzo dei puntatori\n");
+    printf("\nEsercizio 1: utilizzo dei Puntatori");
 
-    n = 10;
-    p = &n;
-    
-    printf("\nValore di n: %d", n);
-    printf("\nValore di p: %p", &n);
+    N = 10;
+    p = &N;
 
-    printf("\n\nValore del contenuto del puntatore: %d", *p);
-    printf("\n\nIndirizzo contenuto nel puntatore: %d", p);
-    printf("\n\nIndirizzo del puntatore: %p", &p);
+    printf("\n\nValore di N: %d", N);
+    printf("\n\nValore di p: %p", &N);
 
-    // cambio contenuto del puntatore
+    printf("\n\nValore del Contenuto del Puntatore : %d", *p);
+    printf("\n\nIndirizzo Contenuto nel Puntatore : %p", p);
+    printf("\n\nIndirizzo del Puntatore : %p", &p);
 
+    // Cambio del Contenuto di un Puntatore
+    *p = *p * 2;
     *p *= 2;
-
-    printf("\n\nValore del contenuto %p", *p);
+    printf("\n\nValore del Contenuto del Puntatore : %p", *p);
+    printf("\n\nValore del Contenuto del Puntatore : %d", *p);
 
     printf("\n\n");
+
     return 0;
 }

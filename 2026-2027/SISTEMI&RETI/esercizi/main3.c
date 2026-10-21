@@ -1,0 +1,2 @@
+// Scrivi un programma in C che permetta all'utente di inserire nome, cognome e voto di più studenti e salvi i dati in un file chiamato Studenti.txt. Il programma deve consentire di aggiungere nuovi studenti senza cancellare quelli già presenti e, successivamente, leggere il file per visualizzare tutti gli studenti registrati, gestendo correttamente l'apertura e la chiusura dei file e gli eventuali errori.
+

@@ -61,7 +61,7 @@ void main()
     // visualizzo le eventuali materie
     printf("\nElenco materie:\n");
     fp = fopen("list.txt", "r");
-    while(fgetc(subject, 22, fp) != NULL){
+    while(fgets(subject, 22, fp) != NULL){
         printf("- &s \n", subject);
     }
     fclose(fp);

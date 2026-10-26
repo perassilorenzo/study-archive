@@ -1,0 +1,27 @@
+json
+
+{
+    "a" : 1     json formattato (char 7)
+}
+
+{"a":1}       minimale / minificato (char 4 -> 8 byte) ma perde di chiarezza
+
+non si possono mettere i commenti
+
+
+jsonc (formato diverso da json non minificabile) w/ comments
+
+
+jsonl w/ lines (grandi dimensioni)
+
+{"a":1}
+{"b":2}
+
+
+json path: saluto.sotto
+
+{
+    "saluto":{
+        "sotto":1
+    }
+}

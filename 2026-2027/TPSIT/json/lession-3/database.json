@@ -1,0 +1,11 @@
+{
+    "database":{
+        "users":[
+            {
+                "username":"saniales",
+                "email":"sani@al.es",
+                "password":"hack_me"
+            }
+        ]
+    }
+}

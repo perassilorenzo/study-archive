@@ -12,7 +12,8 @@ namespace _0825_modulo6_b
         {
             List<Studente> studenti = new List<Studente>();
 
-            studenti.Add(new Studente("Lorenzo", "Perassi", 17)); studenti.Add(new Studente("Marco", "Rossi", 16));
+            studenti.Add(new Studente("Lorenzo", "Perassi", 17));
+            studenti.Add(new Studente("Marco", "Rossi", 16));
             studenti.Add(new Studente("Giulia", "Bianchi", 17));
             studenti.Add(new Studente("Matteo", "Ferrari", 18));
             studenti.Add(new Studente("Sofia", "Romano", 16));

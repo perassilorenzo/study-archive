@@ -57,11 +57,11 @@ const studenti = `[
   { "nome": "Ludovica", "cognome": "Parisi", "voti": [8, 8, 9] }
 ]`
 
+let nuoveStudenteDB = [];
 $(document).ready(function () {
     const studentiDB = JSON.parse(studenti);
-    let nuoveStudenteDB = [];
 
-    for (let i = 0; i < studenti.length; i++){
+    for (let i = 0; i < studentiDB.length; i++){
         // questo uso di reduce "riduce" un array in un numero corrispondente alla somma dei suoi elementi
         const avg = studenti[i].voti.reduce(
             // acc: accoumulatore -> serve ad accumulare risultati fra una chiamata e l'altra, in questo caso la somma accumulata
@@ -79,5 +79,34 @@ $(document).ready(function () {
             }
         )
     }
+    
+    // .txt() assegna un testo dentro ad un elemento
+    $("#ex-1-result").text(JSON.stringify(nuovoStudentiDB));
+});
 
+
+/* ===== esercizio 2 ===== */
+
+$(document).ready(function () {
+    const studentDB = JSON.parse($("#ex-2-result").text());
+
+    const avgAvg = studentiDB.reduce(
+        (acc, item) => acc + item.media,
+        0
+    ) / studentiDB.length;
+
+    const studentiScarti = studentiDB.map(
+        (item) => ({
+            nome: item.nome,
+            cognome: item.cognome,
+            scartoMedia: item.mediaVoti - avgAvg
+        })
+    )
+
+    const mediaScarti = studentiConScarti.reduce(
+        (acc, item) => acc + item.scartoMedia,
+        0
+    ) / studentiDB.length;
+
+    $("#ex-2-result").text(mediaScarti);
 });

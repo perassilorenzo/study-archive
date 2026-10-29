@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1792656441 source:c:\users\l.perassi.4103\desktop\verifica\testo del compito\perassi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

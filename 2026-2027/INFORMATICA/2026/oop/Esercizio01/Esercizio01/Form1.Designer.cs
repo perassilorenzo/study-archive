@@ -37,26 +37,29 @@
             this.lstVeicolo = new System.Windows.Forms.ListBox();
             this.btnCreaVeicolo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chkElettrica = new System.Windows.Forms.CheckBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtModello = new System.Windows.Forms.TextBox();
-            this.txtColore = new System.Windows.Forms.TextBox();
-            this.nudCilindrata = new System.Windows.Forms.NumericUpDown();
-            this.cmbPorte = new System.Windows.Forms.ComboBox();
-            this.dtpMatricola = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnAggiungiAuto = new System.Windows.Forms.Button();
+            this.dtpMatricola = new System.Windows.Forms.DateTimePicker();
+            this.cmbPorte = new System.Windows.Forms.ComboBox();
+            this.nudCilindrata = new System.Windows.Forms.NumericUpDown();
+            this.txtColore = new System.Windows.Forms.TextBox();
+            this.txtModello = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.chkElettrica = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCilindrata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -68,9 +71,9 @@
             this.groupBox1.Controls.Add(this.lstVeicolo);
             this.groupBox1.Controls.Add(this.btnCreaVeicolo);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(940, 338);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -79,7 +82,7 @@
             // txtPrezzo
             // 
             this.txtPrezzo.Location = new System.Drawing.Point(77, 123);
-            this.txtPrezzo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrezzo.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrezzo.Name = "txtPrezzo";
             this.txtPrezzo.Size = new System.Drawing.Size(124, 22);
             this.txtPrezzo.TabIndex = 5;
@@ -87,7 +90,7 @@
             // txtKM
             // 
             this.txtKM.Location = new System.Drawing.Point(77, 91);
-            this.txtKM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtKM.Margin = new System.Windows.Forms.Padding(4);
             this.txtKM.Name = "txtKM";
             this.txtKM.Size = new System.Drawing.Size(124, 22);
             this.txtKM.TabIndex = 4;
@@ -117,7 +120,7 @@
             this.lstVeicolo.FormattingEnabled = true;
             this.lstVeicolo.ItemHeight = 16;
             this.lstVeicolo.Location = new System.Drawing.Point(211, 44);
-            this.lstVeicolo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstVeicolo.Margin = new System.Windows.Forms.Padding(4);
             this.lstVeicolo.Name = "lstVeicolo";
             this.lstVeicolo.ScrollAlwaysVisible = true;
             this.lstVeicolo.Size = new System.Drawing.Size(687, 260);
@@ -126,7 +129,7 @@
             // btnCreaVeicolo
             // 
             this.btnCreaVeicolo.Location = new System.Drawing.Point(21, 44);
-            this.btnCreaVeicolo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreaVeicolo.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreaVeicolo.Name = "btnCreaVeicolo";
             this.btnCreaVeicolo.Size = new System.Drawing.Size(181, 28);
             this.btnCreaVeicolo.TabIndex = 0;
@@ -144,6 +147,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestione AUTO-VEICOLI";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView1);
+            this.groupBox4.Location = new System.Drawing.Point(469, 62);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(442, 344);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Visualizza AUTO";
             // 
             // groupBox3
             // 
@@ -168,99 +181,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dati AUTO";
             // 
-            // groupBox4
+            // btnAggiungiAuto
             // 
-            this.groupBox4.Location = new System.Drawing.Point(469, 62);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(442, 344);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Visualizza AUTO";
+            this.btnAggiungiAuto.Location = new System.Drawing.Point(218, 296);
+            this.btnAggiungiAuto.Name = "btnAggiungiAuto";
+            this.btnAggiungiAuto.Size = new System.Drawing.Size(133, 23);
+            this.btnAggiungiAuto.TabIndex = 13;
+            this.btnAggiungiAuto.Text = "Aggiungi auto";
+            this.btnAggiungiAuto.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // dtpMatricola
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Marca";
+            this.dtpMatricola.Location = new System.Drawing.Point(190, 208);
+            this.dtpMatricola.Name = "dtpMatricola";
+            this.dtpMatricola.Size = new System.Drawing.Size(100, 22);
+            this.dtpMatricola.TabIndex = 12;
             // 
-            // label4
+            // cmbPorte
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Modello";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Colore";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 168);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Cilindrata";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 215);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Data Immatricolazione";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 260);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 16);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "N. Porte";
-            // 
-            // chkElettrica
-            // 
-            this.chkElettrica.AutoSize = true;
-            this.chkElettrica.Location = new System.Drawing.Point(24, 296);
-            this.chkElettrica.Name = "chkElettrica";
-            this.chkElettrica.Size = new System.Drawing.Size(77, 20);
-            this.chkElettrica.TabIndex = 6;
-            this.chkElettrica.Text = "Elettrica";
-            this.chkElettrica.UseVisualStyleBackColor = true;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(190, 43);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(100, 22);
-            this.txtMarca.TabIndex = 7;
-            // 
-            // txtModello
-            // 
-            this.txtModello.Location = new System.Drawing.Point(190, 79);
-            this.txtModello.Name = "txtModello";
-            this.txtModello.Size = new System.Drawing.Size(100, 22);
-            this.txtModello.TabIndex = 8;
-            // 
-            // txtColore
-            // 
-            this.txtColore.Location = new System.Drawing.Point(190, 121);
-            this.txtColore.Name = "txtColore";
-            this.txtColore.Size = new System.Drawing.Size(100, 22);
-            this.txtColore.TabIndex = 9;
+            this.cmbPorte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPorte.FormattingEnabled = true;
+            this.cmbPorte.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbPorte.Location = new System.Drawing.Point(190, 251);
+            this.cmbPorte.Name = "cmbPorte";
+            this.cmbPorte.Size = new System.Drawing.Size(100, 24);
+            this.cmbPorte.TabIndex = 11;
             // 
             // nudCilindrata
             // 
@@ -284,35 +233,100 @@
             0,
             0});
             // 
-            // cmbPorte
+            // txtColore
             // 
-            this.cmbPorte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPorte.FormattingEnabled = true;
-            this.cmbPorte.Items.AddRange(new object[] {
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbPorte.Location = new System.Drawing.Point(190, 251);
-            this.cmbPorte.Name = "cmbPorte";
-            this.cmbPorte.Size = new System.Drawing.Size(100, 24);
-            this.cmbPorte.TabIndex = 11;
+            this.txtColore.Location = new System.Drawing.Point(190, 121);
+            this.txtColore.Name = "txtColore";
+            this.txtColore.Size = new System.Drawing.Size(100, 22);
+            this.txtColore.TabIndex = 9;
             // 
-            // dtpMatricola
+            // txtModello
             // 
-            this.dtpMatricola.Location = new System.Drawing.Point(190, 208);
-            this.dtpMatricola.Name = "dtpMatricola";
-            this.dtpMatricola.Size = new System.Drawing.Size(100, 22);
-            this.dtpMatricola.TabIndex = 12;
+            this.txtModello.Location = new System.Drawing.Point(190, 79);
+            this.txtModello.Name = "txtModello";
+            this.txtModello.Size = new System.Drawing.Size(100, 22);
+            this.txtModello.TabIndex = 8;
             // 
-            // btnAggiungiAuto
+            // txtMarca
             // 
-            this.btnAggiungiAuto.Location = new System.Drawing.Point(218, 296);
-            this.btnAggiungiAuto.Name = "btnAggiungiAuto";
-            this.btnAggiungiAuto.Size = new System.Drawing.Size(133, 23);
-            this.btnAggiungiAuto.TabIndex = 13;
-            this.btnAggiungiAuto.Text = "Aggiungi auto";
-            this.btnAggiungiAuto.UseVisualStyleBackColor = true;
+            this.txtMarca.Location = new System.Drawing.Point(190, 43);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(100, 22);
+            this.txtMarca.TabIndex = 7;
+            // 
+            // chkElettrica
+            // 
+            this.chkElettrica.AutoSize = true;
+            this.chkElettrica.Location = new System.Drawing.Point(24, 296);
+            this.chkElettrica.Name = "chkElettrica";
+            this.chkElettrica.Size = new System.Drawing.Size(77, 20);
+            this.chkElettrica.TabIndex = 6;
+            this.chkElettrica.Text = "Elettrica";
+            this.chkElettrica.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 16);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "N. Porte";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 215);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(140, 16);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Data Immatricolazione";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 168);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Cilindrata";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Colore";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Modello";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Marca";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(385, 263);
+            this.dataGridView1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -322,16 +336,18 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "OOP - Esercizio 1 - Gestione Veicoli";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCilindrata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,6 +378,7 @@
         private System.Windows.Forms.DateTimePicker dtpMatricola;
         private System.Windows.Forms.ComboBox cmbPorte;
         private System.Windows.Forms.Button btnAggiungiAuto;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

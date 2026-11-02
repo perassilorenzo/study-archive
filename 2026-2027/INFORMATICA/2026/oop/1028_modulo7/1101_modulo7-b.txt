@@ -1,0 +1,9 @@
+1. Quali sono i vantaggi dei metodi Factory rispetto al costruttore?
+I metodi Factory permettono di creare oggetti senza chiamare direttamente il costruttore. Sono utili perché permettono di controllare la creazione degli oggetti, scegliere quale tipo di oggetto creare e rendere il codice più flessibile.
+
+2. Come il pattern Singleton semplifica la gestione delle risorse?
+Il Singleton permette di avere una sola istanza di una classe in tutta l'applicazione. È utile per gestire risorse condivise, come un Logger o una connessione, evitando di creare più oggetti uguali.
+
+3. Come scegliere tra List e Dictionary?
+- List: si utilizza quando bisogna memorizzare una raccolta di elementi ordinati e accedervi tramite posizione o indice.
+- Dictionary: si utilizza quando bisogna cercare rapidamente un elemento attraverso una chiave, ad esempio la matricola di uno studente.

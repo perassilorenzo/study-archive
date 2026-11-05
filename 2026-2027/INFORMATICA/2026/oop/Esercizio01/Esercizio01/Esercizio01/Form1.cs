@@ -30,6 +30,8 @@ namespace Esercizio01
         {
             dtpImmatricolazione.Value = DateTime.Now;
             cmbNPorte.SelectedIndex = 1;
+            btnCreaXML.Enabled = false;
+            btnCreaJSon.Enabled = false;
         }
 
 
@@ -113,6 +115,8 @@ namespace Esercizio01
                 // Gestisco la DGV Auto
                 dgvAuto.DataSource = null;
                 dgvAuto.DataSource = listaAuto;
+                btnCreaXML.Enabled = true;
+                btnCreaJSon.Enabled = true;
 
                 // Pulizia Dati Input Auto
                 clearDatiInputAuto();
@@ -134,10 +138,35 @@ namespace Esercizio01
         {
             if (listaCarica)
             {
-                if (MessageBox.Show("La lista AUTO è già carica, vuoi sovrascriverla?", "Conferma ricarica Lista AUTO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("La Lista AUTO è già carica, vuoi sovrascriverla ?",
+                                    "Conferma ricarica Lista AUTO",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    // ricarico la lista AUTO
+                    // Ricarico la Lista AUTO
+                    ricaricaListaAutoByXML();
                 }
+            }
+            else
+            {
+                // Ricarico la Lista AUTO
+                ricaricaListaAutoByXML();
+            }
+
+        }
+
+        private void btnCreaJSon_Click(object sender, EventArgs e)
+        {
+            string JSonAuto = JsonConvert.SerializeObject(listaAuto, Formatting.Indented);
+            File.WriteAllText("AutoVeicoli.json", JSonAuto);
+            MessageBox.Show("Lista AUTO JSon creata con successo !!!");
+        }
+
+        private void dgvAuto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // DataGridViewRow 
             }
         }
 
@@ -182,6 +211,39 @@ namespace Esercizio01
             chkElettrica.Checked = false;
         }
 
+        private void ricaricaListaAutoByXML()
+        {
+            XmlSerializer xmlSer = new XmlSerializer(listaAuto.GetType());
+            bool errore = false;
 
+            dgvAuto.DataSource = null;
+
+            try
+            {
+                using (StreamReader sr = new StreamReader("AutoVeicoli.xml"))
+                {
+                    listaAuto = (List<clsAuto>)xmlSer.Deserialize(sr);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                errore = true;
+                MessageBox.Show($"ATTENZIONE : {ex.Message}");
+            }
+
+            if (!errore)
+            {
+                dgvAuto.DataSource = listaAuto;
+                listaCarica = true;
+                btnCreaXML.Enabled = true;
+                btnCreaJSon.Enabled = true;
+            }
+        }
+
+        private void dgvAuto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

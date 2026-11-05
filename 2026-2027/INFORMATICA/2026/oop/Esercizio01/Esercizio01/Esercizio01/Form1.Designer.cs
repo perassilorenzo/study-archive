@@ -38,6 +38,10 @@
             this.btnCreaVeicolo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnCreaJSon = new System.Windows.Forms.Button();
+            this.btnCaricaXML = new System.Windows.Forms.Button();
+            this.btnCreaXML = new System.Windows.Forms.Button();
+            this.dgvAuto = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnAggiungiAuto = new System.Windows.Forms.Button();
             this.dtpImmatricolazione = new System.Windows.Forms.DateTimePicker();
@@ -53,15 +57,26 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvAuto = new System.Windows.Forms.DataGridView();
-            this.btnCreaXML = new System.Windows.Forms.Button();
-            this.btnCaricaXML = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblBollo = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblEta = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPrezzoAuto = new System.Windows.Forms.TextBox();
+            this.txtKmAuto = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAuto)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCilindrata)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAuto)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -74,7 +89,7 @@
             this.groupBox1.Controls.Add(this.btnCreaVeicolo);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(705, 275);
+            this.groupBox1.Size = new System.Drawing.Size(692, 275);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestione VEICOLI";
@@ -143,6 +158,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnCreaJSon);
             this.groupBox4.Controls.Add(this.btnCaricaXML);
             this.groupBox4.Controls.Add(this.btnCreaXML);
             this.groupBox4.Controls.Add(this.dgvAuto);
@@ -152,6 +168,48 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Visualizza AUTO";
+            // 
+            // btnCreaJSon
+            // 
+            this.btnCreaJSon.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnCreaJSon.Location = new System.Drawing.Point(340, 206);
+            this.btnCreaJSon.Name = "btnCreaJSon";
+            this.btnCreaJSon.Size = new System.Drawing.Size(75, 23);
+            this.btnCreaJSon.TabIndex = 3;
+            this.btnCreaJSon.Text = "Crea JSON";
+            this.btnCreaJSon.UseVisualStyleBackColor = false;
+            this.btnCreaJSon.Click += new System.EventHandler(this.btnCreaJSon_Click);
+            // 
+            // btnCaricaXML
+            // 
+            this.btnCaricaXML.BackColor = System.Drawing.Color.Coral;
+            this.btnCaricaXML.Location = new System.Drawing.Point(238, 206);
+            this.btnCaricaXML.Name = "btnCaricaXML";
+            this.btnCaricaXML.Size = new System.Drawing.Size(75, 23);
+            this.btnCaricaXML.TabIndex = 2;
+            this.btnCaricaXML.Text = "Carica XML";
+            this.btnCaricaXML.UseVisualStyleBackColor = false;
+            this.btnCaricaXML.Click += new System.EventHandler(this.btnCaricaXML_Click);
+            // 
+            // btnCreaXML
+            // 
+            this.btnCreaXML.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCreaXML.Location = new System.Drawing.Point(140, 206);
+            this.btnCreaXML.Name = "btnCreaXML";
+            this.btnCreaXML.Size = new System.Drawing.Size(75, 23);
+            this.btnCreaXML.TabIndex = 1;
+            this.btnCreaXML.Text = "Crea XML";
+            this.btnCreaXML.UseVisualStyleBackColor = false;
+            this.btnCreaXML.Click += new System.EventHandler(this.btnCreaXML_Click);
+            // 
+            // dgvAuto
+            // 
+            this.dgvAuto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAuto.Location = new System.Drawing.Point(11, 21);
+            this.dgvAuto.Name = "dgvAuto";
+            this.dgvAuto.Size = new System.Drawing.Size(530, 179);
+            this.dgvAuto.TabIndex = 0;
+            this.dgvAuto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuto_CellClick);
             // 
             // groupBox3
             // 
@@ -316,41 +374,141 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Marca";
             // 
-            // dgvAuto
+            // groupBox5
             // 
-            this.dgvAuto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAuto.Location = new System.Drawing.Point(11, 21);
-            this.dgvAuto.Name = "dgvAuto";
-            this.dgvAuto.Size = new System.Drawing.Size(530, 179);
-            this.dgvAuto.TabIndex = 0;
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.lblBollo);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.lblEta);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.txtPrezzoAuto);
+            this.groupBox5.Controls.Add(this.txtKmAuto);
+            this.groupBox5.Controls.Add(this.label10);
+            this.groupBox5.Controls.Add(this.label9);
+            this.groupBox5.Location = new System.Drawing.Point(711, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 275);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Dettaglio AUTO-VEICOLO";
             // 
-            // btnCreaXML
+            // label15
             // 
-            this.btnCreaXML.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnCreaXML.Location = new System.Drawing.Point(197, 206);
-            this.btnCreaXML.Name = "btnCreaXML";
-            this.btnCreaXML.Size = new System.Drawing.Size(75, 23);
-            this.btnCreaXML.TabIndex = 1;
-            this.btnCreaXML.Text = "Crea XML";
-            this.btnCreaXML.UseVisualStyleBackColor = false;
-            this.btnCreaXML.Click += new System.EventHandler(this.btnCreaXML_Click);
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Blue;
+            this.label15.Location = new System.Drawing.Point(95, 228);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(0, 13);
+            this.label15.TabIndex = 11;
             // 
-            // btnCaricaXML
+            // label16
             // 
-            this.btnCaricaXML.BackColor = System.Drawing.Color.Coral;
-            this.btnCaricaXML.Location = new System.Drawing.Point(312, 206);
-            this.btnCaricaXML.Name = "btnCaricaXML";
-            this.btnCaricaXML.Size = new System.Drawing.Size(75, 23);
-            this.btnCaricaXML.TabIndex = 2;
-            this.btnCaricaXML.Text = "Carica XML";
-            this.btnCaricaXML.UseVisualStyleBackColor = false;
-            this.btnCaricaXML.Click += new System.EventHandler(this.btnCaricaXML_Click);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(21, 228);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 13);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Comsumo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Blue;
+            this.label12.Location = new System.Drawing.Point(95, 200);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 13);
+            this.label12.TabIndex = 9;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(21, 199);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Assicurazione";
+            // 
+            // lblBollo
+            // 
+            this.lblBollo.AutoSize = true;
+            this.lblBollo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBollo.ForeColor = System.Drawing.Color.Blue;
+            this.lblBollo.Location = new System.Drawing.Point(95, 168);
+            this.lblBollo.Name = "lblBollo";
+            this.lblBollo.Size = new System.Drawing.Size(0, 13);
+            this.lblBollo.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(21, 168);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Bollo";
+            // 
+            // lblEta
+            // 
+            this.lblEta.AutoSize = true;
+            this.lblEta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEta.ForeColor = System.Drawing.Color.Blue;
+            this.lblEta.Location = new System.Drawing.Point(93, 138);
+            this.lblEta.Name = "lblEta";
+            this.lblEta.Size = new System.Drawing.Size(0, 13);
+            this.lblEta.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 138);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(23, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Età";
+            // 
+            // txtPrezzoAuto
+            // 
+            this.txtPrezzoAuto.Location = new System.Drawing.Point(96, 83);
+            this.txtPrezzoAuto.Name = "txtPrezzoAuto";
+            this.txtPrezzoAuto.Size = new System.Drawing.Size(85, 20);
+            this.txtPrezzoAuto.TabIndex = 3;
+            // 
+            // txtKmAuto
+            // 
+            this.txtKmAuto.Location = new System.Drawing.Point(96, 36);
+            this.txtKmAuto.Name = "txtKmAuto";
+            this.txtKmAuto.Size = new System.Drawing.Size(85, 20);
+            this.txtKmAuto.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 90);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Prezzo";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Km";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 585);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -361,10 +519,12 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAuto)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCilindrata)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAuto)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -398,6 +558,20 @@
         private System.Windows.Forms.DataGridView dgvAuto;
         private System.Windows.Forms.Button btnCaricaXML;
         private System.Windows.Forms.Button btnCreaXML;
+        private System.Windows.Forms.Button btnCreaJSon;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txtPrezzoAuto;
+        private System.Windows.Forms.TextBox txtKmAuto;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblEta;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblBollo;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
     }
 }
 

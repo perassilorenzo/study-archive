@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _0911_polimorfismo.Properties
+namespace _1109_polimorfismo.Properties
 {
 
 

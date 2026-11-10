@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1ADC4A79-283F-408C-BFAA-4BDA8A763E5E}</ProjectGuid>
+    <ProjectGuid>{8D7D4225-B969-4D06-8A1D-4AA83D85CBFD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_0911_polimorfismo</RootNamespace>
-    <AssemblyName>0911_polimorfismo</AssemblyName>
+    <RootNamespace>_1109_polimorfismo</RootNamespace>
+    <AssemblyName>1109_polimorfismo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

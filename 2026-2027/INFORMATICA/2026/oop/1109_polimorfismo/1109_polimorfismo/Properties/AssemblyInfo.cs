@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
-[assembly: AssemblyTitle("0911_polimorfismo")]
+[assembly: AssemblyTitle("1109_polimorfismo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("0911_polimorfismo")]
+[assembly: AssemblyProduct("1109_polimorfismo")]
 [assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Se il progetto viene esposto a COM, il GUID seguente verrà utilizzato come ID della libreria dei tipi
-[assembly: Guid("1adc4a79-283f-408c-bfaa-4bda8a763e5e")]
+[assembly: Guid("8d7d4225-b969-4d06-8a1d-4aa83d85cbfd")]
 
 // Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 //

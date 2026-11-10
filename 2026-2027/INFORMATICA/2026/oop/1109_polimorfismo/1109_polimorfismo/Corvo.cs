@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _0911_polimorfismo
+namespace _1109_polimorfismo
 {
-    public class Uccello
+    public class Corvo : Uccello
     {
-        public virtual void Verso()
+        public override void Verso()
         {
-            MessageBox.Show("cip cip", "Uccello");
+            MessageBox.Show("cra cra", "Corvo");
         }
     }
 }

@@ -27,8 +27,6 @@ namespace _1104_gestione_libreria
 
         private System.Windows.Forms.ListBox lstCatalogo;
 
-        private System.Windows.Forms.Label lblRisultato;
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -58,7 +56,6 @@ namespace _1104_gestione_libreria
             this.btnCerca = new System.Windows.Forms.Button();
             this.btnPrezzoMedio = new System.Windows.Forms.Button();
             this.lstCatalogo = new System.Windows.Forms.ListBox();
-            this.lblRisultato = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitolo
@@ -206,17 +203,9 @@ namespace _1104_gestione_libreria
             this.lstCatalogo.Size = new System.Drawing.Size(240, 196);
             this.lstCatalogo.TabIndex = 12;
             // 
-            // lblRisultato
-            // 
-            this.lblRisultato.Location = new System.Drawing.Point(666, 130);
-            this.lblRisultato.Name = "lblRisultato";
-            this.lblRisultato.Size = new System.Drawing.Size(580, 50);
-            this.lblRisultato.TabIndex = 17;
-            this.lblRisultato.Text = "Risultato:";
-            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1079, 710);
+            this.ClientSize = new System.Drawing.Size(1193, 666);
             this.Controls.Add(this.lblTitolo);
             this.Controls.Add(this.txtTitolo);
             this.Controls.Add(this.lblAutore);
@@ -234,7 +223,6 @@ namespace _1104_gestione_libreria
             this.Controls.Add(this.txtRicerca);
             this.Controls.Add(this.btnCerca);
             this.Controls.Add(this.btnPrezzoMedio);
-            this.Controls.Add(this.lblRisultato);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestione Libreria";

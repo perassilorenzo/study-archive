@@ -18,7 +18,7 @@ int main()
      * - 2° : istruzione MALLOC
      * - 3° : la dimesione dell'Area di Memoria
      * 
-     */
+    */
     
     pi = (int *)malloc(sizeof(int));
     *pi = 15;

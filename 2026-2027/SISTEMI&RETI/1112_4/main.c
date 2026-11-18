@@ -1,39 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 100
+#define MAX_LENGTH 100
 
 int main()
 {
-
     int *array;
-    int lunA;
+    int arrayLength;
 
     printf("\nEsercizio 10: allocazione Dinamica di un Vettore di Interi");
 
     // Input Lunghezza Vettore
     do
     {
-        printf("\nInserisci la Lunghezza del Vettore ==> ");
+        printf("\nInserisci la Lunghezza del Vettore >>> ");
         fflush(stdin);
-        scanf("%d",&lunA);
+        scanf("%d", &arrayLength);
 
-    } 
-    while (lunA < 1 || lunA > MAX);
+    } while (arrayLength < 1 || arrayLength > MAX_LENGTH);
     
-    array = (int *)malloc(lunA * sizeof(int));
+    array = (int *)malloc(arrayLength * sizeof(int));
 
     // Carico il Vettore
-    for(int I=0; I<lunA; I++)
-        array[I] = I * 2;
+    for(int i = 0; i < arrayLength; i++)
+        array[i] = i * 2;
 
     // Visualizzo il Vettore
     printf("\n\nVettore:");
-    for(int I=0; I<lunA; I++)
-        printf("\nElemento %d - Valore %d - Indirizzo %p", I+1, array[I], &array[I]);        
+    for(int i = 0; i < arrayLength; i++)
+        printf("\nElemento %d - Valore %d - Indirizzo %p", i + 1, array[i], &array[i]);        
 
     free(array);
-
     printf("\n\n");
 
     return 0;

@@ -52,6 +52,7 @@
             this.btnLeggeDoc.TabIndex = 1;
             this.btnLeggeDoc.Text = "Leggi Docx";
             this.btnLeggeDoc.UseVisualStyleBackColor = true;
+            this.btnLeggeDoc.Click += new System.EventHandler(this.btnLeggeDoc_Click);
             // 
             // lstDatiDoc
             // 

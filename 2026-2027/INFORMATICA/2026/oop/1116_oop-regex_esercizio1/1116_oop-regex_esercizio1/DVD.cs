@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace _1116_oop_regex_esercizio1
 {
-    internal class DVD
+    internal class DVD : Materiale
     {
+        public int DurataMinuti { get; set; }
+
+        public DVD(string titolo, string codice, int durataMinuti)
+            : base(titolo, codice)
+        {
+            DurataMinuti = durataMinuti;
+        }
+
+        public override string Descrivi()
+        {
+            return base.Descrivi() + $", Durata: {DurataMinuti} minuti";
+        }
     }
 }

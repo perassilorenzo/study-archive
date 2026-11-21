@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace _1116_oop_regex_esercizio1
 {
-    internal class Libro
+    public class Libro : Materiale
     {
+        public string Autore { get; set; }
+
+        public Libro(string titolo, string codice, string autore) : base(titolo, codice)
+        {
+            Autore = autore;
+        }
+
+        public override string Descrivi()
+        {
+            return base.Descrivi() + $", Autore: {Autore}";
+        }
     }
+
 }

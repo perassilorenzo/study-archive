@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2026-2027/SISTEMI&RETI/0917",
-      "program": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2026-2027/SISTEMI&RETI/0917/build/Debug/outDebug",
+      "cwd": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2026-2027/TPSIT/1006-condivisioneInfo/repo/tpsit-1006-condivisioneInfo",
+      "program": "c:/Users/peras/Desktop/STUDY-ARCHIVE/2026-2027/TPSIT/1006-condivisioneInfo/repo/tpsit-1006-condivisioneInfo/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -8,5 +8,6 @@ namespace _1123_interface_pagamenti
 {
     internal interface IPagamento
     {
+        void EffettuaPagamento(decimal importo);
     }
 }

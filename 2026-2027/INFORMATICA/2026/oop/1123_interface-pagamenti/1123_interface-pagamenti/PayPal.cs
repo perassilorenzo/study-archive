@@ -10,7 +10,7 @@ namespace _1123_interface_pagamenti
     {
         public void EffettuaPagamento(decimal importo)
         {
-            Console.WriteLine($"Pagamento effettuato tramite PayPal di €{importo}");
+            Console.WriteLine($"Pagamento effettuato tramite PayPal di €{importo}");    
         }
     }
 }

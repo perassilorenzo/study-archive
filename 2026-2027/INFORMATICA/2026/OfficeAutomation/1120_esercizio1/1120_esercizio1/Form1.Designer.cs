@@ -32,6 +32,10 @@
             this.btnCreaDoc = new System.Windows.Forms.Button();
             this.btnLeggeDoc = new System.Windows.Forms.Button();
             this.lstDatiDoc = new System.Windows.Forms.ListBox();
+            this.btnImg = new System.Windows.Forms.Button();
+            this.btnAddImg = new System.Windows.Forms.Button();
+            this.btnFont = new System.Windows.Forms.Button();
+            this.btnModificaParagrafo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreaDoc
@@ -63,11 +67,55 @@
             this.lstDatiDoc.Size = new System.Drawing.Size(365, 292);
             this.lstDatiDoc.TabIndex = 2;
             // 
+            // btnImg
+            // 
+            this.btnImg.Location = new System.Drawing.Point(12, 53);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(112, 35);
+            this.btnImg.TabIndex = 3;
+            this.btnImg.Text = "Crea IMG";
+            this.btnImg.UseVisualStyleBackColor = true;
+            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Location = new System.Drawing.Point(130, 53);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(112, 35);
+            this.btnAddImg.TabIndex = 4;
+            this.btnAddImg.Text = "Aggiungi IMG";
+            this.btnAddImg.UseVisualStyleBackColor = true;
+            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
+            // 
+            // btnFont
+            // 
+            this.btnFont.Location = new System.Drawing.Point(12, 94);
+            this.btnFont.Name = "btnFont";
+            this.btnFont.Size = new System.Drawing.Size(112, 35);
+            this.btnFont.TabIndex = 5;
+            this.btnFont.Text = "Aggiungi font";
+            this.btnFont.UseVisualStyleBackColor = true;
+            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
+            // 
+            // btnModificaParagrafo
+            // 
+            this.btnModificaParagrafo.Location = new System.Drawing.Point(130, 94);
+            this.btnModificaParagrafo.Name = "btnModificaParagrafo";
+            this.btnModificaParagrafo.Size = new System.Drawing.Size(112, 47);
+            this.btnModificaParagrafo.TabIndex = 6;
+            this.btnModificaParagrafo.Text = "Modifica paragrafo";
+            this.btnModificaParagrafo.UseVisualStyleBackColor = true;
+            this.btnModificaParagrafo.Click += new System.EventHandler(this.btnModificaParagrafo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModificaParagrafo);
+            this.Controls.Add(this.btnFont);
+            this.Controls.Add(this.btnAddImg);
+            this.Controls.Add(this.btnImg);
             this.Controls.Add(this.lstDatiDoc);
             this.Controls.Add(this.btnLeggeDoc);
             this.Controls.Add(this.btnCreaDoc);
@@ -83,6 +131,10 @@
         private System.Windows.Forms.Button btnCreaDoc;
         private System.Windows.Forms.Button btnLeggeDoc;
         private System.Windows.Forms.ListBox lstDatiDoc;
+        private System.Windows.Forms.Button btnImg;
+        private System.Windows.Forms.Button btnAddImg;
+        private System.Windows.Forms.Button btnFont;
+        private System.Windows.Forms.Button btnModificaParagrafo;
     }
 }
 

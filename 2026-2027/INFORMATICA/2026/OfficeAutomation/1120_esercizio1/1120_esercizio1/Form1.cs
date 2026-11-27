@@ -209,5 +209,10 @@ namespace _1120_esercizio1
                 Process.Start(docName);
             }
         }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

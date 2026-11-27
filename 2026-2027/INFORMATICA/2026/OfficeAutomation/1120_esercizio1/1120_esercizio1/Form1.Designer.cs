@@ -37,6 +37,7 @@
             this.btnFont = new System.Windows.Forms.Button();
             this.btnModificaParagrafo = new System.Windows.Forms.Button();
             this.btnTabella = new System.Windows.Forms.Button();
+            this.btnPdf = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreaDoc
@@ -118,11 +119,22 @@
             this.btnTabella.UseVisualStyleBackColor = true;
             this.btnTabella.Click += new System.EventHandler(this.btnTabella_Click);
             // 
+            // btnPdf
+            // 
+            this.btnPdf.Location = new System.Drawing.Point(130, 147);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(112, 35);
+            this.btnPdf.TabIndex = 8;
+            this.btnPdf.Text = "Crea PDF";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.btnTabella);
             this.Controls.Add(this.btnModificaParagrafo);
             this.Controls.Add(this.btnFont);
@@ -148,6 +160,7 @@
         private System.Windows.Forms.Button btnFont;
         private System.Windows.Forms.Button btnModificaParagrafo;
         private System.Windows.Forms.Button btnTabella;
+        private System.Windows.Forms.Button btnPdf;
     }
 }
 

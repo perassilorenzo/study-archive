@@ -36,6 +36,7 @@
             this.btnAddImg = new System.Windows.Forms.Button();
             this.btnFont = new System.Windows.Forms.Button();
             this.btnModificaParagrafo = new System.Windows.Forms.Button();
+            this.btnTabella = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreaDoc
@@ -107,11 +108,22 @@
             this.btnModificaParagrafo.UseVisualStyleBackColor = true;
             this.btnModificaParagrafo.Click += new System.EventHandler(this.btnModificaParagrafo_Click);
             // 
+            // btnTabella
+            // 
+            this.btnTabella.Location = new System.Drawing.Point(12, 135);
+            this.btnTabella.Name = "btnTabella";
+            this.btnTabella.Size = new System.Drawing.Size(112, 47);
+            this.btnTabella.TabIndex = 7;
+            this.btnTabella.Text = "Aggiugni tabella";
+            this.btnTabella.UseVisualStyleBackColor = true;
+            this.btnTabella.Click += new System.EventHandler(this.btnTabella_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTabella);
             this.Controls.Add(this.btnModificaParagrafo);
             this.Controls.Add(this.btnFont);
             this.Controls.Add(this.btnAddImg);
@@ -135,6 +147,7 @@
         private System.Windows.Forms.Button btnAddImg;
         private System.Windows.Forms.Button btnFont;
         private System.Windows.Forms.Button btnModificaParagrafo;
+        private System.Windows.Forms.Button btnTabella;
     }
 }
 

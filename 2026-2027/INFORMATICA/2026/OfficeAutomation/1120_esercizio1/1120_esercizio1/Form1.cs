@@ -54,7 +54,7 @@ namespace _1120_esercizio1
                 // leggo tutto il documento word riga per riga
                 foreach(var line in document.Paragraphs)
                 {
-                    lstDatiDoc.Items.Add($"Paragrafo trovato: {line.Text}");
+                    lstDatiDoc.Items.Add($"Paragrafo {document.Paragraphs.IndexOf(line)}: {line.Text}");
                 }
             }
         }
@@ -142,7 +142,72 @@ namespace _1120_esercizio1
 
         private void btnModificaParagrafo_Click(object sender, EventArgs e)
         {
+            using (DocX document = DocX.Load(docName))
+            {
+                Paragraph p = document.Paragraphs[3];
 
+                if (p != null)
+                {
+                    // sostituzione
+                    p.ReplaceText("Questo testo", "Testo sostituito");
+
+                    // aggiungere
+                    p.Append(" Testo aggiunto").
+                        Bold().
+                        FontSize(15);
+                }
+
+                p.RemoveText(0, p.Text.Length, false, false);
+                p.Append("Questo è il testo sostituito completamente con eliminazione del precedente");
+
+
+                document.Save();
+                Process.Start(docName) ;
+            }
+
+        }
+
+        private void btnTabella_Click(object sender, EventArgs e)
+        {
+            using(DocX document = DocX.Load(docName))
+            {
+                // step 1
+                Table t = document.AddTable(3, 3);
+
+                // step 2
+                t.Alignment = Alignment.center;
+                t.Design = TableDesign.TableGrid;
+
+                // step 3
+                Row headerRow = t.Rows[0];
+                foreach (Cell cell in headerRow.Cells)
+                {
+                    cell.FillColor = Xceed.Drawing.Color.LightBlue;
+                    cell.VerticalAlignment = VerticalAlignment.Center;
+
+                    var p = cell.Paragraphs[0];
+                    p.Append("Instazione").
+                        Bold().
+                        Font("Verdana").
+                        FontSize(14).
+                        Color(Xceed.Drawing.Color.Red);
+                }
+
+                t.Rows[1].Cells[0].Paragraphs[0].Append("Dato 1");
+                t.Rows[2].Cells[1].Paragraphs[1].Append("Dato 2");
+                t.Rows[3].Cells[2].Paragraphs[2].Append("Dato 3");
+
+                t.Rows[2].Cells[0].FillColor = Xceed.Drawing.Color.LightBlue;
+                t.Rows[2].Cells[0].Paragraphs[0].Append("Evidenziato");
+
+                Border b = new Border(Xceed.Document.NET.BorderStyle.Tcbs_single, BorderSize.three, 0, Xceed.Drawing.Color.Black);
+
+                t.SetBorder(TableBorderType.InsideH, b);
+
+
+                document.Save();
+                Process.Start(docName);
+            }
         }
     }
 }
